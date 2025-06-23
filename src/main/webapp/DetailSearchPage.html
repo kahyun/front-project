@@ -65,7 +65,6 @@
     }
     .roomSample{
     	height: 380px;
-    	background: #f8f8f8;
     	margin-top : 20px;
     	display:flex;
     }
@@ -75,8 +74,11 @@
 	}
 	.mapImg{
 		width:100%;
-		height: 400px;
-		background: lightgrey;
+		height: 100%;
+	}
+	.mapImg>img{
+		width:100%;
+		height:100%;
 	}
 	.addressCopyBtn{
 		width:100%;
@@ -195,7 +197,7 @@
 		width:95%;
 		height: 75%;
 		display: flex;
-		padding: 2%;
+		padding: 4%;
 		border: 1px solid #D5D5D5;
 		border-radius: 20px;
 	}
@@ -207,6 +209,14 @@
 		width:35%;
 		height:100%;
 		text-align:right;
+	}
+	.bookBtn{
+		width: 60%;
+		height: 20%;
+		border: none;
+		border-radius: 15px;
+		background: #ff4752;
+		color: white;
 	}
 </style>
 <!-- bootstrap -->
@@ -325,33 +335,64 @@
 					<div class="roomImg">
 						<img src="./img/detailSearchPage/SeoulGH/SeoulGH1.png">
 					</div>
-					<h4><b>더블 룸</b></h4>
+					<h4><b>2인실</b></h4>
 					<h6>조식 서비스 제공</h6>
 					<div class="roomCapacity">
-						<h6>기준 4인 / 최대 4인</h6>
+						<h6>기준 2인 / 최대 2인</h6>
 					</div>
+					
 				</div>
 				<div class="roomSample-Right">
 					<div class="roomInfoBox">
 						<div class="roomInfo-Left">
 							<h6><b>숙박</b></h6>
 							<h6 style="color:#D0D0D0; overflow: visible;">체크인 16:00 ~ 체크아웃 10:00</h6>
+							<h6 style="color:#D0D0D0; overflow: visible;">조식포함, 주차불가</h6>
 						</div>
 						<div class="roomInfo-Right">
 							<h6><b>상세보기 ></b></h6>
-							<br><br>
-							<h4 >100,000원</h4>
+							<br><br><br>
+							<h4 id="roomPrice">100,000원</h4>
+							<h6 style="color:#D0D0D0;">취소 및 환불불가</h6>
+							<button class="bookBtn">예매하기</button>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="roomSample">
-			
-			</div>
+				<div class="roomSample-Left">
+					<div class="roomImg">
+						<img src="./img/detailSearchPage/SeoulGH/smallImage2.png">
+					</div>
+					<h4><b>4인실</b></h4>
+					<h6>조식 서비스 제공</h6>
+					<div class="roomCapacity">
+						<h6>기준 4인 / 최대 4인</h6>
+					</div>
+					
+				</div>
+				<div class="roomSample-Right">
+					<div class="roomInfoBox">
+						<div class="roomInfo-Left">
+							<h6><b>숙박</b></h6>
+							<h6 style="color:#D0D0D0; overflow: visible;">체크인 16:00 ~ 체크아웃 10:00</h6>
+							<h6 style="color:#D0D0D0; overflow: visible;">조식포함, 주차불가</h6>
+						</div>
+						<div class="roomInfo-Right">
+							<h6><b>상세보기 ></b></h6>
+							<br><br><br>
+							<h4 id="roomPrice">150,000원</h4>
+							<h6 style="color:#D0D0D0;">취소 및 환불불가</h6>
+							<button class="bookBtn">예매하기</button>
+						</div>
+					</div>
+				</div>
 		</div><br><hr><br>
 		<div class="mapSection">
 			<h4><b>위치/교통</b></h4>
-			<div class="mapImg"></div>
+			<div class="mapImg">
+				<img src="./img/detailSearchPage/SeoulGH/oulimHouseMap.png">
+			</div>
 			<h5 class="address">어디시 어디구 어디동 123-4</h5>
 			<button class="addressCopyBtn">주소복사</button>
 		</div><br><hr><br>
