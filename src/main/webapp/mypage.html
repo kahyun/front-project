@@ -182,7 +182,7 @@
 							<p>결제금액: 73,000원</p>
 							<div class="res-button">
 								<button id="btn-cancel" type="button" class="btn btn-danger">예약취소</button>
-								<button id="btn-review" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">리뷰쓰기</button>
+								<button id="btn-review" type="button" class="btn btn-primary" data-toggle="modal" data-target="#reviewModal">리뷰쓰기</button>
 							</div>
 						</div>
 					</div>		
@@ -293,7 +293,6 @@
 	<!-- 리뷰 모달 관련 코드 -->
 	<script>
 	$(document).ready(function() {
-		console.log("Review Modal")
         $("#modal-placeholder").load("./html/mypage/review-modal.html");
     });
 	</script>
