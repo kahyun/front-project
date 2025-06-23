@@ -25,6 +25,7 @@
 	}
 	.bigImage{
 		width:100%;
+		height:99%;
 		margin-top:0.5%;
 	}
 	.smallImgBannerBox{
@@ -34,6 +35,7 @@
 	}
 	.smallImage{
 		width: 49.5%;
+		height: 50%;
 		margin: 0.5%;
 	}
 	.reviewSection{
@@ -44,14 +46,15 @@
 		display:flex;
 		overflow: scroll;
 	}
-	.reviewSample{
+	.reviewSampleContainer{
 		width: 350px;
 		height: 250px;
-		background: lightgrey;
+		background: #f8f8f8;
 		flex-direction: row;
 		align-items: flex-start;
 		margin-right:1%;
 		flex-shrink: 0;
+		display:flex;
 	}
 	.reviewPost::-webkit-scrollbar {
                 display: none; /* 스크롤바를 완전히 숨김 */
@@ -61,9 +64,10 @@
     	width:80%;
     }
     .roomSample{
-    	height: 280px;
-    	background: lightgrey;
+    	height: 380px;
+    	background: #f8f8f8;
     	margin-top : 20px;
+    	display:flex;
     }
 	.mapSection{
 		margin: 0 auto;
@@ -92,7 +96,6 @@
 	.optionSample{
 		width:33%;
 		height:25px;
-		background: lightgrey;
 		flex-shrink: 0;
 		margin: 1px;
 	}
@@ -118,6 +121,93 @@
 		margin: 0 auto;
 		width: 80%;
 	}
+	.reviewScore{
+		display:flex;
+		flex-direction: row;
+	}
+	.reviewScore>img{
+		width: 30px;
+		height: 30px;
+	}
+	.reviewBox{
+		width:60%;
+		padding: 3%;
+		height:100%;
+	}
+	.reviewStar{
+		height:15%;
+		color: lightgrey;
+	}
+	.reviewStar>img{
+		width:100px;
+		height: 20px;
+	}
+	.reviewImg{
+		width:40%;
+		padding:3%;
+		margin-top: 15%;
+		flex-direction:center;
+		text-align: center;
+	}
+	.reviewRoomInfo{
+		color: #D0D0D0;
+	}
+	.reviewImg>img{
+		width:90%;
+		height:90%;
+	}
+	.reviewDesc{
+		height:55%;
+		overflow:hidden;
+	}
+	.reviewRoomInfo{
+		height:15%;
+	}
+	.reviewName{
+		height:15%;
+	}
+	li{
+		margin-top:5px;
+	}
+	.roomSample-Left{
+		width:45%;
+		height:100%;
+		padding: 2%;
+		
+	}
+	.roomSample-Right{
+		width: 55%;
+		height:100%;
+		padding: 2%;
+	}
+	.roomImg{
+		width:100%;
+		height:80%;
+	}
+	.roomImg>img{
+		width:100%;
+		height:100%;
+	}
+	.roomCapacity{
+		color: #D0D0D0;
+	}
+	.roomInfoBox{
+		width:95%;
+		height: 75%;
+		display: flex;
+		padding: 2%;
+		border: 1px solid #D5D5D5;
+		border-radius: 20px;
+	}
+	.roomInfo-Left{
+		width:65%;
+		height:100%;
+	}
+	.roomInfo-Right{
+		width:35%;
+		height:100%;
+		text-align:right;
+	}
 </style>
 <!-- bootstrap -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
@@ -127,14 +217,25 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
 	$(()=>{
-		let searchGH = localStorage.getItem("ghName");
-		const imageFolderPath = localStorage.getItem('imageKey') || 'default';
-		const newImagePath = `./IMG/${imageFolderPath}/BANNER.JPG`
+		$("#header-container").load("./header/header.html");
+		const searchGH = localStorage.getItem("ghName");
+		const bigImagePath = `./img/detailSearchPage/${searchGH}/bigImage.png`;
+		const smallImagePath1 = `./img/detailSearchPage/${searchGH}/smallImage1.png`;
+		const smallImagePath2 = `./img/detailSearchPage/${searchGH}/smallImage2.png`;
+		const smallImagePath3 = `./img/detailSearchPage/${searchGH}/smallImage3.png`;
+		const smallImagePath4 = `./img/detailSearchPage/${searchGH}/smallImage4.png`;
+		
+		$("#bigImage").attr("src", bigImagePath);
+		$("#smallImage1").attr("src", smallImagePath1);
+		$("#smallImage2").attr("src", smallImagePath2);
+		$("#smallImage3").attr("src", smallImagePath3);
+		$("#smallImage4").attr("src", smallImagePath4);
 	});
+	
 </script>
 </head>
 <body>
-			<div class="jumbotron">
+		<div id="header-container">
 			
 		</div>
 	<div class="container">
@@ -142,16 +243,16 @@
 		<div class="mainBannerSection">
 			<div class="mainImgBanner">
 				<div class="imgBannerBox">
-					<img id="bigImage" src="./img/detailSearchPage/SeoulGH.png" class="bigImage">
+					<img id="bigImage" class="bigImage">
 				</div>
 				<div class="imgBannerBox">
 					<div class="smallImgBannerBox">
-						<img id="smallImg1" src="./img/detailSearchPage/SeoulGHRoom.png" class="smallImage">
-						<img id="smallImg2" src="./img/detailSearchPage/SeoulGHRoom.png" class="smallImage">
+						<img id="smallImage1" class="smallImage">
+						<img id="smallImage2" class="smallImage">
 					</div>
 					<div class="smallImgBannerBox">
-						<img id="smallImg3" src="./img/detailSearchPage/SeoulGHRoom.png" class="smallImage">
-						<img id="smallImg4" src="./img/detailSearchPage/SeoulGHRoom.png" class="smallImage">
+						<img id="smallImage3" class="smallImage">
+						<img id="smallImage4" class="smallImage">
 					</div>
 				</div>
 			</div>
@@ -160,18 +261,93 @@
 		<br><hr><br>
 		<div class="reviewSection">
 			<div class="reviewScore">
-				<h4><b>후기</b></h4>
+				<img src="./img/detailSearchPage/star.PNG" class="starScore"><h4><b>4.1ㆍ후기</b></h4>
 			</div>
 			<div class="reviewPost">
-				<div class="reviewSample"></div>
-				<div class="reviewSample"></div>
-				<div class="reviewSample"></div>
-				<div class="reviewSample"></div>
+				<div class="reviewSampleContainer">
+					<div class="reviewBox">
+						<div class="reviewStar">
+							<img src="./img/detailSearchPage/starScore.PNG"> 4주 전
+						</div>
+						<div class="reviewDesc">테르미니 역에서 캐리어 끌고 도보로 13분?정도 걸리는 거리라 택시 탈 정도거나 멀은 편은 아니지만 짐이 많다면 좀 힘들 수 있을 것 같아요. 저희는 짐도 많았고 ...</div>
+						<div class="reviewRoomInfo">트리플룸, 전용 욕실</div>
+						<div class="reviewName">최*은</div>
+					</div>
+					<div class="reviewImg">
+						<img src="./img/detailSearchPage/SeoulGH/SeoulGH1.png"> 
+					</div>
+				</div>
+				<div class="reviewSampleContainer">
+					<div class="reviewBox">
+						<div class="reviewStar">
+							<img src="./img/detailSearchPage/starScore.PNG"> 3주 전
+						</div>
+						<div class="reviewDesc">공익을 위해 작성합니다. 어디갈지 고민이다. 모르겠다 = 여기로 오십시오...</div>
+						<div class="reviewRoomInfo">3 베드 도미토리 내 1인 예약</div>
+						<div class="reviewName">김*민</div>
+					</div>
+					<div class="reviewImg">
+						<img src="./img/detailSearchPage/SeoulGH/smallImage2.png">
+					</div>
+				</div>
+				<div class="reviewSampleContainer">
+					<div class="reviewBox">
+						<div class="reviewStar">
+							<img src="./img/detailSearchPage/starScore.PNG"> 2주 전
+						</div>
+						<div class="reviewDesc">최고에요<br>직원들은 나이스 하고 구비된 시설은 여행 중에 제가 가진 모든 문제를 해결해줬습니다...</div>
+						<div class="reviewRoomInfo">더블룸, 전용 욕실</div>
+						<div class="reviewName">이*셉</div>
+					</div>
+					<div class="reviewImg">
+						<img src="./img/detailSearchPage/SeoulGH/smallImage3.png">
+					</div>
+				</div>
+				<div class="reviewSampleContainer">
+					<div class="reviewBox">
+						<div class="reviewStar">
+							<img src="./img/detailSearchPage/starScore.PNG"> 4일 전
+						</div>
+						<div class="reviewDesc">좋았다. 한번와라 두번와라 세번와라</div>
+						<div class="reviewRoomInfo">더블룸, 전용 욕실</div>
+						<div class="reviewName">홍*동</div>
+					</div>
+					<div class="reviewImg">
+						<img src="./img/detailSearchPage/SeoulGH/smallImage4.png">
+					</div>
+				</div>
+				
 			</div>
 		</div><br><hr><br>
 		<div class="roomSection">
-			<div class="roomSample"></div>
-			<div class="roomSample"></div>
+			<div class="roomSample">
+				<div class="roomSample-Left">
+					<div class="roomImg">
+						<img src="./img/detailSearchPage/SeoulGH/SeoulGH1.png">
+					</div>
+					<h4><b>더블 룸</b></h4>
+					<h6>조식 서비스 제공</h6>
+					<div class="roomCapacity">
+						<h6>기준 4인 / 최대 4인</h6>
+					</div>
+				</div>
+				<div class="roomSample-Right">
+					<div class="roomInfoBox">
+						<div class="roomInfo-Left">
+							<h6><b>숙박</b></h6>
+							<h6 style="color:#D0D0D0; overflow: visible;">체크인 16:00 ~ 체크아웃 10:00</h6>
+						</div>
+						<div class="roomInfo-Right">
+							<h6><b>상세보기 ></b></h6>
+							<br><br>
+							<h4 >100,000원</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="roomSample">
+			
+			</div>
 		</div><br><hr><br>
 		<div class="mapSection">
 			<h4><b>위치/교통</b></h4>
@@ -196,11 +372,13 @@
 			<h6 style="color: darkblue">숙소 이용 규칙</h6>
 			<div class="ruleInfo">
 				<ul>
-					<li>sample</li>
-					<li>sample</li>
-					<li>sample</li>
-					<li>sample</li>
-					<li>sample</li>
+					<li>게스트하우스 내 음주는 밤 11시 30분까지만 가능합니다. (지나친 음주는 삼가 바랍니다.)</li>
+					<li>실내에서 흡연은 불가합니다.</li>
+					<li>타인에게 피해를 주거나 불쾌감을 주는 행위 또는 기본적인 에티켓을 지키지 않는 경우 강제퇴실 조치합니다.</li>
+					<li>애완동물 동반은 불가능합니다.</li>
+					<li>입실 시 개인당 수건 1장, 베개커버 드립니다.</li>
+					<li>도미토리는 입실 순입니다.</li>
+					<li>보호자 동반 없는 미성년자 입실 불가 (업체 문의 필수)</li>
 				</ul>
 			</div>
 			<br>
@@ -215,10 +393,9 @@
 		    	</h2>
 		    	<div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
 		    		<div class="accordion-body">
-		        		<strong>Sample</strong><br>
-		        		판매자 정보 썜플쓰<br>
-		        		판매자 이름: 홍길동<br>
-		        		판매자 주소: 어딘가<br>
+		        		<h6>이름 : 홍길동</h6>
+		        		<h6>주소 : 서울</h6>
+		        		<h6>전화번호 : 010-1234-5678</h6>
 		    		</div>
 		    	</div>
 			</div>

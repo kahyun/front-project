@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게스트하우스</title>
+<style>
+.main-slide{
+	display: flex;
+	justify-content: center;
+	width:100%;
+	height: 450px;
+	margin-top: 50px;
+	position: absolute;
+  	object-fit: cover;
+  	opacity: 0;
+ 	transition: opacity 1s ease-in-out;
+}
+.main-carousel {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  	margin-bottom: 50px;
+  overflow: hidden;
+}
+
+.main-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.gehaImg {
+	width: 120px;
+	height: 120px;
+	margin: 50px;
+	border-radius: 5px;
+}
+.name{
+	font-weight: bold;
+}
+.geha-list {
+	display: flex;
+	flex-wrap: wrap;
+	width: 1000px;
+	justify-content: center;
+	margin: 0 auto;
+}
+.geha-item p {
+	margin-left: 50px;
+}
+.favorite-btn {
+	background: none;
+	border: none;
+	cursor: pointer;
+	margin-left: 8px;
+	font-size: 18px;
+	color: #aaa;
+}
+.favorite-btn.active i {
+	color: gold;
+}
+.favorite-btn:focus {
+	outline: none;
+}
+
+.custom-btn {
+  border: 1px solid #ccc;
+  background-color: white;
+  color: #333;
+  padding: 6px 14px;
+  border-radius: 10px;
+  margin: 4px;
+}
+
+.custom-btn:hover {
+  background-color: #1D8BFF;
+  color: white;
+  border-color: #1D8BFF;
+}
+
+.custom-btn.active {
+  background-color: #1D8BFF;
+  color: white;
+  border: 2px solid #1D8BFF;
+}
+/* 영상 */
+.carousel-container {
+  position: relative;
+  width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.4s ease;
+  gap: 10px;
+}
+
+.carousel video {
+  width: 250px;
+  height: 140px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #1d8bff;
+  border: none;
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+  z-index: 10;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.arrow.left { left: 0; }
+.arrow.right { right: 0; }
+
+/* 영상 */
+
+</style>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<script>
+
+$(document).ready(function() {
+    $("#header-container").load("./header/header.html");
+    /* 메인 캐로셀 */
+    let current = 0;
+    const slides = document.querySelectorAll('.main-slide');
+    const total = slides.length;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    showSlide(current); // 첫 슬라이드 표시
+
+    setInterval(() => {
+      current = (current + 1) % total;
+      showSlide(current);
+    }, 3000); // 3초마다 전환
+/* 영상 */
+let currentIndex = 0;
+const videoWidth = 260; // video width + margin
+const carousel = document.querySelector('.carousel');
+const videos = document.querySelectorAll('.carousel video');
+
+document.querySelector('.arrow.left').addEventListener('click', () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateCarousel();
+  }
+});
+
+document.querySelector('.arrow.right').addEventListener('click', () => {
+  if (currentIndex < videos.length - 1) {
+    currentIndex++;
+    updateCarousel();
+  }
+});
+
+function updateCarousel() {
+  const offset = -currentIndex * videoWidth;
+  carousel.style.transform = `translateX(${offset}px)`;
+}
+
+// 마우스 오버 시 자동 재생, 벗어나면 일시정지
+videos.forEach(video => {
+  video.addEventListener('mouseenter', () => video.play());
+  video.addEventListener('mouseleave', () => {
+	    video.pause();
+  		video.currentTime = 0;
+  });
+});
+
+/* 영상 */
+
+  // 즐겨찾기 토글
+  $('.favorite-btn').click(function() {
+    const icon = $(this).find('i');
+    icon.toggleClass('far').toggleClass('fas');
+    $(this).toggleClass('active');
+  });
+
+  // 지역 필터링
+  $('.filter-btn').click(function () {
+    const selectedRegion = $(this).data('region');
+
+    if (selectedRegion === '전체') {
+      $('.geha-item').show();
+    } else {
+      $('.geha-item').each(function () {
+        const region = $(this).data('region');
+        if (region === selectedRegion) {
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+      });
+    }
+	//필터 버튼 클릭시 색바뀌는거
+    $('.filter-btn').removeClass('active');
+    $(this).addClass('active');
+
+  });
+});
+</script>
+</head>
+
+<body>
+<div id="header-container"></div> 
+
+<div class="main-carousel">
+  <!-- <img class="main-slide" src="img/main/main1.jpg" alt="메인1">
+   -->
+   <img class="main-slide" src="img/main/main2.png" alt="메인2">
+  <img class="main-slide" src="img/main/main3.png" alt="메인3">
+
+  </div>
+<div class="carousel-container">
+  <button class="arrow left">&lt;</button>
+  <div class="carousel">
+    <video src="./img/avengers.mp4" muted loop></video>
+    <video src="./img/avengers.mp4" muted loop></video>
+    <video src="./img/avengers.mp4" muted loop></video>
+    <video src="./img/avengers.mp4" muted loop></video>
+    <video src="./img/avengers.mp4" muted loop></video>
+    <video src="./img/avengers.mp4" muted loop></video>
+  </div>
+  <button class="arrow right">&gt;</button>
+</div>
+
+<div id="filter-buttons" style="text-align: center; margin: 20px;">
+  <button class="filter-btn btn custom-btn" data-region="전체">전체</button>
+  <button class="filter-btn btn custom-btn" data-region="서울">서울</button>
+  <button class="filter-btn btn custom-btn" data-region="강원">강원</button>
+  <button class="filter-btn btn custom-btn" data-region="제주">제주</button>
+  <button class="filter-btn btn custom-btn" data-region="통영">통영</button>
+</div>
+
+<div class="geha-list">
+  <div class="geha-item" data-region="서울">
+    <img class="gehaImg" src="img/main/main_mini1.jpg" alt="어울림하우스">
+    <p class="name">어울림하우스</p>
+    <p class="location">지역: 서울</p>
+    <p class="price">40,000원~ <button class="favorite-btn"><i class="far fa-star"></i></button></p>
+  </div>
+  <div class="geha-item" data-region="통영">
+    <img class="gehaImg" src="img/main/main_mini2.jpg" alt="어반 스테이">
+    <p class="name">어반 스테이</p>
+    <p class="location">지역: 통영</p>
+    <p class="price">35,000원~ <button class="favorite-btn"><i class="far fa-star"></i></button></p>
+  </div>
+  <div class="geha-item" data-region="강원">
+    <img class="gehaImg" src="img/main/main_mini3.jpg" alt="소담재">
+    <p class="name">소담재</p>
+    <p class="location">지역: 강원</p>
+    <p class="price">30,000원~ <button class="favorite-btn"><i class="far fa-star"></i></button></p>
+  </div>
+  <div class="geha-item" data-region="제주">
+    <img class="gehaImg" src="img/main/main_mini4.jpg" alt="마음 스테이">
+    <p class="name">마음 스테이</p>
+    <p class="location">지역: 제주</p>
+    <p class="price">40,000원~ <button class="favorite-btn"><i class="far fa-star"></i></button></p>
+  </div>
+  <div class="geha-item" data-region="강원">
+    <img class="gehaImg" src="img/main/main_mini5.jpg" alt="숲속 이야기">
+    <p class="name">숲속 이야기</p>
+    <p class="location">지역: 강원</p>
+    <p class="price">50,000원~ <button class="favorite-btn"><i class="far fa-star"></i></button></p>
+  </div>
+  <div class="geha-item" data-region="통영">
+    <img class="gehaImg" src="img/main/main_mini6.jpg" alt="달빛 머무는 집">
+    <p class="name">달빛 머무는 집</p>
+    <p class="location">지역: 통영</p>
+    <p class="price">25,000원~ <button class="favorite-btn"><i class="far fa-star"></i></button></p>
+  </div>
+  <div class="geha-item" data-region="제주">
+    <img class="gehaImg" src="img/main/main_mini7.jpg" alt="어떤하루">
+    <p class="name">어떤하루</p>
+    <p class="location">지역: 제주</p>
+    <p class="price">28,000원~ <button class="favorite-btn"><i class="far fa-star"></i></button></p>
+  </div>
+  <div class="geha-item" data-region="서울">
+    <img class="gehaImg" src="img/main/main_mini8.jpg" alt="별자리 여관">
+    <p class="name">별자리 여관</p>
+    <p class="location">지역: 서울</p>
+    <p class="price">33,000원~ <button class="favorite-btn"><i class="far fa-star"></i></button></p>
+  </div>
+  <div class="geha-item" data-region="강원">
+    <img class="gehaImg" src="img/main/main_mini9.jpg" alt="쉼표 하우스">
+    <p class="name">쉼표 하우스</p>
+    <p class="location">지역: 강원</p>
+    <p class="price">63,000원~ <button class="favorite-btn"><i class="far fa-star"></i></button></p>
+  </div>
+  <div class="geha-item" data-region="통영">
+    <img class="gehaImg" src="img/main/main_mini10.jpg" alt="뜰안채">
+    <p class="name">뜰안채</p>
+    <p class="location">지역: 통영</p>
+    <p class="price">35,000원~ <button class="favorite-btn"><i class="far fa-star"></i></button></p>
+  </div>
+  <div class="geha-item" data-region="제주">
+    <img class="gehaImg" src="img/main/main_mini11.jpg" alt="늘봄 하우스">
+    <p class="name">늘봄 하우스</p>
+    <p class="location">지역: 제주</p>
+    <p class="price">33,000원~ <button class="favorite-btn"><i class="far fa-star"></i></button></p>
+  </div>
+  <div class="geha-item" data-region="서울">
+    <img class="gehaImg" src="img/main/main_mini12.jpg" alt="꿈꾸는 다락방">
+    <p class="name">꿈꾸는 다락방</p>
+    <p class="location">지역: 서울</p>
+    <p class="price">40,000원~ <button class="favorite-btn"><i class="far fa-star"></i></button></p>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+	<style>
+    /* 커스텀 스타일 */
+    .review-modal-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .review-modal-header .guesthouse-name {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+    
+    .review-modal-header .rating-info {
+        color: #ffc107;
+        font-weight: bold;
+    }
+
+    .review-modal-header .rating-info .review-count {
+        color: #333;
+        font-weight: 500;
+        margin-left: 0.25rem;
+    }
+
+    .review-modal-header .address {
+        font-size: 0.9rem;
+        color: #6c757d;
+    }
+    
+    .star-rating-area {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+
+    .star-rating .fa-star {
+        font-size: 2rem;
+        color: #e0e0e0; /* 비활성 별 색상 */
+        cursor: pointer;
+        transition: color 0.2s;
+        margin: 0 0.15rem;
+    }
+
+    .star-rating .fa-star.active,
+    .star-rating .fa-star:hover {
+        color: #ffc107; /* 활성 별 색상 */
+    }
+
+    .photo-attach-area {
+        display: flex;
+        gap: 10px; /* 이미지 사이 간격 */
+        margin-top: 1rem;
+    }
+
+    .photo-attach-area .photo-item {
+        width: 80px;
+        height: 80px;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+    .photo-attach-area .upload-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px dashed #ccc;
+        background-color: #f8f9fa;
+        color: #6c757d;
+        font-size: 0.8rem;
+        cursor: pointer;
+    }
+    
+    .review-textarea {
+        margin-top: 1.5rem;
+        min-height: 150px;
+    }
+	</style>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(() => {
+		
+	})
+	</script>
+</head>
+<body>
+	<div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="reviewModalLabel" aria-hidden="true">
+	    <div class="modal-dialog modal-lg" role="document">
+	        <div class="modal-content">
+	            <div class="modal-header review-modal-header">
+	                <div>
+	                    <h5 class="guesthouse-name">강릉 최고다 게스트 하우스</h5>
+	                    <span class="rating-info">★ 4.9<span class="review-count">· 후기 21개</span></span>
+	                    <p class="address">강원도 ㅇㅇ군 ㅇㅇ동 123-4</p>
+	                </div>
+	                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute; top: 1rem; right: 1.5rem;">
+	                    <span aria-hidden="true">&times;</span>
+	                </button>
+	            </div>
+	            <div class="modal-body">
+	                <div class="star-rating-area">
+	                    <span class="font-weight-bold">별점</span>
+	                    <div class="star-rating">
+	                        <i class="fas fa-star" data-value="1"></i>
+	                        <i class="fas fa-star" data-value="2"></i>
+	                        <i class="fas fa-star" data-value="3"></i>
+	                        <i class="fas fa-star" data-value="4"></i>
+	                        <i class="fas fa-star" data-value="5"></i>
+	                    </div>
+	                </div>
+	
+	                <div class="photo-attach-area">
+	                    <div class="photo-item upload-btn">사진 첨부</div>
+	                    <img src="https://i.imgur.com/uStyXyG.jpg" alt="thumbnail 1" class="photo-item">
+	                    <img src="https://i.imgur.com/1nIq1bV.jpg" alt="thumbnail 2" class="photo-item">
+	                </div>
+	
+	                <textarea class="form-control review-textarea" placeholder="후기를 작성해주세요."></textarea>
+	            </div>
+	            <div class="modal-footer">
+	                <button type="button" class="btn btn-danger">등록</button>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	
+	<script>
+	    // 별점 인터랙션 jQuery 스크립트
+	    $(document).ready(function() {
+	        // 별에 마우스를 올렸을 때
+	        $('.star-rating .fa-star').hover(
+	            function() { // mouseenter
+	                $(this).addClass('active');
+	                $(this).prevAll('.fa-star').addClass('active');
+	                $(this).nextAll('.fa-star').removeClass('active');
+	            },
+	            function() { // mouseleave
+	                // 클릭으로 선택된 값이 없다면 호버 효과 제거
+	                if ($('.star-rating').data('rating') == null) {
+	                    $(this).removeClass('active');
+	                    $(this).prevAll('.fa-star').removeClass('active');
+	                } else {
+	                    // 선택된 값이 있다면 그 값 기준으로 다시 별 색칠
+	                    updateStars($('.star-rating').data('rating'));
+	                }
+	            }
+	        );
+	
+	        // 별을 클릭했을 때
+	        $('.star-rating .fa-star').click(function() {
+	            var rating = $(this).data('value');
+	            $('.star-rating').data('rating', rating); // 클릭한 별점 값을 저장
+	            updateStars(rating);
+	        });
+	        
+	        // 별점 업데이트 함수
+	        function updateStars(rating) {
+	            $('.star-rating .fa-star').each(function() {
+	                if ($(this).data('value') <= rating) {
+	                    $(this).addClass('active');
+	                } else {
+	                    $(this).removeClass('active');
+	                }
+	            });
+	        }
+	    });
+	</script>
+</body>
+</html>
