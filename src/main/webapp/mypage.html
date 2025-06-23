@@ -125,7 +125,7 @@
 							<p>결제방법: 카카오페이</p>
 							<p>결제금액: 73,000원</p>
 							<div class="res-button">
-								<button id="btn-cancel">예약취소</button>
+								<button id="btn-cancel" type="button" class="btn btn-danger">예약취소</button>
 								<button id="btn-review" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">리뷰쓰기</button>
 							</div>
 						</div>
@@ -153,8 +153,8 @@
 							<p>결제방법: 카카오페이</p>
 							<p>결제금액: 73,000원</p>
 							<div class="res-button">
-								<button id="btn-cancel">예약취소</button>
-								<button id="btn-review">리뷰쓰기</button>
+								<button id="btn-cancel" type="button" class="btn btn-danger">예약취소</button>
+								<button id="btn-review" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">리뷰쓰기</button>
 							</div>
 						</div>
 					</div>		
@@ -181,8 +181,8 @@
 							<p>adfasdfasdf이</p>
 							<p>결제금액: 73,000원</p>
 							<div class="res-button">
-								<button id="btn-cancel">예약취소</button>
-								<button id="btn-review">리뷰쓰기</button>
+								<button id="btn-cancel" type="button" class="btn btn-danger">예약취소</button>
+								<button id="btn-review" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">리뷰쓰기</button>
 							</div>
 						</div>
 					</div>		
@@ -263,6 +263,12 @@
 			</div>
 		</div>
 	</div>	
+	
+	<!-- modal -->
+	<div id="modal-placeholder">
+		
+	</div>
+	
 	<!-- footer -->
 	<div id="footer" class="footer">
 		<h1>Footer</h1>
@@ -275,16 +281,22 @@
   		slidesToScroll: 3
 	});	
 
-	$(() => {
-    	$("#header-container").load("./header/header.html");
-  	});
-
 	</script>
 
 	<!-- 헤더 관련 코드 -->
+	<script>
+	$(() => {
+    	$("#header-container").load("./header/header.html");
+  	});
+	</script>
 	
 	<!-- 리뷰 모달 관련 코드 -->
-	<script type="text/javascript" src="./js/mypage/mypage-review-model.js"></script>
+	<script>
+	$(document).ready(function() {
+		console.log("Review Modal")
+        $("#modal-placeholder").load("./html/mypage/review-modal.html");
+    });
+	</script>
 </body>
 
 </html>
