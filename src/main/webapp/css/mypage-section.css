@@ -21,11 +21,6 @@
 }
 
 /* 내 정보 입력 칸 */
-.info-list {
-	width: 800px;
-	margin: 0px auto;
-}
-
 .info-component {
 	display: flex;
 	flex-wrap: wrap;
@@ -33,10 +28,25 @@
     row-gap: 20px;
 }
 
+#info > form {
+	width: 95%;
+	margin: 0px auto;
+    
+    color: #808080;
+}
+
 .info-group {
 	display: flex;
     flex-direction: column;
     width: calc(50% - 15px);
+}
+
+.info-component .btn-info {
+	float: right;
+	
+	border: 1px solid #FF4752;
+	background-color: #fff;
+	color: #FF4752;
 }
 
 /* 할인 관련 칸 */
