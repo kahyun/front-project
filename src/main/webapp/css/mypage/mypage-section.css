@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+.section-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.section-component {
+	background-color: #F8F8F8;
+	border-radius: 2px;
+	margin: 0px auto;
+}
+
+.discount {
+	display: flex;
+}
+
+.res-component {
+	display: flex;
+}
+
+.res-component-img {
+	width: 100px;
+	height: 100px;
+}
+
+.review-list {
+	display: flex;
+}
+
+.review-component-img {
+	width: 200px;
+	height: 200px;
+}
+
+.fav-list {
+	display: flex;
+}
+
+.fav-component-img {
+	width: 100px;
+	height: 100px;
+}

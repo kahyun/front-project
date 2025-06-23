@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>마이페이지</title>	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/mypage/mypage-section.css" />
+	<style type="text/css">
+	.header {
+		width: 100%;
+		height: 100px;
+		background-color: grey;
+		text-align: center;
+	}
+	
+	.section {
+		width: 100%;
+		background-color: blue;
+	}
+	
+	.footer {
+		width: 100%;
+		height: 100px;
+		background-color: grey;
+		text-align: center;
+	}
+	</style>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript">
+	
+	</script>
+</head>
+<body>
+	<!-- Header -->
+	<div id="header" class="header">
+		<h1>Header</h1>
+	</div>
+	<!-- section -->
+	<div id="section" class="section-container">
+		<div id="info" class="section-component">
+			<form>
+				<h3>내 정보</h3>
+				<label>닉네임</label><input type="text" name="nick" id="nick" value="서울게하주인" />
+				<label>이름</label><input type="text" name="name" id="name" value="김주인" />
+				<label>전화번호</label><input type="text" name="number" id="number" value="010-1234-5678" />
+				<label>내정보</label><input type="date" name="birthday" id="birthday" value="1999-01-01" />
+				<label>내정보</label><input type="password" name="gender" id="gender" value="남성" />
+			</form>			
+		</div>
+		<div id="discount" class="section-component discount">
+			<div id="discount-point">
+				<h3>포인트</h3>
+				<p>더보기 ></p>
+				<div id="discount-point-amount">
+					<p>5,730p</p>
+					<p>이번 달 내 소멸될 포인트 1,000 P</p>
+				</div>
+			</div>
+			<div id="discount-coupon">
+				<h3>할인 쿠폰</h3>
+				<p>더보기 ></p>
+				<div class="discount-coupon-list">
+					<p>5000원 할인</p>
+					<p>지금 사용하기 ></p>
+				</div>
+				<div class="discount-coupon-list">
+					<p>숙박 15% 할인</p>
+					<p>지금 사용하기 ></p>
+				</div>
+			</div>
+		</div>
+		<div id="res" class="section-component">
+			<h3>예약목록 조회</h3>
+			<p>더보기 ></p>
+			<div id="res-list">				
+				<div class="res-component">
+					<p>5,730p</p>
+					<img class="res-component-img" alt="" src="./img/mypage/Gemini_Generated_Image_9yjl0j9yjl0j9yjl.webp">
+					<p>이번 달 내 소멸될 포인트 1,000 P</p>
+					<p>5,730p</p>
+					<p>이번 달 내 소멸될 포인트 1,000 P</p>
+					<p>5,730p</p>
+				</div>
+				<div class="res-component">
+					<p>5,730p</p>
+					<img class="res-component-img" alt="" src="./img/mypage/Gemini_Generated_Image_9yjl0j9yjl0j9yjl.webp">
+					<p>이번 달 내 소멸될 포인트 1,000 P</p>
+					<p>5,730p</p>
+					<p>이번 달 내 소멸될 포인트 1,000 P</p>
+					<p>5,730p</p>
+				</div>
+				<div class="res-component">
+					<p>5,730p</p>
+					<img class="res-component-img" alt="" src="./img/mypage/Gemini_Generated_Image_9yjl0j9yjl0j9yjl.webp">
+					<p>이번 달 내 소멸될 포인트 1,000 P</p>
+					<p>5,730p</p>
+					<p>이번 달 내 소멸될 포인트 1,000 P</p>
+					<p>5,730p</p>
+				</div>			
+			</div>
+		</div>
+		<div id="review" class="section-component">
+			<h3>내가 쓴 리뷰</h3>
+			<p>더보기 ></p>
+			<div id="review-list" class="review-list">								
+				<div class="review-component">
+					<p>★★★★★</p>
+					<div>
+						<img class="review-component-img" alt="" src="./img/mypage/Gemini_Generated_Image_9yjl0j9yjl0j9yjl.webp">
+						<img class="review-component-img" alt="" src="./img/mypage/Gemini_Generated_Image_9yjl0j9yjl0j9yjl.webp">
+						<img class="review-component-img" alt="" src="./img/mypage/Gemini_Generated_Image_9yjl0j9yjl0j9yjl.webp">
+						<img class="review-component-img" alt="" src="./img/mypage/Gemini_Generated_Image_9yjl0j9yjl0j9yjl.webp">
+					</div>					
+					<p>별관 B동 - 스탠다드 도보특가</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+						Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+						Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>			
+				</div>
+				<div class="review-component">
+					<p>★★★★★</p>
+					<div>
+						<img class="review-component-img" alt="" src="./img/mypage/Gemini_Generated_Image_9yjl0j9yjl0j9yjl.webp">
+						<img class="review-component-img" alt="" src="./img/mypage/Gemini_Generated_Image_9yjl0j9yjl0j9yjl.webp">
+						<img class="review-component-img" alt="" src="./img/mypage/Gemini_Generated_Image_9yjl0j9yjl0j9yjl.webp">
+						<img class="review-component-img" alt="" src="./img/mypage/Gemini_Generated_Image_9yjl0j9yjl0j9yjl.webp">
+					</div>					
+					<p>별관 B동 - 스탠다드 도보특가</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+						Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+						Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>			
+				</div>
+			</div>
+		</div>
+		<div id="fav" class="section-component">
+			<h3>나의 즐겨찾기</h3>
+			<p>더보기 ></p>
+			<div id="fav-list" class="fav-list">								
+				<div class="fav-component">
+					<img class="fav-component-img" alt="" src="./img/mypage/Gemini_Generated_Image_9yjl0j9yjl0j9yjl.webp">
+					<h5>별자리 여관</h5>
+					<p>위치: 부산광역시 ㅇㅇ동 123-4</p>
+					<p>50,000원 ~</p>
+					<p>★</p>
+				</div>
+				<div class="fav-component">
+					<img class="fav-component-img" alt="" src="./img/mypage/Gemini_Generated_Image_9yjl0j9yjl0j9yjl.webp">
+					<h5>별자리 여관</h5>
+					<p>위치: 부산광역시 ㅇㅇ동 123-4</p>
+					<p>50,000원 ~</p>
+					<p>★</p>
+				</div>
+				<div class="fav-component">
+					<img class="fav-component-img" alt="" src="./img/mypage/Gemini_Generated_Image_9yjl0j9yjl0j9yjl.webp">
+					<h5>별자리 여관</h5>
+					<p>위치: 부산광역시 ㅇㅇ동 123-4</p>
+					<p>50,000원 ~</p>
+					<p>★</p>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<!-- footer -->
+	<div id="footer" class="footer">
+		<h1>Footer</h1>
+	</div>
+</body>
+</html>
