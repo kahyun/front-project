@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+/*  */
+.section-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.section-component {
+	background-color: #F8F8F8;
+	width: 1100px;
+	border: 1px solid #F8F8F8;
+	border-radius: 16px;
+	margin: 20px auto;
+	padding: 20px;
+}
+
+.component-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+/* 내 정보 입력 칸 */
+.info-list {
+	width: 800px;
+	margin: 0px auto;
+}
+
+.info-component {
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 20px;
+}
+
+.info-group {
+	display: flex;
+    flex-direction: column;
+    width: calc(50% - 15px);
+}
+
+/* 할인 관련 칸 */
+.discount {	
+	width: 1100px;
+	margin: 20px auto;
+	justify-content: space-between;
+	display: flex;
+}
+
+.discount-component {
+	width: 530px;
+	background-color: #F8F8F8;
+	border: 1px solid #F8F8F8;
+	border-radius: 16px;
+	padding: 20px;
+}
+
+/* 예약 관련 칸 */
+.res-component {	
+	width: 95%;
+	margin: 10px auto;
+	background-color: white;
+	border: 1px solid white;
+	border-radius: 16px;
+
+	display: flex;
+	justify-content: space-around;
+    align-items: center;
+}
+
+.res-component-img {
+	width: 100px;
+	height: 100px;
+}
+
+.res-expand {
+	width: 95%;
+	margin: 10px auto;
+	background-color: white;
+	border: 1px solid white;
+	border-radius: 16px;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.res-expand-detail {
+	display: flex;	
+	align-items: center;
+}
+
+.res-expand-detail img {
+	width: 250px;
+	height: 250px;
+	border-radius: 16px;
+	margin-left: 50px;
+}
+
+.res-expand-text {
+	width: 55%;
+	margin-left: 100px;
+	padding: 20px;
+}
+
+.res-button {
+	float: right;
+	display: flex;
+}
+
+/* 리뷰 관련 칸 */
+.review-list {
+	display: flex;
+}
+
+.review-component {
+	width: 80%;
+	margin: 10px auto;
+	background-color: white;
+	border: 1px solid white;
+	border-radius: 16px;
+}
+
+.review-component-img {
+	width: 200px;
+	height: 200px;
+}
+
+/* 즐겨찾기 칸 */
+.fav-list {
+	margin: 10px;
+}
+
+.fav-component {
+	width: 300px;
+	margin: 10px;
+	padding: 20px;
+	background-color: white;
+	border: 1px solid #D5D5D5;
+	border-radius: 16px;
+}
+
+.fav-component-img {
+	width: 250px;
+	height: 100px;
+}
+
+.fav-component a {
+	color: gold;
+}
