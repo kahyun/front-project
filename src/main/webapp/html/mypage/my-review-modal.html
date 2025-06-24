@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+	<style>
+    /* 커스텀 스타일 */
+    .review-modal-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .review-modal-header .guesthouse-name {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+    
+    .review-modal-header .rating-info {
+        color: #ffc107;
+        font-weight: bold;
+    }
+
+    .review-modal-header .rating-info .review-count {
+        color: #333;
+        font-weight: 500;
+        margin-left: 0.25rem;
+    }
+
+    .review-modal-header .address {
+        font-size: 0.9rem;
+        color: #6c757d;
+    }
+    
+    .star-rating-area {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+
+    .star-rating .fa-star {
+        font-size: 2rem;
+        color: #e0e0e0; /* 비활성 별 색상 */
+        cursor: pointer;
+        transition: color 0.2s;
+        margin: 0 0.15rem;
+    }
+
+    .star-rating .fa-star.active,
+    .star-rating .fa-star:hover {
+        color: #ffc107; /* 활성 별 색상 */
+    }
+
+    .photo-attach-area {
+        display: flex;
+        gap: 10px; /* 이미지 사이 간격 */
+        margin-top: 1rem;
+    }
+
+    .photo-attach-area .photo-item {
+        width: 80px;
+        height: 80px;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+    .photo-attach-area .upload-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px dashed #ccc;
+        background-color: #f8f9fa;
+        color: #6c757d;
+        font-size: 0.8rem;
+        cursor: pointer;
+    }
+    
+    .review-textarea {
+        margin-top: 1.5rem;
+        min-height: 150px;
+    }
+	</style>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(() => {
+		
+	})
+	</script>
+</head>
+<body>
+	<!-- 리뷰 상세보기 모달 -->
+<div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content p-3">
+      <div class="modal-header border-0">
+        <div class="d-flex flex-column w-100">
+          <div class="d-flex justify-content-between align-items-center mb-1">
+            <div class="text-warning font-weight-bold">★★★★★</div>
+            <div class="text-muted small">24일 전</div>
+          </div>
+          <div class="text-primary font-weight-bold">별관 B동 - 스탠다드 도보특가</div>
+        </div>
+        <button type="button" class="close ml-3" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <!-- 이미지 리스트 -->
+        <div class="review-img-list mb-3">
+          <img class="img-thumbnail mr-2 mb-2" style="width: 22%;" src="./img/mypage/Gemini_Generated_Image_9yjl0j9yjl0j9yjl.webp" alt="">
+          <img class="img-thumbnail mr-2 mb-2" style="width: 22%;" src="./img/mypage/Gemini_Generated_Image_9yjl0j9yjl0j9yjl.webp" alt="">
+          <img class="img-thumbnail mr-2 mb-2" style="width: 22%;" src="./img/mypage/Gemini_Generated_Image_9yjl0j9yjl0j9yjl.webp" alt="">
+          <img class="img-thumbnail mr-2 mb-2" style="width: 22%;" src="./img/mypage/Gemini_Generated_Image_9yjl0j9yjl0j9yjl.webp" alt="">
+        </div>
+
+        <!-- 리뷰 내용 -->
+        <p class="text-justify">
+          시원한 생수도 로비에 비치되어있고 좋습니다 주차자리도 넉넉하고 배달 시켜먹기도 좋습니다<br>
+          다만 룸에서 담배 냄새나 방향제 냄새가 좀 납니다 본관은 금연객실인데 별관은 금연객실은 아닌 것 같습니다<br>
+          TV는 굉장히 오래된 티비인듯한데 화질이 안좋고 로딩이 좀 길고 버퍼링이 있지만 다양한 OTT들이 있어서 편하게 볼 수 있습니다<br>
+          침구는 깨끗하고 편한 편이고 화장실도 오래됐지만 넓고 괜찮습니다<br>
+          다른 숙소에 비해 가격대비 시간도 충분하고 편하게 잘 쉬다가 갈 수 있어서 좋았습니다
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+	
+	<script>
+
+	</script>
+</body>
+</html>

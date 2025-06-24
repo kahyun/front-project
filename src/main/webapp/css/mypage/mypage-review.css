@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+
+/* 리뷰 관련 칸 */
+.review-container {
+	
+}
+
+.review-list {
+	
+}
+
+.btn-detail {
+    border: 0px;
+    background-color: white;
+    width: fit-content;
+    height: fit-content;
+}
+
+.review-component {
+	width: 80%;
+	margin: 10px auto;
+	background-color: white;
+	border: 1px solid white;
+	border-radius: 16px;
+	
+	padding: 40px;
+}
+
+.review-component-img {
+	width: 200px;
+	height: 200px;
+}
+
+.review-header {
+	display: flex;
+	align-items: center;
+}
+
+.review-header p {
+	margin: 0;
+	margin-right: 10px;
+}
+
+.review-star {
+	color: gold;
+}
+
+.review-date {
+	color: #808080;
+}
+
+.review-img-list {
+
+}
+
+.review-img-list img {
+	border-radius: 16px;
+	margin: 10px;
+}
+
+.review-location {
+	color: #808080;
+}
