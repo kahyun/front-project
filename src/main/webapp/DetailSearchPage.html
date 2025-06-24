@@ -235,11 +235,16 @@
 		top: 10%;
 		right: 5%;
 		width: 250px;
-		height: 400px;
-		background-color: #ffffff;
+		height: 280px;
 		padding: 10px;
 		z-index: 30; 
 		border-radius: 20px;
+	}
+	
+	.sidebar.fixed {
+  	  position: fixed;
+      right: 0;
+      top: 0 !important;
 	}
 	.couponBtnSection{
 		display: flex;
@@ -249,9 +254,10 @@
 		border: 1px solid #d5d5d5;
 		border-radius: 10px;
 		box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+		background:white;
 	}
 	.couponBtnSection>*{
-		font-size: 18px;
+		font-size: 15px;
 		align-items: center;
 	}
 	.couponBtn{
@@ -270,13 +276,14 @@
 		border: 1px solid #d5d5d5;
 		border-radius: 10px;
 		box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+		background:white;
 	}
 	.paymentBenefitSection>ul{
 		padding:0;
 		margin:0;
 	}
 	.paymentBenefitSection>*{
-		font-size: 13px;
+		font-size: 10px;
 	}
 	
 	.paymentBenefitHeader{
@@ -292,7 +299,7 @@
 		background: white;
 	}
 	.paymentBenefitBtn>h6{
-		font-size: 13px;
+		font-size: 10px;
 		color: #D5D5D5;
 	}
 	.paymentBenefitToss{
@@ -304,7 +311,7 @@
 		height:15px;
 	}
 	.paymentBenefitToss>h6{
-		font-size: 14px;
+		font-size: 12px;
 		align-items: center;
 	}
 	ul>li{
@@ -323,7 +330,7 @@
 	}
 	.itemBox{
 		display: flex;
-		padding: 15px;
+		padding: 10px;
 		align-items:center
 	}
 	.item-left{
@@ -337,7 +344,8 @@
 		width:40%;
 	}
 	.item-right>img{
-		width:80%;
+		width:70%;
+		
 	}
 	.slick-dots li button::before {
  		 color: #D5D5D5;
@@ -347,6 +355,126 @@
  		 color: #1D8BFF;
  		 opacity: 1;
 	}
+	
+	.bookingBar{
+		position: fixed;
+		top: 47%;
+		right: 3%;
+		width: 320px;
+		height: 400px;
+		padding: 15px;
+		z-index: 30; 
+		border: 1px solid #f8f8f8;
+		border-radius: 20px;
+		background: white;
+		box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.1);
+	}
+	.right-align-text{
+		text-align: right;
+	}
+	.bookingBar *{
+		font-size: 13px;
+	}
+	/* 북킹 css */
+	.input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            margin-left: auto;
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 35%;
+        }
+        
+    .form-group input[type="text"],
+    .form-group input[type="number"],
+    .form-group input[type="text"][readonly],
+    .form-group select {
+        	height: 37px;
+            
+            margin-left: auto;
+    }
+    .input-wrapper input, .input-wrapper select {
+        border: none;
+        padding: 10px;
+        background: transparent;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .input-wrapper.date-picker {
+        	display: flex;
+            border: none;
+            background-color: transparent;
+        }
+    .input-wrapper.date-picker input {
+        border: 1px solid #ddd;
+        background-color: #f9f9f9;
+        width: auto;
+        flex-grow: 1;
+    }
+    .input-wrapper.date-picker span {
+        color: #888;
+    }
+    .select-wrapper {
+        position: relative;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        width: 60%;
+        margin-left: auto;
+    }
+    .select-wrapper select {
+        width: 60%;
+        padding: 10px;
+        border: none;
+        background-color: transparent;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        cursor: pointer;
+    }
+    .select-wrapper::after {
+        content: '▼';
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #888;
+        pointer-events: none;
+    }
+    .right-aligned-text {
+        text-align: right;
+        flex-grow: 1;
+        font-size: 16px;
+        color: #333;
+    }
+    .form-group {
+   		align-items: center;
+    	margin: 0;
+   		height: 50px;
+    	display:flex;
+	}
+	.paymentBtnContainer{	
+		width: 100%;
+	}
+    .paymentBtn{
+       	border: none;
+       	margin-left: 220px;
+       	width: 70px;
+       	height: 30px;
+       	background: #FF4752;
+       	color:white;
+       	margin-top: 10px;
+       	border-radius: 10px;
+    }
+    .date-labels-group>*{
+    	margin-left: 70px;
+    }
+    .date-range-group>*{
+    	margin-left: 10px;
+    }
 </style>
 
 <script>
@@ -368,7 +496,12 @@
 			dots:true,
 			arrows:false,
 		});
+		
+		$('#guestCnt').on('input', ()=>{
+				$('#price').val(parseInt($('#guestCnt').val()) * 100000);
+		});
 	});
+	
 	
 </script>
 </head>
@@ -601,9 +734,9 @@
 	  		<div class="slickItem">
 		  		<div class="itemBox">
 		  			<div class="item-left">
-		  				<h6>전국 인기 호텔</h6><h6>최대 5만원 할인</h6>
-		  				<h6 style="font-size:13px"><b>여름휴가 미리예약</b></h6>
-		  				<h6 style="font-size:13px"><b>지금부터 시작!</b></h6>
+		  				<h6>최대 5만원 할인</h6>
+		  				<h6 style="font-size:10px"><b>여름휴가 미리예약</b></h6>
+		  				<h6 style="font-size:10px"><b>지금부터 시작!</b></h6>
 		  			</div>
 		  			<div class="item-right">
 		  				<img src="./img/detailSearchPage/sidebarItem.png" style="border-radius: 50px;">
@@ -613,15 +746,60 @@
 	  		<div class="slickItem">
 		  		<div class="itemBox">
 		  			<div class="item-left">
-		  				<h6>전국 인기 호텔</h6><h6>최대 10만원 할인</h6>
-		  				<h6 style="font-size:13px"><b>가을휴가 미리예약</b></h6>
-		  				<h6 style="font-size:13px"><b>1달후 부터 시작!</b></h6>
+		  				<h6>최대 10만원 할인</h6>
+		  				<h6 style="font-size:10px"><b>가을휴가 미리예약</b></h6>
+		  				<h6 style="font-size:10px"><b>1달후 부터 시작!</b></h6>
 		  			</div>
 		  			<div class="item-right">
 		  				<img src="./img/detailSearchPage/fall.png" style="border-radius: 50px;">
 		  			</div>
 		  		</div>
 	  		</div>
+	  	</div>
+	  	<div class="bookingBar">
+	  		<form action="#" >
+                <div class="date-labels-group">
+	                <span>체크인</span>
+	                <span>체크아웃</span>
+            	</div>
+	            <div class="form-group">
+					<div class="date-range-group">
+	                    <input type="date" id="checkinDate" name="checkinDate" value="2025-06-21" required class="date-input">
+	                    <span>&nbsp;~&nbsp;</span>
+	                    <input type="date" id="checkoutDate" name="checkoutDate" value="2025-06-22" required class="date-input">
+	                </div>
+	            </div>
+            <div class="form-group">
+                <label>인원</label>
+                <div class="input-wrapper">
+                    <input type="number" id="guestCnt" name="guestCnt" value="1" min="1" required>
+                    <span style="padding-right: 10px;">명</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="coupon">할인쿠폰</label>
+                <div class="select-wrapper">
+                    <select id="coupon" name="coupon">
+                        <option value="">선택 안 함</option>
+                        <option value="welcome">웰컴 쿠폰</option>
+                        <option value="summer_sale">여름 할인</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="points">보유 포인트</label>
+                <div class="input-wrapper">
+                    <input type="text" id="points" name="points" value="0" readonly><span style="padding-right: 10px;">P</span>
+                </div>
+            </div>
+            결제 금액
+            <div class="right-aligned-text">
+                    <span id="price">0</span> 원
+            </div>
+            <div class="paymentBtn-container">
+                <button type="submit" class="paymentBtn">결제</button>
+            </div>
+        </form>
 	  	</div>
 	</div>
 </body>
