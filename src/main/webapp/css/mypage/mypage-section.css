@@ -9,6 +9,7 @@
 .section-component {
 	background-color: #F8F8F8;
 	width: 1100px;
+	height: auto;
 	border: 1px solid #F8F8F8;
 	border-radius: 16px;
 	margin: 20px auto;
@@ -18,12 +19,14 @@
 .component-header {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 /* 내 정보 입력 칸 */
 .info-component {
 	width: 90%;
 	margin: 0px auto;
+	margin-top: 20px;
 	
 	display: flex;
 	flex-wrap: wrap;
@@ -94,17 +97,23 @@
 
 .discount-coupon-list {
 	background-color: #fff;
-	border: 0px;
+	border: 1px solid #FF4752;
 	border-radius: 16px;
 	margin: 10px;
 	padding: 20px;
+	
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
-.discount-coupon-list > p:eq(0) {
+.discount-coupon-list h4 {
 	color: #FF4752;
+	font-weight: bold;
+	margin: 0px;
 }
 
-.discount-coupon-list > p:eq(1) {
+.discount-coupon-list a {
 	color: #FF4752;
 }
 
@@ -181,7 +190,7 @@
 	display: flex;
 }
 
-.res-button #btn-cancel {
+.res-button .btn-cancel {
 	color: #fff;
 	background-color: red;
 	border: 1px solid red;
@@ -190,7 +199,7 @@
 	margin: 5px;
 }
 
-.res-button #btn-review {
+.res-button .btn-review {
 	color: grey;
 	background-color: #fff;
 	border: 1px solid grey;
@@ -209,24 +218,6 @@ a[data-toggle="collapse"][aria-expanded="true"] + .collapse .card-body {
     border-top: 1px solid #f0f0f0;
 }
 
-/* 리뷰 관련 칸 */
-.review-list {
-	display: flex;
-}
-
-.review-component {
-	width: 80%;
-	margin: 10px auto;
-	background-color: white;
-	border: 1px solid white;
-	border-radius: 16px;
-}
-
-.review-component-img {
-	width: 200px;
-	height: 200px;
-}
-
 /* 즐겨찾기 칸 */
 .fav-list {
 	margin: 10px;
@@ -242,10 +233,28 @@ a[data-toggle="collapse"][aria-expanded="true"] + .collapse .card-body {
 }
 
 .fav-component-img {
-	width: 250px;
-	height: 100px;
+	width: 90%;
+	height: 40%;
+	margin: 0px auto;
 }
 
 .fav-component a {
 	color: gold;
+}
+
+.fav-component p {
+	margin: 0px;
+}
+
+.fav-component .fav-content {
+	padding: 10px;
+}
+
+.fav-component .fav-addr {
+	color: #808080;
+}
+
+.fav-component .fav-price {
+	font-weight: bold;
+	font-size: 16px;
 }
