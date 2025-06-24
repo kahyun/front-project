@@ -138,7 +138,7 @@
 	display: flex;
 }
 
-.res-button #btn-cancel {
+.res-button .btn-cancel {
 	color: #fff;
 	background-color: red;
 	border: 1px solid red;
@@ -147,7 +147,7 @@
 	margin: 5px;
 }
 
-.res-button #btn-review {
+.res-button .btn-review {
 	color: grey;
 	background-color: #fff;
 	border: 1px solid grey;
