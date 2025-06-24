@@ -258,3 +258,8 @@ a[data-toggle="collapse"][aria-expanded="true"] + .collapse .card-body {
 	font-weight: bold;
 	font-size: 16px;
 }
+
+.fav-component-img {
+	width: 250px;
+	height: 250px;
+}
