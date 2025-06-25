@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>로그인</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-box {
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 30px 40px;
+      width: 300px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .logo {
+    width: 70px;
+    height: 70px;
+    padding: 20px;
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 93%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #FF4752;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .login-links {
+      margin-top: 14px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    .login-links span {
+      margin: 0 5px;
+    }
+
+    .sns-login {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .sns-login img {
+      width: 200px;
+      height: 70px;
+      cursor: pointer;
+    }
+
+    .coupon {
+      margin-top: 6px;
+      font-size: 12px;
+      color: #FF4752;
+      background-color: #fff;
+      border: 1px solid #FF4752;
+      border-radius: 20px;
+      padding: 2px 10px;
+      display: inline-block;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <img class="logo" src="./img/logo.png">
+    <input type="text" placeholder="아이디 입력">
+    <input type="password" placeholder="비밀번호 입력">
+    <button class="login-btn" onclick="handleLogin()">로그인</button>
+    <div class="login-links">
+      아이디 찾기 <span>•</span> 비밀번호 찾기 <span>•</span> 회원가입
+    </div>
+   <!-- <div class="coupon">웰컴쿠폰받기</div> -->
+    <div class="sns-login">
+      <img src="./img/sns_login.png">
+    </div>
+  </div>
+</body>
+<script>
+  function handleLogin() {
+    const username = document.getElementById('username').value;
+    if (username) {
+      localStorage.setItem('loggedInUser', username);
+      window.location.href = 'index.html';  // 로그인 성공 후 이동
+    } else {
+      alert('아이디를 입력해주세요!');
+    }
+  }
+</script>
+</html>
