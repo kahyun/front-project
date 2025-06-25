@@ -6,508 +6,18 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+<link rel="stylesheet" href="./css/detailSearchPage/detailSearchPage.css"> 
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-<style>
-	*{
-		margin: 0;
-	}
-	.container{
-		width:100%;
-		margin-right:250px;
-	}
-	.jumbotron{
-		width:100%;
-	}
-	.mainBannerSection{
-		margin: 0 auto;
-		width: 80%;
-	}
-	.mainImgBanner{
-		display:flex;
-	}
-	.imgBannerBox{
-		width:50%;
-	}
-	.bigImage{
-		width:100%;
-		height:99%;
-		margin-top:0.5%;
-	}
-	.smallImgBannerBox{
-		width:99.5%;
-		height:49.5%;
-		display:flex;
-		
-	}
-	.smallImage{
-		width: 49%;
-		height: 99.5%;
-		margin: 0.5%;
-	}
-	.reviewSection{
-		margin: 0 auto;
-		width:80%;
-	}
-	.reviewPost{
-		display:flex;
-		overflow: scroll;
-	}
-	.reviewSampleContainer{
-		width: 350px;
-		height: 250px;
-		background: #f8f8f8;
-		flex-direction: row;
-		align-items: flex-start;
-		margin-right:1%;
-		flex-shrink: 0;
-		display:flex;
-	}
-	.reviewSampleContainer *{
-		text-align:left;
-	}
-	.reviewPost::-webkit-scrollbar {
-                display: none; /* 스크롤바를 완전히 숨김 */
-    }
-    .roomSection{
-    	margin: 0 auto;
-    	width:80%;
-    }
-    .roomSample{
-    	height: 380px;
-    	margin-top : 20px;
-    	display:flex;
-    }
-	.mapSection{
-		margin: 0 auto;
-    	width:80%;
-	}
-	.mapImg{
-		width:100%;
-		height: 100%;
-	}
-	.mapImg>img{
-		width:50%;
-		height:50%;
-	}
-	.addressCopyBtn{
-		width:100%;
-		height: 50px;
-		border: 1px solid #D5D5D5;
-		background: #F8F8F8;
-		border-radius: 10px;
-	}
-	.optionSection{
-		margin: 0 auto;
-		width: 80%;
-	}
-	.optionBox{
-		display:flex;
-		flex-wrap: wrap;
-	}
-	.optionSample{
-		width:33%;
-		height:25px;
-		flex-shrink: 0;
-		margin: 1px;
-	}
-	.ruleSection{
-		margin: 0 auto;
-		width: 80%;
-	}
-	.accordion{
-		width: 80%;
-		margin: 0 auto;
-	}
-	.accordion-header{
-		width: 100%;
-		background-color: white;
-	}
-	.accordion-button{
-		width: 100%;
-		background-color: #f8f8f8;
-		text-align: left;
-		border: none;
-	}
-	.cancelRuleSection{
-		margin: 0 auto;
-		width: 80%;
-	}
-	.reviewScore{
-		display:flex;
-		flex-direction: row;
-	}
-	.reviewScore>img{
-		width: 30px;
-		height: 30px;
-	}
-	.reviewBox{
-		width:60%;
-		padding: 3%;
-		height:100%;
-	}
-	.reviewStar{
-		height:15%;
-		color: lightgrey;
-	}
-	.reviewStar>img{
-		width:100px;
-		height: 20px;
-	}
-	.reviewImg{
-		width:40%;
-		padding:3%;
-		margin-top: 15%;
-		flex-direction:center;
-		text-align: center;
-	}
-	.reviewRoomInfo{
-		color: #D0D0D0;
-	}
-	.reviewImg>img{
-		width:90%;
-		height:90%;
-	}
-	.reviewDesc{
-		height:55%;
-		color:black;
-		overflow:hidden;
-		text-overflow: ellipsis;
-	}
-	.reviewRoomInfo{
-		height:15%;
-	}
-	.reviewName{
-		height:15%;
-		color:black;
-	}
-	li{
-		margin-top:5px;
-	}
-	.roomSample-Left{
-		width:45%;
-		height:100%;
-		padding: 2%;
-		
-	}
-	.roomSample-Right{
-		width: 55%;
-		height:100%;
-		padding: 2%;
-	}
-	.roomImg{
-		width:100%;
-		height:80%;
-	}
-	.roomImg>img{
-		width:100%;
-		height:100%;
-	}
-	.roomCapacity{
-		color: #D0D0D0;
-	}
-	.roomInfoBox{
-		width:95%;
-		height: 75%;
-		display: flex;
-		padding: 4%;
-		border: 1px solid #D5D5D5;
-		border-radius: 20px;
-	}
-	.roomInfo-Left{
-		width:65%;
-		height:100%;
-	}
-	.roomInfo-Right{
-		width:35%;
-		height:100%;
-		text-align:right;
-	}
-	.bookBtn{
-		width: 60%;
-		height: 20%;
-		border: none;
-		border-radius: 15px;
-		background: #ff4752;
-		color: white;
-	}
-	.sideBar{
-		position: fixed;
-		top: 10%;
-		right: 5%;
-		width: 250px;
-		height: 280px;
-		padding: 10px;
-		z-index: 30; 
-		border-radius: 20px;
-	}
-	
-	.sidebar.fixed {
-  	  position: fixed;
-      right: 0;
-      top: 0 !important;
-	}
-	.couponBtnSection{
-		display: flex;
-		height: 15%;
-		align-items: center;
-		padding: 10px;
-		border: 1px solid #d5d5d5;
-		border-radius: 10px;
-		box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
-		background:white;
-	}
-	.couponBtnSection>*{
-		font-size: 15px;
-		align-items: center;
-	}
-	.couponBtn{
-		margin-left:15px;
-		width: 80px;
-		height:30px;
-		border: none;
-		border-radius: 15px;
-		background-image: linear-gradient(to right, #1D8BFF, #6751e8);
-		color: white;
-		font-size: 13px;
-	}
-	.paymentBenefitSection{
-		height: 50%;
-		padding: 20px;
-		border: 1px solid #d5d5d5;
-		border-radius: 10px;
-		box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
-		background:white;
-	}
-	.paymentBenefitSection>ul{
-		padding:0;
-		margin:0;
-	}
-	.paymentBenefitSection>*{
-		font-size: 10px;
-	}
-	
-	.paymentBenefitHeader{
-		display: flex;
-		width: 100%;
-		height: 10%;
-	}
-	.paymentBenefitBtn{
-		height: 20px;
-		width: 70px;
-		margin-left: 50px;
-		border:none;
-		background: white;
-	}
-	.paymentBenefitBtn>h6{
-		font-size: 10px;
-		color: #D5D5D5;
-	}
-	.paymentBenefitToss{
-		display:flex;
-		height:15px;
-	}
-	.paymentBenefitToss>img{
-		width:45px;
-		height:15px;
-	}
-	.paymentBenefitToss>h6{
-		font-size: 12px;
-		align-items: center;
-	}
-	ul>li{
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		overflow:hidden;
-		list-style-position: inside;
-	}
-	.single-item{
-		width: 100%;
-		height: 30%;
-		border: 1px solid #d5d5d5;
-		border-radius: 10px;
-		box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
-		background: #f8f8f8;
-	}
-	.itemBox{
-		display: flex;
-		padding: 10px;
-		align-items:center
-	}
-	.item-left{
-		width:50%;
-	}
-	.item-left>*{
-		font-size: 10px;
-	}
-	.item-right{
-		margin-left: 15px;
-		width:40%;
-	}
-	.item-right>img{
-		width:70%;
-		
-	}
-	.slick-dots li button::before {
- 		 color: #D5D5D5;
- 		 opacity: 1;
-	}
-	.slick-dots li.slick-active button::before {
- 		 color: #1D8BFF;
- 		 opacity: 1;
-	}
-	
-	.bookingBar{
-		position: fixed;
-		top: 47%;
-		right: 3%;
-		width: 320px;
-		height: 400px;
-		padding: 15px;
-		z-index: 30; 
-		border: 1px solid #f8f8f8;
-		border-radius: 20px;
-		background: white;
-		box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.1);
-	}
-	.right-align-text{
-		text-align: right;
-	}
-	.bookingBar *{
-		font-size: 13px;
-	}
-	/* 북킹 css */
-	.input-wrapper {
-            position: relative;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-            margin-left: auto;
-            background-color: #f8f8f8;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            width: 35%;
-        }
-        
-    .form-group input[type="text"],
-    .form-group input[type="number"],
-    .form-group input[type="text"][readonly],
-    .form-group select {
-        	height: 37px;
-            
-            margin-left: auto;
-    }
-    .input-wrapper input, .input-wrapper select {
-        border: none;
-        padding: 10px;
-        background: transparent;
-        width: 100%;
-        box-sizing: border-box;
-    }
-    .input-wrapper.date-picker {
-        	display: flex;
-            border: none;
-            background-color: transparent;
-        }
-    .input-wrapper.date-picker input {
-        border: 1px solid #ddd;
-        background-color: #f9f9f9;
-        width: auto;
-        flex-grow: 1;
-    }
-    .input-wrapper.date-picker span {
-        color: #888;
-    }
-    .select-wrapper {
-        position: relative;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        background-color: #f9f9f9;
-        width: 60%;
-        margin-left: auto;
-    }
-    .select-wrapper select {
-        width: 100%;
-        padding: 10px;
-        border: none;
-        background-color: transparent;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        cursor: pointer;
-    }
-    .select-wrapper::after {
-        content: '▼';
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        color: #888;
-        pointer-events: none;
-    }
-    .right-aligned-text {
-        text-align: right;
-        flex-grow: 1;
-        font-size: 16px;
-        color: #333;
-    }
-    .form-group {
-   		align-items: center;
-    	margin: 0;
-   		height: 50px;
-    	display:flex;
-    	margin-bottom: 0 !important;
-	}
-	.paymentBtnContainer{	
-		width: 100%;
-	}
-    .paymentBtn{
-       	border: none;
-       	margin-left: 220px;
-       	width: 70px;
-       	height: 30px;
-       	background: #FF4752;
-       	color:white;
-       	margin-top: 10px;
-       	border-radius: 10px;
-    }
-    .date-labels-group>*{
-    	margin-left: 70px;
-    }
-    .date-range-group>*{
-    	margin-left: 10px;
-    }
-    #price{
-    	border:none;
-    	background: white;
-    	text-align:right;
-    }
-    .reviewBtn,
-    .reviewBtn:hover,
-    .reviewBtn:focus,
-    .reviewBtn:active {
-    	background: none !important;
-    	border:none !important;
-		outline: none !important;
-	}
-	.reviewBtn:checked {
-		background: none;
-		border:none;
-	}
-	.modal-img{
-		display: block;
-		margin: 0 auto;
-		width: 50%;
-		height: auto;
-	}
-</style>
-
 <script>
 	$(()=>{
 		$("#header-container").load("./header/header.html");
+		$("#footer-container").load("./footer/footer.html");
 		const searchGH = localStorage.getItem("ghName");
 		const bigImagePath = `./img/detailSearchPage/${searchGH}/bigImage1.png`;
 		const smallImagePath1 = `./img/detailSearchPage/${searchGH}/smallImage5.png`;
@@ -554,13 +64,16 @@
 		$('.reviewBtn').on('click', function() {
 			const title = $(this).find('.reviewName').html();
 			const desc = $(this).find('.reviewDesc').html();
-			const img = $(this).find('.reviewImg img').attr('src');
-			$('.modal-title').html(title);
-			$('.modal-body').html(desc);
-			$('.modal-img').attr('src', img);
+			// reviewImg div 내부에 있는 img 태그의 src를 가져옵니다.
+			const img = $(this).find('.reviewImg img').attr('src'); 
+			
+			// 특정 모달 (예: #myModal)의 요소들을 대상으로 합니다.
+			$('#myModal .modal-title').html(title);
+			$('#myModal .modal-body').html(desc);
+			// 모달 내부에 <img class="modal-img"> 태그가 있다고 가정합니다.
+			$('#myModal .modal-img').attr('src', img); 
 		});
 	});
-	
 	
 </script>
 </head>
@@ -755,11 +268,11 @@
 		<div class="accordion" id="accordionExample">
 			<div class="accordion-item">
 			    <h2 class="accordion-header">
-			    	<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+			    	<button class="accordion-button" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 			        	<h4>판매자 정보</h4>
 			      	</button>
 			    </h2>
-			    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+			    <div id="collapseOne" class="accordion-collapse collapse" data-parent="#accordionExample">
 			    	<div class="accordion-body">
 			       		<h6>이름 : 홍길동</h6>
 			       		<h6>주소 : 서울</h6>
@@ -779,6 +292,7 @@
 	 		</ul>
 	  	</div>
 	</div>
+	<br><br><br><br><br>
 	<div class="sideBar">
 		<div class="couponBtnSection">
 			<h6>최대&nbsp;</h6><h6 style="color:#1D8BFF">6%&nbsp;</h6> <h6>할인&nbsp;</h6>
@@ -876,18 +390,17 @@
         	</form>
 	  	</div>
 	</div>
-	<!-- The Modal -->
-  <div class="modal" id="myModal">
+	<div id="footer-container">
+	</div>
+	<div class="modal" id="myModal">
     <div class="modal-dialog modal-dialog-scrollable">
       <div class="modal-content">
       
-        <!-- Modal Header -->
         <div class="modal-header">
           <h4 class="modal-title">ㅇㅇ</h4>
           <button type="button" class="close" data-dismiss="modal">×</button>
         </div>
         
-        <!-- Modal body -->
         <div class="modal-body">
         ㅇㅇ
         </div>
@@ -895,7 +408,6 @@
         <div>
         	<img class="modal-img">
         </div>
-        <!-- Modal footer -->
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal" style="background:#ff4752">Close</button>
         </div>
@@ -905,4 +417,3 @@
   </div>
 </body>
 </html>
-
