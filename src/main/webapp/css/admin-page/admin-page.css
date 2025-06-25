@@ -31,9 +31,7 @@
 
 /* 내 정보 입력 칸 */
 .info-component {
-	width: 90%;
-	margin: 0px auto;
-	margin-top: 20px;
+	margin: 20px 30px 0px 30px;
 	
 	display: flex;
 	align-items: flex-end;
@@ -77,8 +75,10 @@
 
 /* 게스트하우스 관리 관련 칸 */
 .management-contanier {
+	margin: 10px 30px;
+	
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 }
 
 .management-gh {
@@ -167,8 +167,6 @@
 }
 
 .income-component {
-	width: 95%; 
-	
 	background-color: #F8F8F8;
 	
 	border: 1px solid #F8F8F8;
@@ -177,16 +175,16 @@
 	display: flex;
 	justify-content: space-between;
 	
-	margin: 10px auto;
+	margin: 0px 20px;
 	padding: 10px;
 }
 
 #income-today {
-	padding: 20px;
+	margin: 10px 30px;
 }
 
 #income-expect {
-	padding: 20px;
+	margin: 10px 30px;
 }
 
 /* 차트 관련 스타일 */

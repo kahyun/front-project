@@ -164,28 +164,28 @@
 			<div class="chart-contanier">
 				<div class="chart-row">
 					<div class="chart-item">
-						<h5>2025년 월 별 매출</h5>
-						<div class="chart">
+						<h4>2025년 월 별 매출</h4>
+						<div class="chart" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
 							<canvas id="income-2025" width="400" height="400"></canvas>
 						</div>
 					</div>					
 					<div class="chart-item">
-						<h5>인기 게스트하우스</h5>
-						<div class="chart">
-							<canvas id="gh-popular" width="400" height="400"></canvas>
+						<h4>인기 게스트하우스</h4>
+						<div class="chart" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+							<canvas id="gh-popular" width="300" height="300"></canvas>
 						</div>
 					</div>
 				</div>
 				<div class="chart-row">
 					<div class="chart-item">
-						<h5>2024년 월 별 매출</h5>
-						<div class="chart">
+						<h4>2024년 월 별 매출</h4>
+						<div class="chart" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
 							<canvas id="income-2024" width="400" height="400"></canvas>
 						</div>
 					</div>
 					<div class="chart-item">
-						<h5>전년 대비</h5>
-						<div class="chart">
+						<h4>전년 대비</h4>
+						<div class="chart" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
 							<canvas id="diff-income" width="400" height="400"></canvas>
 						</div>
 					</div>
@@ -262,6 +262,7 @@
 				scales: {
 					
 				},
+				responsive: false,
 			}
 		}	
 		
@@ -276,6 +277,7 @@
 					scales: {
 						
 					},
+					responsive: false,
 				}
 			}	
 		
@@ -286,8 +288,8 @@
 					datasets: [ghPopular],
 				},
 				options: {
-					
-				}
+					responsive: false,
+				},
 			}	
 		
 		let config_diff = {
@@ -297,7 +299,7 @@
 					datasets: [ghDiffIncome],
 				},
 				options: {
-					
+					responsive: false,
 				},
 			}	
 		new Chart(ctxIncome2024, config_2024);
