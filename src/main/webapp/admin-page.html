@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>관리자 페이지</title>	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  	<script type="text/javascript" src="./slick/slick.min.js"></script>
+  	
+  	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="./slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="./slick/slick-theme.css"/>
+	<link rel="stylesheet" type="text/css" href="./css/admin-page/admin-page.css" />
+	<style>
+
+	</style>
+</head>
+<body>
+	<!-- Header -->
+	<div id="header-container"></div>
+	<!-- section -->
+	<div id="section" class="section-container">
+	
+		<!-- 관리자 정보 -->
+		<div id="info" class="section-component">
+			<h3>관리자 정보</h3>
+			<form>
+				<div class="info-component">
+					<div class="info-group">
+						<label for="nick">닉네임</label>
+						<input type="text" name="nick" id="nick" value="서울게하주인" />				
+					</div>
+					<div class="info-group">
+						이름
+						<input type="text" name="name" id="name" value="김주인" />
+					</div>
+					<div  class="info-group">
+						<label>전화번호</label>
+						<input type="text" name="number" id="number" value="010-1234-5678" />
+					</div>
+					<div  class="info-group">
+						<label>생년월일</label>
+						<input type="date" name="birthday" id="birthday" value="1999-01-01" />
+					</div>
+					<div  class="info-group">
+						<label>성별</label>
+						<input type="password" name="gender" id="gender" value="남성" />
+					</div>
+					<button id="btn-info" class="btn btn-danger">저장</button> 
+				</div>
+				
+			</form>
+		</div>
+		
+		<!-- 게스트하우스 관리하기 -->
+		<div id="management" class="discount">
+			<div class="section-component">
+				<div class="component-header">
+					<h3>내 게스트하우스 관리하기</h3>
+				</div>	
+				<div class="management-contanier">
+					<div class="management-gh">
+						<img src="./img/mypage/img01-01.jpg"/>
+						<h5>별자리 여관</h5>
+						<p>서울특별시 마포구 새별로 123</p>
+						<div>
+							<button class="btn btn-danger">관리</button>
+						</div>
+					</div>
+					<div class="management-gh">
+						<img src="./img/mypage/img02-01.jpg"/>
+						<h5>어떤하루</h5>
+						<p>강원도 춘천시 소양강로 321</p>
+						<div>
+							<button class="btn btn-danger">관리</button>
+						</div>
+					</div>
+					<div class="management-gh">
+						<img src="./img/mypage/img03-01.jpg"/>
+						<h5>어울림하우스</h5>
+						<p>대전광역시 유성구 과학로 89</p>
+						<div>
+							<button class="btn btn-danger">관리</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 매출 요약 -->
+		<div id="income">	
+			<div class="income-container">				
+				<div class="income-item">
+					<div class="income-component" style="font-weight: bold;">
+						<div>오늘 입실할 고객 수</div>
+						<div>10명</div>
+					</div>
+					<div  class="income-component" style="font-weight: bold;">
+						<div>현재 숙박 중인 고객 수</div>
+						<div>24명</div>
+					</div>
+					<div  class="income-component" style="font-weight: bold;">
+						<div>오늘 퇴실할 고객 수</div>
+						<div>8명</div>
+					</div>
+					<div  class="income-component" style="font-weight: bold;">
+						<div>현재 사용 중인 방</div>
+						<div>5개</div>
+					</div>
+				</div>
+				<div class="income-item">
+					<h5>신규 예약 목록</h5>
+					<div class="income-component" style="font-weight: bold;">
+						<div>어울림하우스</div>
+						<div>601호실</div>
+						<div>5명</div>
+						<div>체크인: 2025-06-26</div>
+					</div>
+					<div  class="income-component" style="font-weight: bold;">
+						<div>별자리 여관</div>
+						<div>102호실</div>
+						<div>2명</div>
+						<div>체크인: 2025-06-22</div>
+					</div>
+					<div  class="income-component" style="font-weight: bold;">
+						<div>어떤하루</div>
+						<div>203호실</div>
+						<div>4명</div>
+						<div>체크인: 2025-07-05</div>
+					</div>
+					<div>
+						<a href="#">더보기 ></a>
+					</div>
+				</div>
+				<div class="income-item">
+					<div id="income-today">
+						<div style="font-weight: bold">오늘 정산</div>
+						<div style="display: flex; justify-content: space-between;">
+							<div style="color: #808080">정산금액</div>
+							<div style="font-weight: bold">320,500원</div>
+						</div>
+					</div>
+					<div id="income-expect">
+						<div style="font-weight: bold">정산 예정</div>
+						<div style="display: flex; justify-content: space-between;">
+							<div style="color: #808080">정산금액</div>
+							<div style="font-weight: bold">5,828,200원</div>
+						</div>
+					</div>
+					<div class="income-component" style="font-weight: bold">
+						<div>06.23 예정</div>
+						<div>5,828,200원</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div id="review" class="section-component review-container">
+			<div class="component-header">
+				<h3>내가 쓴 리뷰</h3>
+				<a href="#">더보기 ></a>
+			</div>			
+			<div id="review-list" class="review-list">								
+				<div class="review-component">
+					<div class="review-header">
+						<p class="review-star">★★★★★</p>
+						<p class="review-date">24일 전</p>
+						<div style="flex-grow: 2;"></div>
+						<button type="button" class="btn-detail" data-toggle="modal" data-target="#detailModal">상세보기</button>
+					</div>
+					<div class="review-img-list">
+						<img class="review-component-img" alt="" src="./img/mypage/gh-exterior01.webp">
+						<img class="review-component-img" alt="" src="./img/mypage/gh-exterior01.webp">
+						<img class="review-component-img" alt="" src="./img/mypage/gh-exterior01.webp">
+						<img class="review-component-img" alt="" src="./img/mypage/gh-exterior01.webp">
+					</div>					
+					<p class="review-location">별관 B동 - 스탠다드 도보특가</p>
+					<p class="review-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+						Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+						Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>			
+				</div>
+				<div class="review-component">
+					<div class="review-header">
+						<p class="review-star">★★★★★</p>
+						<p class="review-date">24일 전</p>
+						<div style="flex-grow: 2;"></div>
+						<button type="button" class="btn-detail" data-toggle="modal" data-target="#detailModal">상세보기</button>
+					</div>					
+					<div class="review-img-list">
+						<img class="review-component-img" alt="" src="./img/mypage/gh-exterior01.webp">
+						<img class="review-component-img" alt="" src="./img/mypage/gh-exterior01.webp">
+						<img class="review-component-img" alt="" src="./img/mypage/gh-exterior01.webp">
+						<img class="review-component-img" alt="" src="./img/mypage/gh-exterior01.webp">
+					</div>					
+					<p>별관 B동 - 스탠다드 도보특가</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+						Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+						Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>			
+				</div>
+			</div>
+		</div>
+		<div id="fav" class="section-component">
+			<div class="component-header">
+				<h3>나의 즐겨찾기</h3>
+				<a href="#">더보기 ></a>
+			</div>	
+			<div id="fav-list" class="fav-list">								
+				<div class="fav-component">
+					<img class="fav-component-img" alt="" src="./img/mypage/gh-exterior01.webp">
+					<div class="fav-content">
+						<h5 class="fav-title">별자리 여관</h5>
+						<p class="fav-addr">위치: 부산광역시 ㅇㅇ동 123-4</p>
+						<p class="fav-price">50,000원 ~</p>
+					</div>
+					<input type="checkbox" id="star1" class="star-checkbox" checked="checked">
+  					<label for="star1" class="star-label"></label>
+				</div>
+				<div class="fav-component">
+					<img class="fav-component-img" alt="" src="./img/mypage/gh-exterior01.webp">
+					<div class="fav-content">
+						<h5 class="fav-title">별자리 여관</h5>
+						<p class="fav-addr">위치: 부산광역시 ㅇㅇ동 123-4</p>
+						<p class="fav-price">50,000원 ~</p>
+					</div>
+					<input type="checkbox" id="star2" class="star-checkbox" checked="checked">
+  					<label for="star2" class="star-label"></label>
+				</div>
+				<div class="fav-component">
+					<img class="fav-component-img" alt="" src="./img/mypage/gh-exterior01.webp">
+					<div class="fav-content">
+						<h5 class="fav-title">별자리 여관</h5>
+						<p class="fav-addr">위치: 부산광역시 ㅇㅇ동 123-4</p>
+						<p class="fav-price">50,000원 ~</p>
+					</div>
+					<input type="checkbox" id="star3" class="star-checkbox" checked="checked">
+  					<label for="star3" class="star-label"></label>
+				</div>
+				<div class="fav-component">
+					<img class="fav-component-img" alt="" src="./img/mypage/gh-exterior01.webp">
+					<div class="fav-content">
+						<h5 class="fav-title">별자리 여관</h5>
+						<p class="fav-addr">위치: 부산광역시 ㅇㅇ동 123-4</p>
+						<p class="fav-price">50,000원 ~</p>
+					</div>
+					<input type="checkbox" id="star4" class="star-checkbox" checked="checked">
+  					<label for="star4" class="star-label"></label>
+				</div>
+			</div>
+		</div>
+	</div>	
+	
+	<!-- modal -->
+	<div id="modal-placeholder">
+		
+	</div>
+	<div id="review-modal-placeholder">
+		
+	</div>
+	
+	<!-- footer -->
+	<div id="footer" class="footer">
+		<h1>Footer</h1>
+	</div>
+	<!-- slick 관련 코드 -->
+	<script type="text/javascript">
+	$('.fav-list').slick({
+  		infinite: false,
+  		slidesToShow: 3,
+  		slidesToScroll: 3
+	});	
+
+	</script>
+
+	<!-- 헤더 관련 코드 -->
+	<script>
+	$(() => {
+    	$("#header-container").load("./header/header.html");
+  	});
+	</script>
+	
+	<!-- 모달 관련 코드 -->
+	<script>
+	$(document).ready(function() {
+        $("#modal-placeholder").load("./html/mypage/write-review-modal.html");
+        $("#review-modal-placeholder").load("./html/mypage/my-review-modal.html");
+    });
+	</script>
+	
+	<!-- 리뷰 목록 slick 관련 코드 -->
+	<script>
+	$(document).ready(function() {
+		// 리뷰 목록 slick
+        $("#review-list").slick({
+        	dots: true,
+        	infinite: true,
+        	speed: 300,
+        	slidesToShow: 1,
+        	adaptiveHeight: true,
+        });
+        
+		// 리뷰 내부에 이미지 slick
+        $('.review-img-list').slick({
+        	  dots: true,
+        	  infinite: false,
+        	  speed: 300,
+        	  slidesToShow: 4,
+        	  slidesToScroll: 4,
+        	  responsive: [
+        	    {
+        	      breakpoint: 1024,
+        	      settings: {
+        	        slidesToShow: 3,
+        	        slidesToScroll: 3,
+        	        infinite: true,
+        	        dots: true
+        	      }
+        	    },
+        	    {
+        	      breakpoint: 600,
+        	      settings: {
+        	        slidesToShow: 2,
+        	        slidesToScroll: 2
+        	      }
+        	    },
+        	    {
+        	      breakpoint: 480,
+        	      settings: {
+        	        slidesToShow: 1,
+        	        slidesToScroll: 1
+        	      }
+        	    }
+        	    // You can unslick at a given breakpoint now by adding:
+        	    // settings: "unslick"
+        	    // instead of a settings object
+        	  ]
+        });
+    });
+	</script>
+</body>
+
+</html>
