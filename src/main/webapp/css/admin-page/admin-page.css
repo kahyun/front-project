@@ -1,16 +1,21 @@
 @charset "UTF-8";
 
-/*  */
+/* 전체 공통 스타일  */
 .section-container {
+	background-color: #F8F8F8;
+
 	display: flex;
 	flex-direction: column;
 }
 
 .section-component {
-	background-color: #F8F8F8;
+	background-color: white;
+	
 	width: 1100px;
-	border: 1px solid #F8F8F8;
+	
+	border: 1px solid white;
 	border-radius: 16px;
+	
 	margin: 20px auto;
 	padding: 20px;
 }
@@ -20,18 +25,23 @@
 	justify-content: space-between;
 }
 
+.component-header h3 {
+	margin: 10px;
+}
+
 /* 내 정보 입력 칸 */
 .info-component {
+	width: 90%;
+	margin: 0px auto;
+	margin-top: 20px;
+	
 	display: flex;
+	align-items: flex-end;
 	flex-wrap: wrap;
     justify-content: space-between;
     row-gap: 20px;
-}
-
-#info > form {
-	width: 95%;
-	margin: 0px auto;
     
+    background-color: white;
     color: #808080;
 }
 
@@ -41,52 +51,145 @@
     width: calc(50% - 15px);
 }
 
-.info-component .btn-info {
+.info-group > input {
+	background-color: #F8F8F8;
+	
+	height: 40px;
+	
+	border: 0px; 
+	border-radius: 8px;
+	
+	padding-left: 15px;
+}
+
+#btn-info {
+	width: 75px;
+	height: 30px;
+	
 	float: right;
 	
 	border: 1px solid #FF4752;
 	background-color: #fff;
 	color: #FF4752;
+	
+	padding: 0px;
 }
 
-/* 할인 관련 칸 */
-.discount {	
-	width: 1100px;
-	margin: 20px auto;
-	justify-content: space-between;
+/* 게스트하우스 관리 관련 칸 */
+.management-contanier {
 	display: flex;
+	justify-content: space-around;
 }
 
-.discount-component {
-	width: 530px;
-	background-color: #F8F8F8;
-	border: 1px solid #F8F8F8;
-	border-radius: 16px;
+.management-gh {
+	display: flex;
+	flex-direction: column;
+	
+	border: 1px solid #D5D5D5;
+	border-radius: 8px;
+	
+	background-color: white;
+	
 	padding: 20px;
 }
 
-/* 예약 관련 칸 */
-.res-list .card-header {
-	background-color: #fff;
-    border-bottom: 1px solid #f0f0f0;
-    padding: 1rem 1.25rem;
-    cursor: pointer;
-    transition: background-color 0.2s;
-
+.management-gh img {
+	width: 250px;
+	height: 250px;
+	
+	border-radius: 8px;
+	
+	margin: 0px auto;
 }
 
-.res-component {	
-	width: 95%;
-	margin: 10px auto;
+.management-gh h5 {
+	margin-top: 10px;
+}
+
+.management-gh button {
+	width: 70px;
+	height: auto;
+	
+	float: right;
+	
+	border: 1px solid #FF4752;
+	background-color: white;
+	color: #FF4752;
+}
+
+/* 매출 관련 칸 */
+.income-container {
+	width: 1100px;
+	
+	margin: 20px auto;
+	
+	display: flex;
+	justify-content: space-between;
+}
+
+.income-item {
+	height: 300px;
+	
 	background-color: white;
 	border: 1px solid white;
 	border-radius: 16px;
 
 	display: flex;
-	justify-content: space-around;
-    align-items: center;
+	flex-direction: column;
+	justify-content: space-evenly
 }
 
+.income-item:nth-child(1) {
+	 width: 30%;
+}
+
+.income-item:nth-child(2) {
+	 width: 36%;
+}
+
+.income-item:nth-child(3) {
+	 width: 30%;
+}
+
+.income-item > h5 {
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+.income-item a {
+	color: black;
+	font-weight: bold;
+	
+	float: right;
+	
+	margin-right: 20px;
+	margin-bottom: 10px;
+}
+
+.income-component {
+	width: 95%; 
+	
+	background-color: #F8F8F8;
+	
+	border: 1px solid #F8F8F8;
+	border-radius: 8px;
+	
+	display: flex;
+	justify-content: space-between;
+	
+	margin: 10px auto;
+	padding: 10px;
+}
+
+#income-today {
+	padding: 20px;
+}
+
+#income-expect {
+	padding: 20px;
+}
+
+/*  */
 .res-component-img {
 	width: 100px;
 	height: 100px;

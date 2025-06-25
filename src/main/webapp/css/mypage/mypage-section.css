@@ -29,6 +29,7 @@
 	margin-top: 20px;
 	
 	display: flex;
+	align-items: flex-end;
 	flex-wrap: wrap;
     justify-content: space-between;
     row-gap: 20px;
@@ -51,8 +52,17 @@
 	margin: 3px;
 }
 
-.btn-info {
+#btn-info {
+	width: 75px;
+	height: 30px;
+	
 	float: right;
+	
+	border: 1px solid #FF4752;
+	background-color: #fff;
+	color: #FF4752;
+	
+	padding: 0px;
 }
 
 /* 할인 관련 칸 */
