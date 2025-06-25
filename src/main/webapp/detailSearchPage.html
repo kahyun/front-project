@@ -73,6 +73,13 @@
 			// 모달 내부에 <img class="modal-img"> 태그가 있다고 가정합니다.
 			$('#myModal .modal-img').attr('src', img); 
 		});
+		
+		$('.favorite-btn').click(function() {
+		    const icon = $(this).find('i');
+		    icon.toggleClass('far').toggleClass('fas');
+		    $(this).toggleClass('active');
+		  });
+		
 	});
 	
 </script>
@@ -97,12 +104,18 @@
 					</div>
 				</div>
 			</div>
-			<h2 class="mainBannerGHName">서울 어울림 하우스</h2>
+			<br>
+			<div class="mainBannerNameSection">
+				<h2 class="mainBannerGHName">서울 어울림 하우스</h2>
+				<button class="favorite-btn">
+						<i class="far fa-star"></i>
+				</button>
+			</div>
 		</div>
 		<br><hr><br>
 		<div class="reviewSection">
 			<div class="reviewScore">
-				<img src="./img/detailSearchPage/star.PNG" class="starScore"><h4><b>4.1ㆍ후기</b></h4>
+				<img src="./img/detailSearchPage/star.PNG" class="starScore"><h4><b>&nbsp;4.1ㆍ후기</b></h4>
 			</div>
 			<div class="reviewPost">
 			<button type="button" class="btn btn-primary reviewBtn" data-toggle="modal" data-target="#myModal">
@@ -141,7 +154,7 @@
 						<div class="reviewStar">
 							<img src="./img/detailSearchPage/starScore.PNG"> 2주 전
 						</div>
-						<div class="reviewDesc">최고에요<br>직원들은 나이스 하고 구비된 시설은 여행 중에 제가 가진 모든 문제를 해결해줬습니다. 그것만으로도 충분히 올만한 곳이라는걸 깨달을 수 있었어요. 정말 좋았습니다.</div>
+						<div class="reviewDesc">최고에요. 직원들은 나이스 하고 구비된 시설은 여행 중에 제가 가진 모든 문제를 해결해줬습니다. 그것만으로도 충분히 올만한 곳이라는걸 깨달을 수 있었어요. 정말 좋았습니다.</div>
 						<div class="reviewRoomInfo">더블룸, 전용 욕실</div>
 						<div class="reviewName">이*셉</div>
 					</div>
@@ -174,7 +187,7 @@
 					<div class="roomImg">
 						<img src="./img/detailSearchPage/SeoulGH/bigImage1.png">
 					</div>
-					<h4><b>2인실</b></h4>
+					<h4 style="margin-top:10px;"><b>2인실</b></h4>
 					<h6>조식 서비스 제공</h6>
 					<div class="roomCapacity">
 						<h6>기준 2인 / 최대 2인</h6>
@@ -203,7 +216,7 @@
 					<div class="roomImg">
 						<img src="./img/detailSearchPage/SeoulGH/bigImage2.png">
 					</div>
-					<h4><b>4인실</b></h4>
+					<h4 style="margin-top:10px;"><b>4인실</b></h4>
 					<h6>조식 서비스 제공</h6>
 					<div class="roomCapacity">
 						<h6>기준 4인 / 최대 4인</h6>
@@ -233,7 +246,9 @@
 			<div style="margin: 0 auto" class="mapImg">
 				<img  src="./img/detailSearchPage/SeoulGH/oulimHouseMap.png">
 			</div>
-			<h5 class="address">어디시 어디구 어디동 123-4</h5>
+			<br>
+			<h6 class="address">Room 334, oullim, Toegye-ro, Jung-gu, Seoul Special City, 어울림하우스, 동대문, 서울, 대한민국, 100-143</h6>
+			<br>
 			<button class="addressCopyBtn">주소복사</button>
 		</div><br><hr><br>
 		<div class="optionSection">
@@ -269,14 +284,17 @@
 			<div class="accordion-item">
 			    <h2 class="accordion-header">
 			    	<button class="accordion-button" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-			        	<h4>판매자 정보</h4>
+			        	<h4>판매자 정보 ></h4>
 			      	</button>
 			    </h2>
 			    <div id="collapseOne" class="accordion-collapse collapse" data-parent="#accordionExample">
 			    	<div class="accordion-body">
-			       		<h6>이름 : 홍길동</h6>
-			       		<h6>주소 : 서울</h6>
-			       		<h6>전화번호 : 010-1234-5678</h6>
+			    		<h6>상호 : 어울림하우스</h6>
+			       		<h6>이름 : 배인숙</h6>
+			       		<h6>주소 : Room 334, oullim, Toegye-ro, Jung-gu, Seoul Special City</h6>
+			       		<h6>전화번호 : 010-3248-3122</h6>
+			       		<h6>이메일 : oolhouse@gmail.com</h6>
+			       		<h6>사업자등록번호 : 362880301262</h6>
 			    	</div>
 			   	</div>
 			</div>
@@ -343,10 +361,10 @@
 	                <span>체크인</span>
 	                <span>체크아웃</span>
             	</div>
-	            <div class="form-group">
+	            <div class="date-group">
 					<div class="date-range-group">
-	                    <input type="date" id="checkinDate" name="checkinDate" value="2025-06-21" required class="date-input">
-	                    <span>&nbsp;~&nbsp;</span>
+	                    <input type="date" id="checkinDate" name="checkinDate" value="2025-06-21" required class="date-input" style="height:100%">
+	                    <span>~</span>
 	                    <input type="date" id="checkoutDate" name="checkoutDate" value="2025-06-22" required class="date-input">
 	                </div>
 	            </div>
@@ -380,11 +398,13 @@
 	                    <input type="text" id="points" name="points" value="0" readonly><span style="padding-right: 10px;">P</span>
 	                </div>
 	            </div>
-	            결제 금액
-	            <div class="right-aligned-text">
-	                    <input type="number" readonly="readonly" id="price" value="100000"/> 원
+	            <div class="form-group">
+	            	<label for="price">결제 금액</label>
+		            <div class="right-aligned-text">
+		                    <input type="number" readonly="readonly" id="price" value="100000"/> 원
+		            </div>
 	            </div>
-	            <div class="paymentBtn-container">
+	            <div class="form-group">
 	                <button type="submit" class="paymentBtn">결제</button>
 	            </div>
         	</form>

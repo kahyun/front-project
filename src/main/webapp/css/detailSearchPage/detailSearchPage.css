@@ -14,25 +14,36 @@
     margin: 0 auto;
     width: 80%;
 }
+.mainBannerNameSection{
+	margin-top: 15px;
+	display:flex;
+	justify-content:space-between;
+	align-items: center;
+}
 .mainImgBanner {
     display: flex;
 }
 .imgBannerBox {
     width: 50%;
 }
+.mainBannerGHName{
+	margin-top:7px;
+}
 .bigImage {
-    width: 100%;
+    width: 99%;
     height: 99%;
-    margin-top: 0.5%;
+    margin-top: 1%;
+    margin-left:0.37%;
 }
 .smallImgBannerBox {
     width: 99.5%;
     height: 49.5%;
     display: flex;
+	margin-top:0.5%;
 }
 .smallImage {
     width: 49%;
-    height: 99.5%;
+    height: 99%;
     margin: 0.5%;
 }
 .reviewSection {
@@ -67,6 +78,7 @@
     height: 380px;
     margin-top: 20px;
     display: flex;
+	justify-content: space-between;
 }
 .mapSection {
     margin: 0 auto;
@@ -80,6 +92,7 @@
     width: 100%;
     height: 100%;
 }
+
 .addressCopyBtn {
     width: 100%;
     height: 50px;
@@ -115,8 +128,8 @@
 }
 .accordion-button {
     width: 100%;
-    background-color: #f8f8f8;
     text-align: left;
+    backGround-color: white;
     border: none;
 }
 .cancelRuleSection {
@@ -128,13 +141,14 @@
     flex-direction: row;
 }
 .reviewScore > img {
-    width: 30px;
-    height: 30px;
+    width: 31px;
+    height: 31px;
 }
 .reviewBox {
     width: 60%;
     padding: 3%;
     height: 100%;
+    
 }
 .reviewStar {
     height: 15%;
@@ -148,7 +162,6 @@
     width: 40%;
     padding: 3%;
     margin-top: 15%;
-    /* flex-direction: center; 는 CSS 속성이 아니므로 제거하거나 적절한 속성으로 대체해야 합니다. */
     text-align: center;
 }
 .reviewImg > img {
@@ -156,13 +169,18 @@
     height: 90%;
 }
 .reviewDesc {
-    height: 55%;
+    height: 51%;
     color: black;
     overflow: hidden;
-    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+	text-overflow: hidden;
 }
 .reviewRoomInfo {
+	margin-top: 10px;
     height: 15%;
+    color: #d5d5d5;
 }
 .reviewName {
     height: 15%;
@@ -174,26 +192,27 @@ li {
 .roomSample-Left {
     width: 45%;
     height: 100%;
-    padding: 2%;
 }
 .roomSample-Right {
-    width: 55%;
+    width: 50%;
     height: 100%;
-    padding: 2%;
+
 }
 .roomImg {
     width: 100%;
-    height: 80%;
+    height: 75%;
+    border-radius: 20px;
 }
 .roomImg > img {
     width: 100%;
     height: 100%;
+    border-radius: 20px;
 }
 .roomCapacity {
     color: #D0D0D0;
 }
 .roomInfoBox {
-    width: 95%;
+    width: 100%;
     height: 75%;
     display: flex;
     padding: 4%;
@@ -204,10 +223,20 @@ li {
     width: 65%;
     height: 100%;
 }
+.roomInfo-Left>*{
+	
+	margin-top:10px;
+}
 .roomInfo-Right {
     width: 35%;
     height: 100%;
     text-align: right;
+}
+.roomInfo-Right>*{
+	margin-top:10px;
+}
+.optionSample{
+	margin-top:15px;
 }
 .bookBtn {
     width: 60%;
@@ -342,15 +371,15 @@ ul > li {
 .bookingBar {
     position: fixed;
     top: 50%;
-    right: 3%;
-    width: 320px;
-    height: 400px;
-    padding: 15px;
+    right: 4%;
+    width: 274px;
+    height: 390px;
+    padding: 20px;
     z-index: 30;
-    border: 1px solid #f8f8f8;
+    border: 1px solid #d5d5d5;
     border-radius: 20px;
     background: white;
-    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
 }
 .right-align-text {
     text-align: right;
@@ -358,7 +387,7 @@ ul > li {
 .bookingBar * {
     font-size: 13px;
 }
-/* 북킹 css */
+
 .input-wrapper {
     position: relative;
     display: flex;
@@ -433,30 +462,39 @@ ul > li {
     color: #333;
 }
 .form-group {
-    align-items: center;
+   
     margin: 0;
-    height: 50px;
+    margin-top:12px;
+    height: 39px;
     display: flex;
     margin-bottom: 0 !important;
+    align-items: baseline;
 }
 .paymentBtnContainer {
     width: 100%;
 }
 .paymentBtn {
     border: none;
-    margin-left: 220px;
     width: 70px;
     height: 30px;
+    margin-left:auto;
     background: #FF4752;
     color: white;
-    margin-top: 10px;
     border-radius: 10px;
 }
-.date-labels-group > * {
-    margin-left: 70px;
+.date-group{
+	margin-top: 12px;
 }
-.date-range-group > * {
-    margin-left: 10px;
+.date-labels-group{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.date-range-group{
+	width:100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
 }
 #price {
     border: none;
@@ -470,6 +508,8 @@ ul > li {
     background: none !important;
     border: none !important;
     outline: none !important;
+    padding:0 !important;
+    margin-right: 30px;
 }
 .reviewBtn:checked {
     background: none;
@@ -480,4 +520,19 @@ ul > li {
     margin: 0 auto;
     width: 50%;
     height: auto;
+}
+.favorite-btn {
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 32px;
+	color: #aaa;
+}
+
+.favorite-btn.active i {
+	color: gold;
+}
+
+.favorite-btn:focus {
+	outline: none;
 }
