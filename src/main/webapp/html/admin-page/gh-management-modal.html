@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+	<style>
+    /* 커스텀 스타일 */
+    .review-modal-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .review-modal-header .guesthouse-name {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+    
+    .review-modal-header .rating-info {
+        color: #ffc107;
+        font-weight: bold;
+    }
+
+    .review-modal-header .rating-info .review-count {
+        color: #333;
+        font-weight: 500;
+        margin-left: 0.25rem;
+    }
+
+    .review-modal-header .address {
+        font-size: 0.9rem;
+        color: #6c757d;
+    }
+    
+    .star-rating-area {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+
+    .star-rating .fa-star {
+        font-size: 2rem;
+        color: #e0e0e0; /* 비활성 별 색상 */
+        cursor: pointer;
+        transition: color 0.2s;
+        margin: 0 0.15rem;
+    }
+
+    .star-rating .fa-star.active,
+    .star-rating .fa-star:hover {
+        color: #ffc107; /* 활성 별 색상 */
+    }
+
+    .photo-attach-area {
+        display: flex;
+        gap: 10px; /* 이미지 사이 간격 */
+        margin-top: 1rem;
+    }
+
+    .photo-attach-area .photo-item {
+        width: 80px;
+        height: 80px;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+    .photo-attach-area .upload-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px dashed #ccc;
+        background-color: #f8f9fa;
+        color: #6c757d;
+        font-size: 0.8rem;
+        cursor: pointer;
+    }
+    
+    .review-textarea {
+        margin-top: 1.5rem;
+        min-height: 150px;
+    }
+    
+    /* 본문 스타일 */
+    .management-container {
+    	padding: 20px;
+    
+    	display: flex;
+    	flex-direction: column;
+    	
+    	
+    }
+    
+    .management-container > div {
+    	margin-bottom: 20px;
+    }
+    
+    .management-container input[type="text"] {
+    	width: 100%;
+    	height: 36px;
+    	
+    	border: 1px solid #DFDFDF;
+   		border-radius: 8px;
+    }
+    
+    .management-container input[type="checkbox"] {
+    	margin-right: 5px;
+    }
+    
+    .management-container textarea {
+   		width: 100%;
+   		height: 75px;
+   		
+   		border: 1px solid #DFDFDF;
+   		border-radius: 8px;
+    }
+    
+    .management-room {
+    	display: flex; 
+    	justify-content: space-between;
+    	align-items: center;
+    	
+    	border: 1px solid #DFDFDF;
+    	border-radius: 8px;
+    	
+    	margin-bottom: 10px;
+    	padding: 5px;
+    }
+    
+    .management-room input[type="text"] {
+    	width: 75px;
+    	
+    	text-align: right;
+    }
+    
+    .management-btn {
+    	text-align: right;
+    }
+	</style>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(() => {
+		
+	})
+	</script>
+</head>
+<body>
+<!-- 게스트하우스 관리 모달 -->
+<div class="modal fade" id="ghManagementModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content p-3">
+    
+      <div class="modal-header border-0">
+        <div class="d-flex flex-column w-100">
+          <div class="d-flex justify-content-between align-items-center mb-1">
+          </div>
+        </div>
+        <button type="button" class="close ml-3" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+	
+      <div class="modal-body">
+      	<form class="management-container">
+	        <div class="management-ghname">
+	        	<h5>게스트하우스 명</h5>
+	        	<input type="text" value="별자리 여관"/>
+	        </div>
+	        <div class="management-addr">
+	        	<h5>위치</h5>
+	        	<input type="text" value="서울특별시 마포구 새별로 123"/>
+	        </div>
+	        <div style="display: flex; justify-content: space-between; align-items: center;">
+	        	<div>
+	        		<h5 style="display: inline;">게스트하우스 이미지 추가</h5>
+	        		<input style="display: inline;" type="button" value="사진선택"/>
+	        	</div>
+	        	<div>
+	        		<h5 style="display: inline;">1박 당 가격</h5>
+	        		<input style="display: inline; width: 100px; text-align: right;" type="text" value="30,000 원"/>
+	        	</div>	        	
+	        </div>
+	        <div>
+	        	<div style="margin-bottom: 10px">
+	        		<h5 style="display: inline;">방 목록</h5>
+		        	<button id="btn-add-room" style="display: inline; float: none;" type="button" class="close">
+	          			<span aria-hidden="true">+</span>
+	        		</button>
+	        		<button id="btn-remove-room"  style="display: inline; float: none;" type="button" class="close">
+	          			<span aria-hidden="true">-</span>
+	        		</button>
+	        	</div>
+	        	<div id="room-container">
+	        		<div class="management-room">
+	        			<div>
+	        				방 이름
+	        			</div>
+	        			<div>
+	        				<input type="text" value="201호"/>
+	        			</div>
+	        			<div>
+	        				방 이미지
+	        			</div>
+	        			<div>	
+	        				<input style="display: inline;" type="button" value="사진선택"/>
+	        			</div>
+	        			<div>
+	        				최대 수용 인원
+	        			</div>
+	        			<div>
+	        				<input type="text" value="5명"/>
+	        			</div>
+	        			<div>
+	        				1박 당 가격
+	        			</div>
+	        			<div>
+	        				<input type="text" value="30,000원"/>
+	        			</div>
+	        		</div>
+	        		<div class="management-room">
+	        			<div>
+	        				방 이름
+	        			</div>
+	        			<div>
+	        				<input type="text" value="202호"/>
+	        			</div>
+	        			<div>
+	        				방 이미지
+	        			</div>
+	        			<div>	
+	        				<input style="display: inline;" type="button" value="사진선택"/>
+	        			</div>
+	        			<div>
+	        				최대 수용 인원
+	        			</div>
+	        			<div>
+	        				<input type="text" value="6명"/>
+	        			</div>
+	        			<div>
+	        				1박 당 가격
+	        			</div>
+	        			<div>
+	        				<input type="text" value="25,000원"/>
+	        			</div>
+	        		</div>
+	        		<div class="management-room">
+	        			<div>
+	        				방 이름
+	        			</div>
+	        			<div>
+	        				<input type="text" value="203호"/>
+	        			</div>
+	        			<div>
+	        				방 이미지
+	        			</div>
+	        			<div>	
+	        				<input style="display: inline;" type="button" value="사진선택"/>
+	        			</div>
+	        			<div>
+	        				최대 수용 인원
+	        			</div>
+	        			<div>
+	        				<input type="text" value="4명"/>
+	        			</div>
+	        			<div>
+	        				1박 당 가격
+	        			</div>
+	        			<div>
+	        				<input type="text" value="45,000원"/>
+	        			</div>
+	        		</div>
+	        	</div>
+	        </div>
+	        <div>	    
+	        	<h5>옵션</h5>
+	        	<input type="checkbox" checked="checked"/><label style="margin-right: 10px;">샤워실</label> 
+	        	<input type="checkbox" checked="checked"/><label style="margin-right: 10px;">조식 제공 </label> 
+	        	<input type="checkbox" checked="checked"/><label style="margin-right: 10px;">에어컨 </label> 
+	        	<input type="checkbox" checked="checked"/><label style="margin-right: 10px;">취사 가능 </label> 
+	        	<input type="checkbox" checked="checked"/><label style="margin-right: 10px;">세탁기 </label> 
+	        	<input type="checkbox" checked="checked"/><label style="margin-right: 10px;">냉장고 </label> 
+	        	<input type="checkbox" checked="checked"/><label style="margin-right: 10px;">무선 인터넷 </label> 
+	        	<input type="checkbox" checked="checked"/><label style="margin-right: 10px;">주차가능 </label> 
+	        </div>
+	        <div>
+	        	<h5>상세설명</h5>
+	        	<textarea rows="" cols="">
+서울에서 별자리가 보이는 게스트하우스입니다.
+	        	</textarea>
+	        </div>
+	        <div>
+	        	<h5>숙소 이용 규칙</h5>
+	        	<textarea rows="" cols="">
+객실 내 금연	
+- 모든 객실 및 실내 공간은 금연 구역입니다. 위반 시 벌금이 부과될 수 있습니다.
+22시 이후 정숙 시간
+- 다른 투숙객의 편안한 휴식을 위해 오후 10시 이후에는 소음을 자제해 주세요.
+외부 음식 반입 제한
+- 위생 및 해충 문제 예방을 위해 객실 내 외부 음식 반입은 제한됩니다. 공용 주방을 이용해 주세요.
+	        	</textarea>
+	        </div>
+	        <div class="management-btn">
+	        	<input type="button" class="btn btn-danger" id="btn-change" value="수정"/>
+	        	<input type="button" class="btn btn-secondary" id="btn-cancel" value="취소"/>
+	        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+	
+	<script>
+	$(document).ready(function () {
+	  const roomHTML = `
+	    <div class="management-room">
+	      <div>방 이름</div>
+	      <div><input type="text" value=""/></div>
+	      <div>방 이미지</div>
+	      <div><input style="display: inline;" type="button" value="사진선택"/></div>
+	      <div>최대 수용 인원</div>
+	      <div><input type="text" value=""/></div>
+	      <div>1박 당 가격</div>
+	      <div><input type="text" value=""/></div>
+	    </div>
+	  `;
+	
+	  // 방 추가
+	  $('#btn-add-room').click(function () {
+	    $('#room-container').append(roomHTML);
+	  });
+	
+	  // 방 삭제 (마지막 방만 제거)
+	  $('#btn-remove-room').click(function () {
+	    $('#room-container .management-room').last().remove();
+	  });
+	});
+	</script>
+</body>
+</html>
