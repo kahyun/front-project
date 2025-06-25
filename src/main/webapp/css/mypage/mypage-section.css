@@ -1,5 +1,15 @@
 @charset "UTF-8";
 
+body {
+  font-family : 'gulim', 'gothic'
+}
+
+h5 {
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
 /*  */
 .section-container {
 	display: flex;
@@ -24,7 +34,7 @@
 
 /* 내 정보 입력 칸 */
 .info-component {
-	margin: 10px 30px;
+	margin: 30px;
 	
 	display: flex;
 	align-items: flex-end;
@@ -83,25 +93,24 @@
 #discount-point-amount {
 	height: 60%;
 	
-	margin: 10px 30px;
+	margin: 20px 30px 10px 30px;
 	
 	background-color: #FFF;
 	
 	border-radius: 16px;
 }
 
-#discount-point-amount > h3 {
+#discount-point-amount > h5 {
 	color: #FF4752;
 	font-size: 35px;
-	padding-top: 15px;
+	padding-top: 30px;
 	padding-left: 30px;
 }
 
 #discount-point-amount > p {
 	float: right;
 	color: #8a8a8a;
-	padding-top: 30px;
-	padding-right: 30px;
+	padding: 15px 15px 15px 0px;
 }
 
 .discount-coupon-list {
@@ -271,8 +280,13 @@ a[data-toggle="collapse"][aria-expanded="true"] + .collapse .card-body {
 	margin: 0px;
 }
 
-.fav-component .fav-content {
-	padding: 10px;
+.fav-component .fav-content h5 {
+	margin: 5px 5px;
+}
+
+.fav-component .fav-content p {
+	margin: 5px 0px;
+	margin-left: 5px;
 }
 
 .fav-component .fav-addr {
@@ -287,4 +301,28 @@ a[data-toggle="collapse"][aria-expanded="true"] + .collapse .card-body {
 .fav-component-img {
 	width: 250px;
 	height: 250px;
+}
+
+.fav-title {
+	margin: 0px;
+	padding: 0px;
+}
+
+.favorite-btn {
+	background: none;
+	border: none;
+	cursor: pointer;
+	margin-left: 95px;
+	font-size: 18px;
+	color: #aaa;
+	
+	float: right;
+}
+
+.favorite-btn.active i {
+	color: gold;
+}
+
+.favorite-btn:focus {
+	outline: none;
 }

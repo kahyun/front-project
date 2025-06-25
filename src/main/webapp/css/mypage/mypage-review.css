@@ -1,13 +1,12 @@
 @charset "UTF-8";
 
-
 /* 리뷰 관련 칸 */
 .review-container {
 	
 }
 
 .review-list {
-	
+	padding: 0px 50px;
 }
 
 .btn-detail {

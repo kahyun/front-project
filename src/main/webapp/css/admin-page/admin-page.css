@@ -29,9 +29,13 @@
 	margin: 10px;
 }
 
+h5 {
+	margin: 10px 0px 20px 10px;
+}
+
 /* 내 정보 입력 칸 */
 .info-component {
-	margin: 20px 30px 0px 30px;
+	margin: 15px 30px 30px 30px;
 	
 	display: flex;
 	align-items: flex-end;
@@ -218,20 +222,11 @@
 	flex-direction: column;
 }
 
-/* 리뷰 관련 칸 */
-.review-list {
-	display: flex;
+.chart-item > h5 {
+	margin: 10px 0px 10px 10px;
 }
 
-.review-component {
-	width: 80%;
-	margin: 10px auto;
-	background-color: white;
-	border: 1px solid white;
-	border-radius: 16px;
-}
-
-.review-component-img {
-	width: 200px;
-	height: 200px;
+.chart {
+	margin-top: 30px;
+	margin-bottom: 40px;
 }
