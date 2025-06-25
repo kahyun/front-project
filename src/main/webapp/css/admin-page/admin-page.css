@@ -8,6 +8,14 @@
 	flex-direction: column;
 }
 
+.section-container h5 {
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	
+	font-weight: bold;
+}
+
 .section-component {
 	background-color: white;
 	
@@ -27,10 +35,6 @@
 
 .component-header h3 {
 	margin: 10px;
-}
-
-h5 {
-	margin: 10px 0px 20px 10px;
 }
 
 /* 내 정보 입력 칸 */
@@ -225,7 +229,7 @@ h5 {
 }
 
 .chart-item > h5 {
-	margin: 10px 0px 10px 10px;
+	/* margin: 10px 0px 10px 10px; */
 }
 
 .chart {
