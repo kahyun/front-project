@@ -37,13 +37,30 @@
     }
 
     .star-label::before {
-      content: '☆';
+      content: '';
     }
 
     .star-checkbox:checked + .star-label::before {
       content: '★';
     }
+    
+    footer {
+    	margin-top: 25px;
+    }
 	</style>
+	
+	<style>
+	@font-face {
+	    font-family: 'Pretendard-Regular';
+	    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+	    font-weight: 400;
+	    font-style: normal;
+	}
+	
+	.section-container {
+	    font-family: 'Pretendard-Regular', sans-serif;
+	}
+</style>
 </head>
 <body>
 	<!-- Header -->
@@ -51,7 +68,7 @@
 	<!-- section -->
 	<div id="section" class="section-container">
 		<div id="info" class="section-component">
-			<h3>내 정보</h3>
+			<h5>내 정보</h5>
 			<form>
 				<div class="info-component">
 					<div class="info-group">
@@ -83,17 +100,17 @@
 		<div id="discount" class="discount">
 			<div id="discount-point" class="discount-component">
 				<div class="component-header">
-					<h3>포인트</h3>
+					<h5>포인트</h5>
 					<a href="#">더보기 ></a>
 				</div>	
 				<div id="discount-point-amount">
-					<h3>5,730p</h3>
+					<h5>5,730p</h5>
 					<p>이번 달 내 소멸될 포인트 1,000 P</p>
 				</div>
 			</div>
 			<div id="discount-coupon" class="discount-component">
 				<div class="component-header">
-					<h3>할인 쿠폰</h3>
+					<h5>할인 쿠폰</h5>
 					<a href="#">더보기 ></a>
 				</div>	
 				<div class="discount-coupon-list">
@@ -109,7 +126,7 @@
 		
 		<div id="res" class="section-component">
 			<div class="component-header">
-				<h3>예약목록 조회</h3>
+				<h5>예약목록 조회</h5>
 				<a href="#">더보기 ></a>
 			</div>	
 			<div id="res-list">				
@@ -123,20 +140,22 @@
 						<span>99,000원</span>						
 					</a>
 					<div id="expand-1" class="expand res-expand-detail collapse" aria-labelledby="heading3" data-parent="#res">
-						<div class="res-expand-img">
-							<img alt="" src="./img/mypage/img01-01.jpg"">
-						</div>
-						<div class="res-expand-text">
-							<p>예약일자: 2025-06-20</p>
-							<p>게스트하우스 명: 별자리 여관</p>
-							<p>체크인: 2025-07-13    체크아웃: 2025-07-16</p>
-							<p>숙박인원: 5명</p>
-							<p>결제방법: 카카오페이</p>
-							<p>결제금액: 99,000원</p>
-							<div class="res-button">
-								<button type="button" class="btn btn-danger btn-cancel">예약취소</button>
-								<button type="button" class="btn btn-secondary btn-review" data-toggle="modal" data-target="#reviewModal">리뷰쓰기</button>
+						<div class="res-expand-content">
+							<div class="res-expand-img">
+								<img alt="" src="./img/mypage/img01-01.jpg"">
 							</div>
+							<div class="res-expand-text">
+								<p><b>예약일자</b>: 2025-06-20</p>
+								<p><b>게스트하우스 명</b>: 별자리 여관</p>
+								<p><b>체크인</b>: 2025-07-13    <b>체크아웃</b>: 2025-07-16</p>
+								<p><b>숙박인원</b>: 5명</p>
+								<p><b>결제방법</b>: 카카오페이</p>
+								<p><b>결제금액</b>: 99,000원</p>
+							</div>
+						</div>
+						<div class="res-button">
+							<button type="button" class="btn btn-danger btn-cancel">예약취소</button>
+							<button type="button" class="btn btn-secondary btn-review" data-toggle="modal" data-target="#reviewModal">리뷰쓰기</button>
 						</div>
 					</div>		
 				</div>	
@@ -151,21 +170,24 @@
 						<span>73,000원</span>
 					</a>
 					<div id="expand-2" class="expand res-expand-detail collapse" aria-labelledby="heading3" data-parent="#res">
-						<div class="res-expand-img">
-							<img alt="" src="./img/mypage/img02-01.jpg">
-						</div>
-						<div class="res-expand-text">
-							<p>예약일자: 2025-06-20</p>
-							<p>게스트하우스 명: 어떤하루</p>
-							<p>체크인: 2025-06-21    체크아웃: 2025-06-23</p>
-							<p>숙박인원: 5명</p>
-							<p>결제방법: 카카오페이</p>
-							<p>결제금액: 73,000원</p>
-							<div class="res-button">
-								<button type="button" class="btn btn-danger btn-cancel">예약취소</button>
-								<button type="button" class="btn btn-secondary btn-review" data-toggle="modal" data-target="#reviewModal">리뷰쓰기</button>
+						<div class="res-expand-content">
+							<div class="res-expand-img">
+								<img alt="" src="./img/mypage/img02-01.jpg">
+							</div>
+							<div class="res-expand-text">
+								<p><b>예약일자</b>: 2025-06-20</p>
+								<p><b>게스트하우스 명</b>: 어떤하루</p>
+								<p><b>체크인</b>: 2025-06-21    <b>체크아웃</b>: 2025-06-23</p>
+								<p><b>숙박인원</b>: 5명</p>
+								<p><b>결제방법</b>: 카카오페이</p>
+								<p><b>결제금액</b>: 73,000원</p>
 							</div>
 						</div>
+						<div class="res-button">
+							<button type="button" class="btn btn-danger btn-cancel">예약취소</button>
+							<button type="button" class="btn btn-secondary btn-review" data-toggle="modal" data-target="#reviewModal">리뷰쓰기</button>
+						</div>						
+						
 					</div>		
 				</div>	
 
@@ -179,20 +201,22 @@
 						<span>60,000원</span>
 					</a>
 					<div id="expand-3" class="expand res-expand-detail collapse" aria-labelledby="heading3" data-parent="#res">
-						<div class="res-expand-img">
-							<img alt="" src="./img/mypage/img03-01.jpg">
-						</div>
-						<div class="res-expand-text">
-							<p>예약일자: 2025-06-20</p>
-							<p>게스트하우스 명: 어울림하우스</p>
-							<p>체크인: 2025-05-05    체크아웃: 2025-05-08</p>
-							<p>숙박인원: 3명</p>
-							<p>결제방법: 신용카드</p>
-							<p>결제금액: 60,000원</p>
-							<div class="res-button">
-								<button type="button" class="btn btn-danger btn-cancel">예약취소</button>
-								<button type="button" class="btn btn-secondary btn-review" data-toggle="modal" data-target="#reviewModal">리뷰쓰기</button>
+						<div class="res-expand-content">
+							<div class="res-expand-img">
+								<img alt="" src="./img/mypage/img03-01.jpg">
 							</div>
+							<div class="res-expand-text">
+								<p><b>예약일자</b>: 2025-06-20</p>
+								<p><b>게스트하우스 명</b>: 어울림하우스</p>
+								<p><b>체크인</b>: 2025-05-05    <b>체크아웃</b>: 2025-05-08</p>
+								<p><b>숙박인원</b>: 3명</p>
+								<p><b>결제방법</b>: 신용카드</p>
+								<p><b>결제금액</b>: 60,000원</p>
+							</div>
+						</div>
+						<div class="res-button">
+							<button type="button" class="btn btn-danger btn-cancel">예약취소</button>
+							<button type="button" class="btn btn-secondary btn-review" data-toggle="modal" data-target="#reviewModal">리뷰쓰기</button>
 						</div>
 					</div>		
 				</div>		
@@ -202,7 +226,7 @@
 		
 		<div id="review" class="section-component review-container">
 			<div class="component-header">
-				<h3>내가 쓴 리뷰</h3>
+				<h5>내가 쓴 리뷰</h5>
 				<a href="#">더보기 ></a>
 			</div>			
 			<div id="review-list" class="review-list">								
@@ -254,7 +278,7 @@
 		
 		<div id="fav" class="section-component">
 			<div class="component-header">
-				<h3>나의 즐겨찾기</h3>
+				<h5>나의 즐겨찾기</h5>
 				<a href="#">더보기 ></a>
 			</div>	
 			<div id="fav-list" class="fav-list">								
@@ -275,8 +299,9 @@
 						<p class="fav-addr">위치: 서울특별시 마포구 새별로 123</p>
 						<p class="fav-price">50,000원 ~</p>
 					</div>
-					<input type="checkbox" id="star1" class="star-checkbox" checked="checked">
-  					<label for="star1" class="star-label"></label>
+					<button class="favorite-btn">
+						<i class="far fa-star"></i>
+					</button>
 				</div>
 				<div class="fav-component carousel slide carousel-fade" data-ride="carousel" data-interval="4000">
 					<div class="carousel-inner">
@@ -295,8 +320,9 @@
 						<p class="fav-addr">위치: 강원도 춘천시 소양강로 321</p>
 						<p class="fav-price">70,000원 ~</p>
 					</div>
-					<input type="checkbox" id="star2" class="star-checkbox" checked="checked">
-  					<label for="star2" class="star-label"></label>
+					<button class="favorite-btn">
+						<i class="far fa-star"></i>
+					</button>
 				</div>
 				<div class="fav-component carousel slide carousel-fade" data-ride="carousel" data-interval="4000">
 					<div class="carousel-inner">
@@ -315,8 +341,9 @@
 						<p class="fav-addr">위치: 대전광역시 유성구 과학로 89</p>
 						<p class="fav-price">30,000원 ~</p>
 					</div>
-					<input type="checkbox" id="star3" class="star-checkbox" checked="checked">
-  					<label for="star3" class="star-label"></label>
+					<button class="favorite-btn">
+						<i class="far fa-star"></i>
+					</button>
 				</div>
 				<div class="fav-component carousel slide carousel-fade" data-ride="carousel" data-interval="4000">
 					<div class="carousel-inner">
@@ -335,8 +362,9 @@
 						<p class="fav-addr">위치: 경기도 성남시 분당구 미래로 77</p>
 						<p class="fav-price">55,000원 ~</p>
 					</div>
-					<input type="checkbox" id="star4" class="star-checkbox" checked="checked">
-  					<label for="star4" class="star-label"></label>
+					<button class="favorite-btn">
+						<i class="far fa-star"></i>
+					</button>
 				</div>
 			</div>
 		</div>
@@ -354,15 +382,16 @@
 	</div>
 	
 	<!-- footer -->
-	<div id="footer" class="footer">
-		<h1>Footer</h1>
+	<div id="footer-container">
 	</div>
 	<!-- slick 관련 코드 -->
 	<script type="text/javascript">
 	$('.fav-list').slick({
   		infinite: false,
   		slidesToShow: 3,
-  		slidesToScroll: 3
+  		slidesToScroll: 3,
+  		slidesToShow: 1,
+  	  	variableWidth: true,
 	});	
 
 	</script>
@@ -391,47 +420,30 @@
         	dots: true,
         	infinite: true,
         	speed: 300,
-        	slidesToShow: 1,
-        	adaptiveHeight: true,
+        	variableWidth: true,
         });
         
 		// 리뷰 내부에 이미지 slick
         $('.review-img-list').slick({
-        	  dots: true,
-        	  infinite: false,
+        	  dots: false,
+        	  infinite: true,
         	  speed: 300,
-        	  slidesToShow: 4,
-        	  slidesToScroll: 4,
-        	  responsive: [
-        	    {
-        	      breakpoint: 1024,
-        	      settings: {
-        	        slidesToShow: 3,
-        	        slidesToScroll: 3,
-        	        infinite: true,
-        	        dots: true
-        	      }
-        	    },
-        	    {
-        	      breakpoint: 600,
-        	      settings: {
-        	        slidesToShow: 2,
-        	        slidesToScroll: 2
-        	      }
-        	    },
-        	    {
-        	      breakpoint: 480,
-        	      settings: {
-        	        slidesToShow: 1,
-        	        slidesToScroll: 1
-        	      }
-        	    }
-        	    // You can unslick at a given breakpoint now by adding:
-        	    // settings: "unslick"
-        	    // instead of a settings object
-        	  ]
+        	  slidesToShow: 1,
+        	  variableWidth: true,
         });
     });
+	</script>
+	
+	<script>
+	$("#footer-container").load("./footer/footer.html");
+	</script>
+	
+	<script>
+	$('.favorite-btn').click(function() {
+		const icon = $(this).find('i');
+		icon.toggleClass('far').toggleClass('fas');
+		$(this).toggleClass('active');
+	});
 	</script>
 </body>
 

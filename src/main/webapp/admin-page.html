@@ -16,8 +16,17 @@
 	
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<style>
-
-	</style>
+	@font-face {
+	    font-family: 'Pretendard-Regular';
+	    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+	    font-weight: 400;
+	    font-style: normal;
+	}
+	
+	.section-container {
+	    font-family: 'Pretendard-Regular', sans-serif;
+	}
+</style>
 </head>
 <body>
 	<!-- Header -->
@@ -27,7 +36,7 @@
 	
 		<!-- 관리자 정보 -->
 		<div id="info" class="section-component">
-			<h3>관리자 정보</h3>
+			<h5>관리자 정보</h5>
 			<form>
 				<div class="info-component">
 					<div class="info-group">
@@ -60,7 +69,7 @@
 		<div id="management" class="discount">
 			<div class="section-component">
 				<div class="component-header">
-					<h3>내 게스트하우스 관리하기</h3>
+					<h5>내 게스트하우스 관리하기</h5>
 				</div>	
 				<div class="management-contanier">
 					<div class="management-gh">
@@ -165,27 +174,27 @@
 				<div class="chart-row">
 					<div class="chart-item">
 						<h5>2025년 월 별 매출</h5>
-						<div class="chart">
+						<div class="chart" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
 							<canvas id="income-2025" width="400" height="400"></canvas>
 						</div>
 					</div>					
 					<div class="chart-item">
 						<h5>인기 게스트하우스</h5>
-						<div class="chart">
-							<canvas id="gh-popular" width="400" height="400"></canvas>
+						<div class="chart" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+							<canvas id="gh-popular" width="350" height="350"></canvas>
 						</div>
 					</div>
 				</div>
 				<div class="chart-row">
 					<div class="chart-item">
 						<h5>2024년 월 별 매출</h5>
-						<div class="chart">
+						<div class="chart" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
 							<canvas id="income-2024" width="400" height="400"></canvas>
 						</div>
 					</div>
 					<div class="chart-item">
 						<h5>전년 대비</h5>
-						<div class="chart">
+						<div class="chart" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
 							<canvas id="diff-income" width="400" height="400"></canvas>
 						</div>
 					</div>
@@ -262,6 +271,7 @@
 				scales: {
 					
 				},
+				responsive: false,
 			}
 		}	
 		
@@ -276,6 +286,7 @@
 					scales: {
 						
 					},
+					responsive: false,
 				}
 			}	
 		
@@ -286,8 +297,8 @@
 					datasets: [ghPopular],
 				},
 				options: {
-					
-				}
+					responsive: false,
+				},
 			}	
 		
 		let config_diff = {
@@ -297,7 +308,7 @@
 					datasets: [ghDiffIncome],
 				},
 				options: {
-					
+					responsive: false,
 				},
 			}	
 		new Chart(ctxIncome2024, config_2024);

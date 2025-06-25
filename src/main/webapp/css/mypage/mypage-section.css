@@ -1,5 +1,15 @@
 @charset "UTF-8";
 
+body {
+  font-family : 'gulim', 'gothic'
+}
+
+h5 {
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
 /*  */
 .section-container {
 	display: flex;
@@ -24,9 +34,7 @@
 
 /* 내 정보 입력 칸 */
 .info-component {
-	width: 90%;
-	margin: 0px auto;
-	margin-top: 20px;
+	margin: 30px;
 	
 	display: flex;
 	align-items: flex-end;
@@ -50,6 +58,7 @@
 	border-radius: 8px;
 	
 	margin: 3px;
+	padding-left: 5px;
 }
 
 #btn-info {
@@ -84,32 +93,32 @@
 #discount-point-amount {
 	height: 60%;
 	
-	margin-top: 30px;
+	margin: 20px 30px 10px 30px;
 	
 	background-color: #FFF;
 	
 	border-radius: 16px;
 }
 
-#discount-point-amount > h3 {
+#discount-point-amount > h5 {
 	color: #FF4752;
 	font-size: 35px;
-	padding-top: 15px;
+	padding-top: 30px;
 	padding-left: 30px;
 }
 
 #discount-point-amount > p {
 	float: right;
 	color: #8a8a8a;
-	padding-top: 30px;
-	padding-right: 30px;
+	padding: 15px 15px 15px 0px;
 }
 
 .discount-coupon-list {
 	background-color: #fff;
 	border: 1px solid #FF4752;
 	border-radius: 16px;
-	margin: 10px;
+	
+	margin: 10px 30px;
 	padding: 20px;
 	
 	display: flex;
@@ -128,6 +137,21 @@
 }
 
 /* 예약 관련 칸 */
+.res-list {
+	width: 90%;
+	
+	background-color: #fff;
+	padding: 10px;
+	
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.res-list > span {
+	font-weight: bold;
+}
+
 .res-list .card-header {
 	background-color: #fff;
     border-bottom: 1px solid #f0f0f0;
@@ -137,9 +161,13 @@
 
 }
 
-.res-component {	
-	width: 95%;
-	margin: 10px auto;
+#res-list .card {
+	border-radius: 16px;
+}
+
+.res-component {
+	margin: 15px 30px;
+	
 	background-color: white;
 	border: 1px solid white;
 	border-radius: 16px;
@@ -150,19 +178,8 @@
 }
 
 .res-component-img {
-	width: 100px;
-	height: 100px;
-}
-
-.res-list {
-	width: 90%;
-	
-	background-color: #fff;
-	padding: 20px;
-	
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	width: 75px;
+	height: 75px;
 }
 
 .res-expand {
@@ -178,26 +195,33 @@
 
 .res-expand-detail {
 	display: flex;	
-	align-items: center;
+	flex-direction: column;
 }
 
-.res-expand-detail img {
-	width: 300px;
-	height: 300px;
-	border-radius: 16px;
+.res-expand-content {
+	display: flex;
+	align-items: center;
 	
-	margin-left: 50px;
+	padding: 30px 10px;
+}
+
+.res-expand-content img {
+	width: 250px;
+	height: 250px;
+	border-radius: 16px;
 }
 
 .res-expand-text {
-	width: 600px;
-	margin-left: 75px;
-	padding: 20px;
+	width: 400px;
+		
+	text-align: right;
 }
 
 .res-button {
-	float: right;
+	margin-bottom: 20px;
+	
 	display: flex;
+	justify-content: flex-end;
 }
 
 .res-button .btn-cancel {
@@ -229,8 +253,8 @@ a[data-toggle="collapse"][aria-expanded="true"] + .collapse .card-body {
 }
 
 /* 즐겨찾기 칸 */
-.fav-list {
-	margin: 10px;
+.fav-list {	
+	margin: 0px 30px;
 }
 
 .fav-component {
@@ -256,8 +280,13 @@ a[data-toggle="collapse"][aria-expanded="true"] + .collapse .card-body {
 	margin: 0px;
 }
 
-.fav-component .fav-content {
-	padding: 10px;
+.fav-component .fav-content h5 {
+	margin: 5px 5px;
+}
+
+.fav-component .fav-content p {
+	margin: 5px 0px;
+	margin-left: 5px;
 }
 
 .fav-component .fav-addr {
@@ -272,4 +301,28 @@ a[data-toggle="collapse"][aria-expanded="true"] + .collapse .card-body {
 .fav-component-img {
 	width: 250px;
 	height: 250px;
+}
+
+.fav-title {
+	margin: 0px;
+	padding: 0px;
+}
+
+.favorite-btn {
+	background: none;
+	border: none;
+	cursor: pointer;
+	margin-left: 95px;
+	font-size: 18px;
+	color: #aaa;
+	
+	float: right;
+}
+
+.favorite-btn.active i {
+	color: gold;
+}
+
+.favorite-btn:focus {
+	outline: none;
 }
