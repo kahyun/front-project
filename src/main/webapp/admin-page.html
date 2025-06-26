@@ -273,8 +273,13 @@
 			  adminInfo[username].gender = genderForm.value;
 			}
 			
-			// 변경된 정보 localStorage에 저장
-			localStorage.setItem("adminInfo", JSON.stringify(adminInfo));
+			if (confirm("관리자 정보를 수정하시겠습니까?")) {
+				// 변경된 정보 localStorage에 저장
+				localStorage.setItem("adminInfo", JSON.stringify(adminInfo));
+				alert("관리자 정보가 수정되었습니다.");
+			} else {
+				return;
+			}
 		});
 	});
 	</script>
