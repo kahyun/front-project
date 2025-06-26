@@ -4,6 +4,7 @@
     margin: 0;
 }
 .container {
+	padding: 0 !important;
     width: 1100px !important;
     margin-right: 250px;
 }
@@ -11,7 +12,7 @@
     width: 100%;
 }
 .mainBannerSection {
-    margin: 0 auto;
+    margin: 0;
     width: 80%;
 }
 .mainBannerNameSection{
@@ -48,7 +49,7 @@
     margin: 0.5%;
 }
 .reviewSection {
-    margin: 0 auto;
+    margin: 0;
     width: 80%;
 }
 .reviewPost {
@@ -73,7 +74,7 @@
     display: none; /* 스크롤바를 완전히 숨김 */
 }
 .roomSection {
-    margin: 0 auto;
+    margin: 0;
     width: 80%;
 }
 #roomPrice{
@@ -87,10 +88,9 @@
     height: 300px;
     margin-top: 20px;
     display: flex;
-	justify-content: space-between;
 }
 .mapSection {
-    margin: 0 auto;
+    margin: 0;
     width: 80%;
 }
 .mapImg {
@@ -114,7 +114,7 @@
     font-size: 15px;
 }
 .optionSection {
-    margin: 0 auto;
+    margin: 0;
     width: 80%;
 }
 .optionBox {
@@ -128,16 +128,25 @@
     margin: 1px;
 }
 .ruleSection {
-    margin: 0 auto;
+    margin: 0;
     width: 80%;
+}
+.ruleInfo li{
+	font-size: 15px;
+	
 }
 .accordion {
     width: 80%;
-    margin: 0 auto;
+    margin: 0;
 }
 .accordion-header {
     width: 100%;
     background-color: white;
+}
+.accordion-body>h6{
+	font-size: 15px;
+	margin-left: 20px;
+	margin-top: 10px;
 }
 .accordion-button {
     width: 100%;
@@ -146,8 +155,11 @@
     border: none;
 }
 .cancelRuleSection {
-    margin: 0 auto;
+    margin: 0;
     width: 80%;
+}
+.cancelRuleSection li{
+	font-size: 15px;
 }
 .reviewScore {
     display: flex;
@@ -180,8 +192,9 @@
 }
 .reviewImg {
     width: 40%;
+    height:60%;
     padding: 3%;
-    margin-top: 15%;
+    margin-top: 10%;
     text-align: center;
 }
 .reviewImg > img {
@@ -211,16 +224,17 @@ li {
     margin-top: 5px;
 }
 .roomSample-Left {
-    width: 45%;
+    width: 30%;
     height: 100%;
 }
 .roomSample-Right {
+	margin-left: 40px;
     width: 55%;
     height: 100%;
 
 }
 .roomImg {
-    width: 60%;
+    width: 100%;
     height: 75%;
     border-radius: 20px;
 }
@@ -261,6 +275,7 @@ li {
 }
 .optionSample{
 	margin-top:15px;
+	font-size: 15px;
 }
 .bookBtn {
     width: 60%;
@@ -273,7 +288,7 @@ li {
 .sideBar {
     position: fixed;
     top: 12%;
-    right: 5%;
+    right: 14%;
     width: 250px;
     height: 300px;
     padding: 10px;
@@ -290,7 +305,7 @@ li {
     justify-content:space-between;
     height: 15%;
     align-items: baseline;
-    padding: 5px;
+    padding: 6px;
     border: 1px solid #d5d5d5;
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
@@ -299,6 +314,10 @@ li {
 .couponBtnSection > * {
     font-size: 15px;
     align-items: baseline;
+}
+.coupon-left {
+	margin-left: 10px;
+	
 }
 .coupon-left *{
 	display:inline;
@@ -314,7 +333,7 @@ li {
 }
 .paymentBenefitSection {
     height: 55%;
-    padding: 20px;
+    padding: 15px;
     border: 1px solid #d5d5d5;
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
@@ -329,13 +348,13 @@ li {
 }
 .paymentBenefitHeader {
     display: flex;
+    justify-content:space-between;
     width: 100%;
     height: 10%;
 }
 .paymentBenefitBtn {
     height: 20px;
-    width: 70px;
-    margin-left: 50px;
+    width: 50px;
     border: none;
     background: white;
 }
@@ -371,7 +390,7 @@ ul > li {
 }
 .itemBox {
     display: flex;
-    padding: 10px;
+    padding: 15px;
     align-items: center;
 }
 .item-left {
@@ -381,8 +400,8 @@ ul > li {
     font-size: 10px;
 }
 .item-right {
-    margin-left: 15px;
-    width: 40%;
+    margin-left: 20px;
+    width: 45%;
 }
 .item-right > img {
     width: 70%;
@@ -398,7 +417,7 @@ ul > li {
 .bookingBar {
     position: fixed;
     top: 53%;
-    right: 4%;
+    right: 13%;
     width: 274px;
     height: 390px;
     padding: 20px;
