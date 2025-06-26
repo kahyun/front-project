@@ -24,6 +24,7 @@
 		    });
 		$("#footer-container").load("./footer/footer.html");
 		const searchGH = localStorage.getItem("ghName");
+		const bannerPrice = localStorage.getItem("bannerPrice");
 		const bigImagePath = `./img/detailSearchPage/${searchGH}/bigImage.png`;
 		const smallImagePath1 = `./img/detailSearchPage/${searchGH}/smallImage1.png`;
 		const smallImagePath2 = `./img/detailSearchPage/${searchGH}/smallImage2.png`;
@@ -31,6 +32,7 @@
 		const smallImagePath4 = `./img/detailSearchPage/${searchGH}/smallImage4.png`;
 		
 		$(".mainBannerGHName").html(searchGH);
+		$(".bannerPrice").prepend("<h6>" + bannerPrice + "<h6>");
 		$("#bigImage").attr("src", bigImagePath);
 		$("#smallImage1").attr("src", smallImagePath1);
 		$("#smallImage2").attr("src", smallImagePath2);
@@ -61,7 +63,9 @@
 		        return;
 		    }
 		    if (roomPrice > 0) {
-		        $('#price').val(guestCount * roomPrice);
+		        const totalPrice = guestCount * roomPrice;
+		        const formattedPrice = totalPrice.toLocaleString();
+		        $('#price').val(formattedPrice);
 		    } else {
 		        $('#price').val(0);
 		    }
@@ -106,15 +110,17 @@
 					</div>
 				</div>
 			</div>
-			<br>
 			<div class="mainBannerNameSection">
 				<h2 class="mainBannerGHName">서울 어울림 하우스</h2>
+				<div class="bannerPrice">
+					
+				
 				<button class="favorite-btn">
-						<i class="far fa-star"></i>
+						<i style="font-size: 20px;" class="far fa-star"></i>
 				</button>
+				</div>
 			</div>
-		</div>
-		<br><hr><br>
+		</div><br>
 		<div class="reviewSection">
 			<div class="reviewScore">
 				<i class="fas fa-star"></i><b>&nbsp;&nbsp;4.7ㆍ리뷰</b>
@@ -198,14 +204,14 @@
 				</button>
 				
 			</div>
-		</div><br><hr><br>
+		</div><br><br>
 		<div class="roomSection">
 			<div class="roomSample">
 				<div class="roomSample-Left">
 					<div class="roomImg">
 						<img src="./img/detailSearchPage/room/room1.png">
 					</div>
-					<h4 class="roomName"><b>트윈 2층(지하 객실)</b></h4>
+					<h4 class="roomName"><b>2인실-A</b></h4>
 					<h6>조식 서비스 제공</h6>
 					<div class="roomCapacity">
 						<h6>기준 2인 / 최대 2인</h6>
@@ -224,7 +230,7 @@
 							<br><br>
 							<h4 id="roomPrice">79,000원</h4>
 							<h6 style="color:#D0D0D0;">취소 및 환불불가</h6>
-							<button class="bookBtn" value="79000" name="트윈 2층(지하 객실)">예약하기</button>
+							<button class="bookBtn" value="79000" name="2인실-A">예약하기</button>
 						</div>
 					</div>
 				</div>
@@ -234,7 +240,7 @@
 					<div class="roomImg">
 						<img src="./img/detailSearchPage/room/room2.png">
 					</div>
-					<h4 class="roomName"><b>트윈 2층</b></h4>
+					<h4 class="roomName"><b>2인실-B</b></h4>
 					<h6>조식 서비스 제공</h6>
 					<div class="roomCapacity">
 						<h6>기준 2인 / 최대 2인</h6>
@@ -253,7 +259,7 @@
 							<br><br>
 							<h4 id="roomPrice">85,000원</h4>
 							<h6 style="color:#D0D0D0;">취소 및 환불불가</h6>
-							<button class="bookBtn" value="85000" name="트윈 2층">예약하기</button>
+							<button class="bookBtn" value="85000" name="2인실-B">예약하기</button>
 						</div>
 					</div>
 				</div>
@@ -263,7 +269,36 @@
 					<div class="roomImg">
 						<img src="./img/detailSearchPage/room/room3.png">
 					</div>
-					<h4 class="roomName"><b>4인실</b></h4>
+					<h4 class="roomName"><b>3인실</b></h4>
+					<h6>조식 서비스 제공</h6>
+					<div class="roomCapacity">
+						<h6>기준 3인 / 최대 3인</h6>
+					</div>
+					
+				</div>
+				<div class="roomSample-Right">
+					<div class="roomInfoBox">
+						<div class="roomInfo-Left">
+							<h5><b>숙박</b></h5>
+							<h6 style="color:#D0D0D0; overflow: visible;">체크인 16:00 ~ 체크아웃 10:00</h6>
+							<h6 style="color:#D0D0D0; overflow: visible;">조식포함, 주차불가</h6>
+						</div>
+						<div class="roomInfo-Right">
+							<h6 style="color:#1D8BFF"><b>상세 정보 ></b></h6>
+							<br><br>
+							<h4 id="roomPrice">99,000원</h4>
+							<h6 style="color:#D0D0D0;">취소 및 환불불가</h6>
+							<button class="bookBtn" value="99000" name="3인실">예약하기</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="roomSample">
+				<div class="roomSample-Left">
+					<div class="roomImg">
+						<img src="./img/detailSearchPage/room/room4.png">
+					</div>
+					<h4 class="roomName"><b>스위트 룸</b></h4>
 					<h6>조식 서비스 제공</h6>
 					<div class="roomCapacity">
 						<h6>기준 4인 / 최대 4인</h6>
@@ -280,43 +315,14 @@
 						<div class="roomInfo-Right">
 							<h6 style="color:#1D8BFF"><b>상세 정보 ></b></h6>
 							<br><br>
-							<h4 id="roomPrice">99,000원</h4>
-							<h6 style="color:#D0D0D0;">취소 및 환불불가</h6>
-							<button class="bookBtn" value="99000" name="4인실">예약하기</button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="roomSample">
-				<div class="roomSample-Left">
-					<div class="roomImg">
-						<img src="./img/detailSearchPage/room/room4.png">
-					</div>
-					<h4 class="roomName"><b>6인실</b></h4>
-					<h6>조식 서비스 제공</h6>
-					<div class="roomCapacity">
-						<h6>기준 6인 / 최대 6인</h6>
-					</div>
-					
-				</div>
-				<div class="roomSample-Right">
-					<div class="roomInfoBox">
-						<div class="roomInfo-Left">
-							<h5><b>숙박</b></h5>
-							<h6 style="color:#D0D0D0; overflow: visible;">체크인 16:00 ~ 체크아웃 10:00</h6>
-							<h6 style="color:#D0D0D0; overflow: visible;">조식포함, 주차불가</h6>
-						</div>
-						<div class="roomInfo-Right">
-							<h6 style="color:#1D8BFF"><b>상세 정보 ></b></h6>
-							<br><br>
 							<h4 id="roomPrice">150,000원</h4>
 							<h6 style="color:#D0D0D0;">취소 및 환불불가</h6>
-							<button class="bookBtn" value="150000" name="6인실">예약하기</button>
+							<button class="bookBtn" value="150000" name="스위트 룸">예약하기</button>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div><br><hr><br>
+		</div><br><br>
 		<div class="mapSection">
 			<h5 style="font-size: 18px;"><b>🗺️위치/교통</b></h5>
 			<div style="margin: 0 auto; margin-top:20px;" class="mapImg">
@@ -355,7 +361,7 @@
 			</div>
 			<br>
 			<h6 style="color: darkblue; font-size: 15px;">현장 요금 추가 정보</h6>
-		</div><br><hr><br>
+		</div><hr>
 		<div class="accordion" id="accordionExample">
 			<div class="accordion-item">
 			    <h2 class="accordion-header">
@@ -375,7 +381,6 @@
 			   	</div>
 			</div>
 		</div>
-		<br><hr><br>
 		<div class="cancelRuleSection">
 		  	<h5 style="font-size:18px;">↩️취소 및 환불규정</h5>
 		  	<br>
@@ -453,7 +458,7 @@
 	            <div class="form-group">
 	                <label>방 이름</label>
 	                <div class="input-wrapper">
-	                    <input type="text" id="roomName" name="roomName" value="2인실" readonly>
+	                    <input type="text" id="roomName" name="roomName" value="2인실-A" readonly>
 	                    <span style="padding-right: 10px;"></span>
 	                </div>
 	            </div>
@@ -483,7 +488,7 @@
 	            <div class="form-group">
 	            	<label for="price">결제 금액</label>
 		            <div class="right-aligned-text">
-		                    <input type="number" readonly="readonly" id="price" value="100000"/> 원
+		                    <input type="text" readonly="readonly" id="price" value="79,000"/> 원
 		            </div>
 	            </div>
 	            <div class="form-group">
