@@ -120,7 +120,12 @@
 				</button>
 				</div>
 			</div>
+<<<<<<< HEAD
+		</div>
+		<br><br>
+=======
 		</div><br>
+>>>>>>> fbf82642d1f9b0f3f2998e594319ca3efc49ecb5
 		<div class="reviewSection">
 			<div class="reviewScore">
 				<i class="fas fa-star"></i><b>&nbsp;&nbsp;4.7ㆍ리뷰</b>
@@ -332,7 +337,7 @@
 			<h6 class="address">Room 334, oullim, Toegye-ro, Jung-gu, Seoul Special City, 어울림하우스, 동대문, 서울, 대한민국, 100-143</h6>
 			<br>
 			<button class="addressCopyBtn">주소복사</button>
-		</div><br><hr><br>
+		</div><br><br>
 		<div class="optionSection">
 			<h5 style="font-size: 18px;"><b>🏢서비스 및 부대시설</b></h5>
 			<div class="optionBox">
@@ -343,7 +348,7 @@
 				<div class="optionSample">🔌개인콘센트</div>
 			</div>
 		</div>
-		<br><hr><br>
+		<br><br>
 		<div class="ruleSection">
 			<h5 style="font-size: 18px;"><b>ℹ️숙소 이용 정보</b></h5>
 			<br>
@@ -361,7 +366,7 @@
 			</div>
 			<br>
 			<h6 style="color: darkblue; font-size: 15px;">현장 요금 추가 정보</h6>
-		</div><hr>
+		</div><br><br>
 		<div class="accordion" id="accordionExample">
 			<div class="accordion-item">
 			    <h2 class="accordion-header">
@@ -381,6 +386,7 @@
 			   	</div>
 			</div>
 		</div>
+		<br><br>
 		<div class="cancelRuleSection">
 		  	<h5 style="font-size:18px;">↩️취소 및 환불규정</h5>
 		  	<br>
@@ -511,7 +517,7 @@
         <div class="modal-body">
         ㅇㅇ
         </div>
-        <hr>
+        
         <div>
         	<img class="modal-img">
         </div>
@@ -523,4 +529,37 @@
     </div>
   </div>
 </body>
+<script>
+function saveRecentGH(gh) {
+	  let recent = JSON.parse(localStorage.getItem("recentGH")) || [];
+
+	  // 같은 이름의 항목이 있으면 제거
+	  recent = recent.filter(item => item.name !== gh.name);
+
+	  // 맨 앞에 새로 본 게스트하우스 추가
+	  recent.unshift(gh);
+
+	  // 최대 2개까지만 유지
+	  if (recent.length > 2) {
+	    recent = recent.slice(0, 2);
+	  }
+
+	  // 저장
+	  localStorage.setItem("recentGH", JSON.stringify(recent));
+	}
+	
+$(() => {
+	const ghName = localStorage.getItem("ghName");
+	const ghImage = localStorage.getItem("ghImage");
+	const bannerPrice = localStorage.getItem("bannerPrice"); 
+	const bannerAddr = localStorage.getItem("bannerPrice"); 
+	
+	saveRecentGH({
+		 name: ghName,
+		 image: ghImage,
+		 addr: bannerAddr,
+		 price: bannerPrice
+	});
+})
+</script>
 </html>
