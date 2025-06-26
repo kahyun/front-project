@@ -302,12 +302,12 @@ a[data-toggle="collapse"][aria-expanded="true"] + .collapse .card-body {
 	margin: 0px;
 }
 
-.fav-component .fav-content h5 {
-	margin: 5px 5px;
+.fav-content h5 {
+	margin-top: 15px;
 }
 
 .fav-component .fav-content p {
-	margin: 5px 0px;
+	margin: 3px 0px;
 	margin-left: 5px;
 }
 
