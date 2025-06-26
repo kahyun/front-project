@@ -16,7 +16,12 @@
 
 <script>
 	$(()=>{
-		$("#header-container").load("./header/header.html");
+		$("#header-container").load("./header/header.html", function () {
+		      const username = localStorage.getItem("loggedInUser");
+		      if (username) {
+		        $(".username").text(`${username}님`);
+		      }
+		    });
 		$("#footer-container").load("./footer/footer.html");
 		const searchGH = localStorage.getItem("ghName");
 		const bigImagePath = `./img/detailSearchPage/${searchGH}/bigImage1.png`;
@@ -25,6 +30,7 @@
 		const smallImagePath3 = `./img/detailSearchPage/${searchGH}/smallImage7.png`;
 		const smallImagePath4 = `./img/detailSearchPage/${searchGH}/smallImage8.png`;
 		
+		$(".mainBannerGHName").html(searchGH);
 		$("#bigImage").attr("src", bigImagePath);
 		$("#smallImage1").attr("src", smallImagePath1);
 		$("#smallImage2").attr("src", smallImagePath2);
@@ -64,13 +70,9 @@
 		$('.reviewBtn').on('click', function() {
 			const title = $(this).find('.reviewName').html();
 			const desc = $(this).find('.reviewDesc').html();
-			// reviewImg div 내부에 있는 img 태그의 src를 가져옵니다.
 			const img = $(this).find('.reviewImg img').attr('src'); 
-			
-			// 특정 모달 (예: #myModal)의 요소들을 대상으로 합니다.
 			$('#myModal .modal-title').html(title);
 			$('#myModal .modal-body').html(desc);
-			// 모달 내부에 <img class="modal-img"> 태그가 있다고 가정합니다.
 			$('#myModal .modal-img').attr('src', img); 
 		});
 		
@@ -115,69 +117,85 @@
 		<br><hr><br>
 		<div class="reviewSection">
 			<div class="reviewScore">
-				<img src="./img/detailSearchPage/star.PNG" class="starScore"><h4><b>&nbsp;4.1ㆍ후기</b></h4>
+				<i class="fas fa-star"></i><b>&nbsp;&nbsp;4.7ㆍ리뷰</b>
 			</div>
 			<div class="reviewPost">
-			<button type="button" class="btn btn-primary reviewBtn" data-toggle="modal" data-target="#myModal">
-				<div class="reviewSampleContainer">
-					<div class="reviewBox">
-						<div class="reviewStar">
-							<img src="./img/detailSearchPage/starScore.PNG"> 4주 전
+				<button type="button" class="btn btn-primary reviewBtn" data-toggle="modal" data-target="#myModal">
+					<div class="reviewSampleContainer">
+						<div class="reviewBox">
+							<div class="reviewStar">
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i> 4주 전
+							</div>
+							<div class="reviewDesc">테르미니 역에서 캐리어 끌고 도보로 13분?정도 걸리는 거리라 택시 탈 정도거나 멀은 편은 아니지만 짐이 많다면 좀 힘들 수 있을 것 같아요. 저희는 짐도 많았고 온 곳도 거리가 꽤 길어서 조금 힘들었는데 친절하게 대해주셔서 편했습니다.</div>
+							<div class="reviewRoomInfo">트리플룸, 전용 욕실</div>
+							<div class="reviewName">최*은</div>
 						</div>
-						<div class="reviewDesc">테르미니 역에서 캐리어 끌고 도보로 13분?정도 걸리는 거리라 택시 탈 정도거나 멀은 편은 아니지만 짐이 많다면 좀 힘들 수 있을 것 같아요. 저희는 짐도 많았고 온 곳도 거리가 꽤 길어서 조금 힘들었는데 친절하게 대해주셔서 편했습니다.</div>
-						<div class="reviewRoomInfo">트리플룸, 전용 욕실</div>
-						<div class="reviewName">최*은</div>
-					</div>
-					<div class="reviewImg">
-						<img src="./img/detailSearchPage/SeoulGH/smallImage8.png"> 
-					</div>
-				</div>
-  			</button>
-  			<button type="button" class="btn btn-primary reviewBtn" data-toggle="modal" data-target="#myModal">
-				<div class="reviewSampleContainer">
-					<div class="reviewBox">
-						<div class="reviewStar">
-							<img src="./img/detailSearchPage/starScore.PNG"> 3주 전
+						<div class="reviewImg">
+							<img src="./img/detailSearchPage/SeoulGH/smallImage8.png"> 
 						</div>
-						<div class="reviewDesc">공익을 위해 작성합니다. 어디갈지 고민이다. 모르겠다 = 여기로 오십시오</div>
-						<div class="reviewRoomInfo">3 베드 도미토리 내 1인 예약</div>
-						<div class="reviewName">김*민</div>
 					</div>
-					<div class="reviewImg">
-						<img src="./img/detailSearchPage/SeoulGH/smallImage5.png">
-					</div>
-				</div>
-			</button>
-			<button type="button" class="btn btn-primary reviewBtn" data-toggle="modal" data-target="#myModal">
-				<div class="reviewSampleContainer">
-					<div class="reviewBox">
-						<div class="reviewStar">
-							<img src="./img/detailSearchPage/starScore.PNG"> 2주 전
+	  			</button>
+	  			<button type="button" class="btn btn-primary reviewBtn" data-toggle="modal" data-target="#myModal">
+					<div class="reviewSampleContainer">
+						<div class="reviewBox">
+							<div class="reviewStar">
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i> 3주 전
+							</div>
+							<div class="reviewDesc">공익을 위해 작성합니다. 어디갈지 고민이다. 모르겠다 = 여기로 오십시오</div>
+							<div class="reviewRoomInfo">3 베드 도미토리 내 1인 예약</div>
+							<div class="reviewName">김*민</div>
 						</div>
-						<div class="reviewDesc">최고에요. 직원들은 나이스 하고 구비된 시설은 여행 중에 제가 가진 모든 문제를 해결해줬습니다. 그것만으로도 충분히 올만한 곳이라는걸 깨달을 수 있었어요. 정말 좋았습니다.</div>
-						<div class="reviewRoomInfo">더블룸, 전용 욕실</div>
-						<div class="reviewName">이*셉</div>
-					</div>
-					<div class="reviewImg">
-						<img src="./img/detailSearchPage/SeoulGH/smallImage6.png">
-					</div>
-				</div>
-			</button>
-			<button type="button" class="btn btn-primary reviewBtn" data-toggle="modal" data-target="#myModal">
-				<div class="reviewSampleContainer">
-					<div class="reviewBox">
-						<div class="reviewStar">
-							<img src="./img/detailSearchPage/starScore.PNG"> 4일 전
+						<div class="reviewImg">
+							<img src="./img/detailSearchPage/SeoulGH/smallImage5.png">
 						</div>
-						<div class="reviewDesc">좋았다. 한번와라 두번와라 세번와라</div>
-						<div class="reviewRoomInfo">더블룸, 전용 욕실</div>
-						<div class="reviewName">홍*동</div>
 					</div>
-					<div class="reviewImg">
-						<img src="./img/detailSearchPage/SeoulGH/smallImage7.png">
+				</button>
+				<button type="button" class="btn btn-primary reviewBtn" data-toggle="modal" data-target="#myModal">
+					<div class="reviewSampleContainer">
+						<div class="reviewBox">
+							<div class="reviewStar">
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i> 2주 전
+							</div>
+							<div class="reviewDesc">최고에요. 직원들은 나이스 하고 구비된 시설은 여행 중에 제가 가진 모든 문제를 해결해줬습니다. 그것만으로도 충분히 올만한 곳이라는걸 깨달을 수 있었어요. 정말 좋았습니다.</div>
+							<div class="reviewRoomInfo">더블룸, 전용 욕실</div>
+							<div class="reviewName">이*셉</div>
+						</div>
+						<div class="reviewImg">
+							<img src="./img/detailSearchPage/SeoulGH/smallImage6.png">
+						</div>
 					</div>
-				</div>
-			</button>
+				</button>
+				<button type="button" class="btn btn-primary reviewBtn" data-toggle="modal" data-target="#myModal">
+					<div class="reviewSampleContainer">
+						<div class="reviewBox">
+							<div class="reviewStar">
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i> 4일 전
+							</div>
+							<div class="reviewDesc">좋았다. 한번와라 두번와라 세번와라</div>
+							<div class="reviewRoomInfo">더블룸, 전용 욕실</div>
+							<div class="reviewName">홍*동</div>
+						</div>
+						<div class="reviewImg">
+							<img src="./img/detailSearchPage/SeoulGH/smallImage7.png">
+						</div>
+					</div>
+				</button>
 				
 			</div>
 		</div><br><hr><br>
@@ -187,7 +205,7 @@
 					<div class="roomImg">
 						<img src="./img/detailSearchPage/SeoulGH/bigImage1.png">
 					</div>
-					<h4 style="margin-top:10px;"><b>2인실</b></h4>
+					<h4 class="roomName"><b>2인실</b></h4>
 					<h6>조식 서비스 제공</h6>
 					<div class="roomCapacity">
 						<h6>기준 2인 / 최대 2인</h6>
@@ -197,13 +215,13 @@
 				<div class="roomSample-Right">
 					<div class="roomInfoBox">
 						<div class="roomInfo-Left">
-							<h6><b>숙박</b></h6>
+							<h5><b>숙박</b></h5>
 							<h6 style="color:#D0D0D0; overflow: visible;">체크인 16:00 ~ 체크아웃 10:00</h6>
 							<h6 style="color:#D0D0D0; overflow: visible;">조식포함, 주차불가</h6>
 						</div>
 						<div class="roomInfo-Right">
-							<h6><b>상세보기 ></b></h6>
-							<br><br><br>
+							<h6 style="color:#1D8BFF"><b>상세 정보 ></b></h6>
+							<br><br>
 							<h4 id="roomPrice">100,000원</h4>
 							<h6 style="color:#D0D0D0;">취소 및 환불불가</h6>
 							<button class="bookBtn" value="100000" name="2인실">예약하기</button>
@@ -216,7 +234,7 @@
 					<div class="roomImg">
 						<img src="./img/detailSearchPage/SeoulGH/bigImage2.png">
 					</div>
-					<h4 style="margin-top:10px;"><b>4인실</b></h4>
+					<h4 class="roomName"><b>4인실</b></h4>
 					<h6>조식 서비스 제공</h6>
 					<div class="roomCapacity">
 						<h6>기준 4인 / 최대 4인</h6>
@@ -226,13 +244,13 @@
 				<div class="roomSample-Right">
 					<div class="roomInfoBox">
 						<div class="roomInfo-Left">
-							<h6><b>숙박</b></h6>
+							<h5><b>숙박</b></h5>
 							<h6 style="color:#D0D0D0; overflow: visible;">체크인 16:00 ~ 체크아웃 10:00</h6>
 							<h6 style="color:#D0D0D0; overflow: visible;">조식포함, 주차불가</h6>
 						</div>
 						<div class="roomInfo-Right">
-							<h6><b>상세보기 ></b></h6>
-							<br><br><br>
+							<h6 style="color:#1D8BFF"><b>상세 정보 ></b></h6>
+							<br><br>
 							<h4 id="roomPrice">150,000원</h4>
 							<h6 style="color:#D0D0D0;">취소 및 환불불가</h6>
 							<button class="bookBtn" value="150000" name="4인실">예약하기</button>
@@ -242,8 +260,8 @@
 			</div>
 		</div><br><hr><br>
 		<div class="mapSection">
-			<h4><b>🗺️위치/교통</b></h4>
-			<div style="margin: 0 auto" class="mapImg">
+			<h5 style="font-size: 18px;"><b>🗺️위치/교통</b></h5>
+			<div style="margin: 0 auto; margin-top:20px;" class="mapImg">
 				<img  src="./img/detailSearchPage/SeoulGH/oulimHouseMap.png">
 			</div>
 			<br>
@@ -252,7 +270,7 @@
 			<button class="addressCopyBtn">주소복사</button>
 		</div><br><hr><br>
 		<div class="optionSection">
-			<h4><b>🏢서비스 및 부대시설</b></h4>
+			<h5 style="font-size: 18px;"><b>🏢서비스 및 부대시설</b></h5>
 			<div class="optionBox">
 				<div class="optionSample">🧺세탁기</div>
 				<div class="optionSample">📶무선인터넷</div>
@@ -313,7 +331,9 @@
 	<br><br><br><br><br>
 	<div class="sideBar">
 		<div class="couponBtnSection">
-			<h6>최대&nbsp;</h6><h6 style="color:#1D8BFF">6%&nbsp;</h6> <h6>할인&nbsp;</h6>
+			<div class="coupon-left">
+				<h6>최대&nbsp;</h6><h6 style="color:#1D8BFF">6%&nbsp;</h6> <h6>할인&nbsp;</h6>
+			</div>
 			<button class="couponBtn">쿠폰받기</button>
 		</div><br>
 		<div class="paymentBenefitSection">

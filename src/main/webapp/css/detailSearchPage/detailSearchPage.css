@@ -4,7 +4,7 @@
     margin: 0;
 }
 .container {
-    width: 100%;
+    width: 1100px !important;
     margin-right: 250px;
 }
 .jumbotron {
@@ -28,6 +28,7 @@
 }
 .mainBannerGHName{
 	margin-top:7px;
+	font-size: 27px;
 }
 .bigImage {
     width: 99%;
@@ -51,12 +52,13 @@
     width: 80%;
 }
 .reviewPost {
+	margin-top: 5px;
     display: flex;
     overflow: scroll;
 }
 .reviewSampleContainer {
-    width: 350px;
-    height: 250px;
+    width: 300px;
+    height: 180px;
     background: #f8f8f8;
     flex-direction: row;
     align-items: flex-start;
@@ -74,8 +76,15 @@
     margin: 0 auto;
     width: 80%;
 }
+#roomPrice{
+	margin-top: 20px;
+}
+.roomSection h6{
+	font-size: 12px;
+	
+}
 .roomSample {
-    height: 380px;
+    height: 300px;
     margin-top: 20px;
     display: flex;
 	justify-content: space-between;
@@ -92,13 +101,17 @@
     width: 100%;
     height: 100%;
 }
-
+.mapSection h6{
+	font-size: 15px;
+	
+}
 .addressCopyBtn {
     width: 100%;
     height: 50px;
     border: 1px solid #D5D5D5;
     background: #F8F8F8;
     border-radius: 10px;
+    font-size: 15px;
 }
 .optionSection {
     margin: 0 auto;
@@ -139,10 +152,14 @@
 .reviewScore {
     display: flex;
     flex-direction: row;
+    align-items:baseline;
 }
-.reviewScore > img {
-    width: 31px;
-    height: 31px;
+.reviewScore > i {
+    color: gold;
+}
+.reviewScore>b{
+	font-size: 17px;
+	
 }
 .reviewBox {
     width: 60%;
@@ -150,13 +167,16 @@
     height: 100%;
     
 }
+.reviewBox *{
+	font-size: 12px;
+}
 .reviewStar {
-    height: 15%;
+	margin-top: 2px;
+    height: 16%;
     color: lightgrey;
 }
-.reviewStar > img {
-    width: 100px;
-    height: 20px;
+.reviewStar > i {
+    color: gold;
 }
 .reviewImg {
     width: 40%;
@@ -165,20 +185,21 @@
     text-align: center;
 }
 .reviewImg > img {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height:100%;
 }
 .reviewDesc {
-    height: 51%;
+    height: 54%;
     color: black;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
 	text-overflow: hidden;
+	margin-top: 2px;
 }
 .reviewRoomInfo {
-	margin-top: 10px;
+	margin-top: 5px;
     height: 15%;
     color: #d5d5d5;
 }
@@ -194,14 +215,18 @@ li {
     height: 100%;
 }
 .roomSample-Right {
-    width: 50%;
+    width: 55%;
     height: 100%;
 
 }
 .roomImg {
-    width: 100%;
+    width: 60%;
     height: 75%;
     border-radius: 20px;
+}
+.roomName {
+	margin-top:10px;
+	font-size:20px;
 }
 .roomImg > img {
     width: 100%;
@@ -224,16 +249,15 @@ li {
     height: 100%;
 }
 .roomInfo-Left>*{
-	
 	margin-top:10px;
 }
 .roomInfo-Right {
     width: 35%;
-    height: 100%;
+    height: 70%;
     text-align: right;
 }
 .roomInfo-Right>*{
-	margin-top:10px;
+	margin-top:5px;
 }
 .optionSample{
 	margin-top:15px;
@@ -248,7 +272,7 @@ li {
 }
 .sideBar {
     position: fixed;
-    top: 10%;
+    top: 12%;
     right: 5%;
     width: 250px;
     height: 300px;
@@ -263,9 +287,10 @@ li {
 }
 .couponBtnSection {
     display: flex;
+    justify-content:space-between;
     height: 15%;
-    align-items: center;
-    padding: 10px;
+    align-items: baseline;
+    padding: 5px;
     border: 1px solid #d5d5d5;
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
@@ -273,10 +298,12 @@ li {
 }
 .couponBtnSection > * {
     font-size: 15px;
-    align-items: center;
+    align-items: baseline;
+}
+.coupon-left *{
+	display:inline;
 }
 .couponBtn {
-    margin-left: 15px;
     width: 80px;
     height: 30px;
     border: none;
@@ -370,7 +397,7 @@ ul > li {
 }
 .bookingBar {
     position: fixed;
-    top: 50%;
+    top: 53%;
     right: 4%;
     width: 274px;
     height: 390px;
