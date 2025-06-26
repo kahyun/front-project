@@ -87,18 +87,24 @@
 	border-radius: 10px;
 	margin: 4px;
 }
+.custom-btn.active:hover {
+  color: white;
+  background-color: #1D8BFF;
+  border-color: #1D8BFF;
+}
 
-.custom-btn:hover {
-	background-color: #1D8BFF;
-	color: white;
-	border-color: #1D8BFF;
+.btn:focus,
+.custom-btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .custom-btn.active {
 	background-color: #1D8BFF;
 	color: white;
-	border: 2px solid #1D8BFF;
+	border: 1px solid #1D8BFF;
 }
+
 /* 배너 */
 .promo-banner {
   width: 1300px;
@@ -326,10 +332,12 @@ $(document).ready(function() {
     //디테일로 넘어갈때 로컬스토리지
     $(".geha-item").on("click", function () {
     	  const name = $(this).find(".name").text();
+    	  const price = $(this).find(".price").text();
     	  const imageSrc = $(this).find("img").attr("src");
 
     	  localStorage.setItem("ghName", name);        // 이름 저장
     	  localStorage.setItem("ghImage", imageSrc);   // 이미지 경로 저장
+    	  localStorage.setItem("bannerPrice", price);   // 가격 저장
 
     	  window.location.href = "./detailSearchPage.html";
     	});
@@ -431,9 +439,9 @@ $(".gehaImg").on("mouseleave", function () {
 	<div class="main-carousel">
 		<!-- <img class="main-slide" src="img/main/main1.jpg" alt="메인1">
    -->
-		<img class="main-slide" src="img/main/main2.png" alt="메인2"> <img
-			class="main-slide" src="img/main/main3.png" alt="메인3"><img
-			class="main-slide" src="img/main/main4.png" alt="메인4">
+		<img class="main-slide" src="img/main/main1.png" alt="메인2"> <img
+			class="main-slide" src="img/main/main2.png" alt="메인3"><img
+			class="main-slide" src="img/main/main3.png" alt="메인4">
 			<img class="main-slide" src="img/main/main5.png" alt="메인5">
 			
 
@@ -527,7 +535,7 @@ $(".gehaImg").on("mouseleave", function () {
 
 	<div id="filter-buttons">
 	<div class="carousel-title" style="margin-left: 10px;">인기 추천 숙소</div>
-		<button class="filter-btn btn custom-btn" data-region="전체">전체</button>
+		<button class="filter-btn btn custom-btn active" data-region="전체">전체</button>
 		<button class="filter-btn btn custom-btn" data-region="서울">서울</button>
 		<button class="filter-btn btn custom-btn" data-region="강원">강원</button>
 		<button class="filter-btn btn custom-btn" data-region="제주">제주</button>
@@ -536,8 +544,8 @@ $(".gehaImg").on("mouseleave", function () {
 
 	<div class="geha-list">
 		<div class="geha-item" data-region="서울">
-			<img class="gehaImg" src="img/main/main_mini1.jpg"  data-images="img/main/main_mini1.jpg,img/main/main_mini1_1.jpg,img/main/main_mini1_2.jpg,img/main/main_mini1_3.jpg"  alt="어울림하우스">
-			<p class="name">어울림하우스</p>
+			<img class="gehaImg" src="img/main/main_mini2.jpg"  data-images="img/main/main_mini1.jpg,img/main/main_mini1_1.jpg,img/main/main_mini1_2.jpg,img/main/main_mini1_3.jpg"  alt="어울림하우스">
+			<p class="name">어반 스테이</p>
 			<p class="location">지역: 서울</p>
 			<p class="price">
 				40,000원~
@@ -547,8 +555,8 @@ $(".gehaImg").on("mouseleave", function () {
 			</p>
 		</div>
 		<div class="geha-item" data-region="통영">
-			<img class="gehaImg" src="img/main/main_mini2.jpg"   data-images="img/main/main_mini2.jpg,img/main/main_mini2_1.jpg" alt="어반 스테이">
-			<p class="name">어반 스테이</p>
+			<img class="gehaImg" src="img/main/main_mini3.jpg"   data-images="img/main/main_mini2.jpg,img/main/main_mini2_1.jpg" alt="어반 스테이">
+			<p class="name">소담재</p>
 			<p class="location">지역: 통영</p>
 			<p class="price">
 				35,000원~
@@ -558,8 +566,8 @@ $(".gehaImg").on("mouseleave", function () {
 			</p>
 		</div>
 		<div class="geha-item" data-region="강원">
-			<img class="gehaImg" src="img/main/main_mini3.jpg"   data-images="img/main/main_mini3.jpg,img/main/main_mini3_1.jpg,img/main/main_mini3_2.jpg,img/main/main_mini3_3.jpg" alt="소담재">
-			<p class="name">소담재</p>
+			<img class="gehaImg" src="img/main/main_mini1.jpg"   data-images="img/main/main_mini3.jpg,img/main/main_mini3_1.jpg,img/main/main_mini3_2.jpg,img/main/main_mini3_3.jpg" alt="소담재">
+			<p class="name">어울림 하우스</p>
 			<p class="location">지역: 강원</p>
 			<p class="price">
 				30,000원~
