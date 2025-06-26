@@ -45,7 +45,7 @@
 }
 .bigImage {
     width: 99%;
-    	height: 400px;
+    height: 400px;
     margin-top: 1%;
     margin-left:0.37%;
 }
@@ -90,7 +90,7 @@
     display: none; /* 스크롤바를 완전히 숨김 */
 }
 .roomSection {
-    margin-left: 4%;
+    margin-left: 5% !important;
     width: 80%;
 }
 #roomPrice{
