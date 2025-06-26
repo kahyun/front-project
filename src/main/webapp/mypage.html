@@ -388,13 +388,17 @@
 			<div id="recent-list" class="recent-list">
 										
 				<div class="recent-component">
-		            <img class="recent-component-img" alt="" src="./img/mypage/img01-01.png">
+					<img class="recent-component-img" alt="" src="./img/mypage/img04-01.png">
 					<div class="recent-content">
-						<p class="recent-title" style="margin-top: 10px;">별자리 여관</p>
-						<button class="favorite-btn">
-							<i class="far fa-star"></i>
-						</button>
-					</div>
+						<p class="recent-title" style="margin-top: 20px;">자연별장</p>
+						<p class="recent-addr">위치: 경기도 성남시 분당구 미래로 77</p>
+						<div style="display: flex; justify-content: space-between;">
+							<p class="recent-price">55,000원 ~</p>
+							<button class="favorite-btn active">
+								<i class="fas fa-star"></i>
+							</button>
+						</div>
+					</div> 
 				</div>
 				
 			</div>
@@ -550,13 +554,17 @@
 	<!-- 최근에 본 게스트하우스 관련 코드 -->
 	<script>
 	const html = `<div class="recent-component">
-				        <img class="recent-component-img" alt="" src="./img/mypage/img01-01.png">
+						<img class="recent-component-img" alt="" src=${src}>
 						<div class="recent-content">
-							<p class="recent-title" style="margin-top: 10px;">별자리 여관</p>
-							<button class="favorite-btn">
-								<i class="far fa-star"></i>
-							</button>
-						</div>
+							<p class="recent-title" style="margin-top: 20px;">자연별장</p>
+							<p class="recent-addr">위치: 경기도 성남시 분당구 미래로 77</p>
+							<div style="display: flex; justify-content: space-between;">
+								<p class="recent-price">55,000원 ~</p>
+								<button class="favorite-btn active">
+									<i class="fas fa-star"></i>
+								</button>
+							</div>
+						</div> 
 					</div>`
 	</script>
 </body>

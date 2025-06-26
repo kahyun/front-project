@@ -374,18 +374,26 @@ a[data-toggle="collapse"][aria-expanded="true"] + .collapse .card-body {
 /* 최근에 본 게스트하우스 */
 .recent-list {	
 	margin: 0px 30px;
+	margin-bottom: 10px;
 }
 
 .recent-component {
-	width: 230px;
+	width: 260px;
 	
-	margin: 10px 10px 5px 10px;
-	padding: 10px 5px 10px 5px;
+	margin: 10px;
+	padding: 20px 10px 10px 10px;
 	background-color: white;
+	/* border: 1px solid #D5D5D5; */
+	border-radius: 16px;
+}
+
+.recent-component-img {
+	width: 200px;
+	height: 200px;
+	
 	border-radius: 16px;
 	
-	display: flex;
-	flex-direction: column;
+	margin: 0px 20px;
 }
 
 .recent-component a {
@@ -394,14 +402,6 @@ a[data-toggle="collapse"][aria-expanded="true"] + .collapse .card-body {
 
 .recent-component p {
 	margin: 0px;
-}
-
-.recent-content {
-	 display: flex;
-	 justify-content: space-between;
-	 align-items: flex-end;
-	 
-	 margin: 0px 10px;
 }
 
 .recent-content h5 {
@@ -419,18 +419,11 @@ a[data-toggle="collapse"][aria-expanded="true"] + .collapse .card-body {
 	font-size: 14px;
 }
 
-.recent-component .recent-price {
+.recent-component .fav-price {
 	font-size: 14px;
 }
 
-.recent-component-img {
-	width: 200px;
-	height: 200px;
-	
-	border-radius: 16px;
-	
-	margin: 0px auto;
-}
+
 
 .recent-title {
 	font-size: 1.25rem;
