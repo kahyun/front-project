@@ -38,6 +38,7 @@
 
 .name {
 	font-weight: bold;
+	font-size: 16px;
 }
 
 .geha-list {
@@ -52,6 +53,7 @@
 .geha-item p {
   margin: 4px 0 4px 30px;
   line-height: 1.3;
+  font-size: 14px;
 }
 
 .favorite-btn {
@@ -264,7 +266,12 @@
 <script>
 
 $(document).ready(function() {
-    $("#header-container").load("./header/header.html");
+	 $("#header-container").load("./header/header.html", function () {
+	      const username = localStorage.getItem("loggedInUser");
+	      if (username) {
+	        $(".username").text(`${username}님`);
+	      }
+	    });
     $("#footer-container").load("./footer/footer.html");
     /* 메인 캐로셀 */
     let current = 0;
@@ -316,7 +323,16 @@ $(document).ready(function() {
     }
     updatePoolCarousel();
   }, 3000);
+    //디테일로 넘어갈때 로컬스토리지
+    $(".geha-item").on("click", function () {
+    	  const name = $(this).find(".name").text();
+    	  const imageSrc = $(this).find("img").attr("src");
 
+    	  localStorage.setItem("ghName", name);        // 이름 저장
+    	  localStorage.setItem("ghImage", imageSrc);   // 이미지 경로 저장
+
+    	  window.location.href = "./detailSearchPage.html";
+    	});
     
 /* 영상 */
 // 영상 캐러셀
@@ -519,8 +535,6 @@ $(".gehaImg").on("mouseleave", function () {
 	</div>
 
 	<div class="geha-list">
-	<a href="./detailSearchPage.html" style="color: inherit;
-  text-decoration: none;">
 		<div class="geha-item" data-region="서울">
 			<img class="gehaImg" src="img/main/main_mini1.jpg"  data-images="img/main/main_mini1.jpg,img/main/main_mini1_1.jpg,img/main/main_mini1_2.jpg,img/main/main_mini1_3.jpg"  alt="어울림하우스">
 			<p class="name">어울림하우스</p>
@@ -532,7 +546,6 @@ $(".gehaImg").on("mouseleave", function () {
 				</button>
 			</p>
 		</div>
-		</a>
 		<div class="geha-item" data-region="통영">
 			<img class="gehaImg" src="img/main/main_mini2.jpg"   data-images="img/main/main_mini2.jpg,img/main/main_mini2_1.jpg" alt="어반 스테이">
 			<p class="name">어반 스테이</p>
