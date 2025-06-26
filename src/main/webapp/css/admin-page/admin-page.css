@@ -8,10 +8,18 @@
 	flex-direction: column;
 }
 
+.section-container h5 {
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	
+	font-weight: bold;
+}
+
 .section-component {
 	background-color: white;
 	
-	width: 1100px;
+	width: 1000px;
 	
 	border: 1px solid white;
 	border-radius: 16px;
@@ -27,10 +35,6 @@
 
 .component-header h3 {
 	margin: 10px;
-}
-
-h5 {
-	margin: 10px 0px 20px 10px;
 }
 
 /* 내 정보 입력 칸 */
@@ -107,7 +111,8 @@ h5 {
 }
 
 .management-gh > h5 {
-	margin: 10px 0px 10px 0px;
+	padding: 0px;
+	padding-top: 10px;
 }
 
 .management-gh button {
@@ -123,7 +128,7 @@ h5 {
 
 /* 매출 관련 칸 */
 .income-container {
-	width: 1100px;
+	width: 1000px;
 	
 	margin: 20px auto;
 	
@@ -132,7 +137,7 @@ h5 {
 }
 
 .income-item {
-	height: 300px;
+	height: 250px;
 	
 	background-color: white;
 	border: 1px solid white;
@@ -144,20 +149,23 @@ h5 {
 }
 
 .income-item:nth-child(1) {
-	 width: 30%;
+	 width: 28%;
 }
 
 .income-item:nth-child(2) {
-	 width: 36%;
+	 width: 40%;
 }
 
 .income-item:nth-child(3) {
-	 width: 30%;
+	 width: 28%;
 }
 
-.income-item > h5 {
-	margin-left: 20px;
-	margin-top: 20px;
+.income-item h5 {
+	margin-left: 15px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	
+	padding: 0px;
 }
 
 .income-item a {
@@ -193,7 +201,7 @@ h5 {
 
 /* 차트 관련 스타일 */
 .chart-contanier {
-	width: 1100px;
+	width: 1000px;
 	
 	margin: 20px auto;
 	
@@ -225,7 +233,7 @@ h5 {
 }
 
 .chart-item > h5 {
-	margin: 10px 0px 10px 10px;
+	/* margin: 10px 0px 10px 10px; */
 }
 
 .chart {
