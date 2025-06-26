@@ -333,11 +333,13 @@ $(document).ready(function() {
     $(".geha-item").on("click", function () {
     	  const name = $(this).find(".name").text();
     	  const price = $(this).find(".price").text();
+    	  const location = $(this).find(".location").text();
     	  const imageSrc = $(this).find("img").attr("src");
 
     	  localStorage.setItem("ghName", name);        // 이름 저장
     	  localStorage.setItem("ghImage", imageSrc);   // 이미지 경로 저장
     	  localStorage.setItem("bannerPrice", price);   // 가격 저장
+    	  localStorage.setItem("lacation", location);   // 지역 저장
 
     	  window.location.href = "./detailSearchPage.html";
     	});
@@ -544,7 +546,7 @@ $(".gehaImg").on("mouseleave", function () {
 
 	<div class="geha-list">
 		<div class="geha-item" data-region="서울">
-			<img class="gehaImg" src="img/main/main_mini2.jpg"  data-images="img/main/main_mini1.jpg,img/main/main_mini1_1.jpg,img/main/main_mini1_2.jpg,img/main/main_mini1_3.jpg"  alt="어울림하우스">
+			<img class="gehaImg" src="img/main/main_mini2.jpg"  data-images="img/main/main_mini2.jpg,img/detailSearchPage/어반 스테이/smallImage2.png,img/detailSearchPage/어반 스테이/smallImage3.png,img/detailSearchPage/어반 스테이/smallImage4.png"  alt="어울림하우스">
 			<p class="name">어반 스테이</p>
 			<p class="location">지역: 서울</p>
 			<p class="price">
@@ -555,7 +557,7 @@ $(".gehaImg").on("mouseleave", function () {
 			</p>
 		</div>
 		<div class="geha-item" data-region="통영">
-			<img class="gehaImg" src="img/main/main_mini3.jpg"   data-images="img/main/main_mini2.jpg,img/main/main_mini2_1.jpg" alt="어반 스테이">
+			<img class="gehaImg" src="img/main/main_mini3.jpg"   data-images="img/main/main_mini3.jpg,img/main/main_mini3_1.jpg,img/main/main_mini3_2.jpg,img/main/main_mini3_3.jpg" alt="어반 스테이">
 			<p class="name">소담재</p>
 			<p class="location">지역: 통영</p>
 			<p class="price">
@@ -566,7 +568,7 @@ $(".gehaImg").on("mouseleave", function () {
 			</p>
 		</div>
 		<div class="geha-item" data-region="강원">
-			<img class="gehaImg" src="img/main/main_mini1.jpg"   data-images="img/main/main_mini3.jpg,img/main/main_mini3_1.jpg,img/main/main_mini3_2.jpg,img/main/main_mini3_3.jpg" alt="소담재">
+			<img class="gehaImg" src="img/main/main_mini1.jpg"   data-images="img/main/main_mini1.jpg" alt="소담재">
 			<p class="name">어울림 하우스</p>
 			<p class="location">지역: 강원</p>
 			<p class="price">
