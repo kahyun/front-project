@@ -73,7 +73,7 @@
 				</div>	
 				<div class="management-contanier">
 					<div class="management-gh">
-						<img src="./img/mypage/img01-01.jpg"/>
+						<img src="./img/mypage/img01-01.png"/>
 						<h5>별자리 여관</h5>
 						<p>서울특별시 마포구 새별로 123</p>
 						<div>
@@ -81,7 +81,7 @@
 						</div>
 					</div>
 					<div class="management-gh">
-						<img src="./img/mypage/img02-01.jpg"/>
+						<img src="./img/mypage/img02-01.png"/>
 						<h5>어떤하루</h5>
 						<p>강원도 춘천시 소양강로 321</p>
 						<div>
@@ -89,7 +89,7 @@
 						</div>
 					</div>
 					<div class="management-gh">
-						<img src="./img/mypage/img03-01.jpg"/>
+						<img src="./img/mypage/img03-01.png"/>
 						<h5>어울림하우스</h5>
 						<p>대전광역시 유성구 과학로 89</p>
 						<div>
@@ -273,8 +273,13 @@
 			  adminInfo[username].gender = genderForm.value;
 			}
 			
-			// 변경된 정보 localStorage에 저장
-			localStorage.setItem("adminInfo", JSON.stringify(adminInfo));
+			if (confirm("관리자 정보를 수정하시겠습니까?")) {
+				// 변경된 정보 localStorage에 저장
+				localStorage.setItem("adminInfo", JSON.stringify(adminInfo));
+				alert("관리자 정보가 수정되었습니다.");
+			} else {
+				return;
+			}
 		});
 	});
 	</script>

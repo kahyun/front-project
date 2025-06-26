@@ -8,7 +8,6 @@
 .section-container h5 {
 	padding-top: 10px;
 	padding-left: 10px;
-	padding-bottom: 10px;
 	
 	font-weight: bold;
 }
@@ -20,7 +19,7 @@
 	border: 1px solid #F8F8F8;
 	border-radius: 16px;
 	margin: 20px auto;
-	padding: 20px;
+	padding: 5px;
 }
 
 .component-header {
@@ -31,24 +30,26 @@
 
 .component-header a {
 	font-size: 14px;
+	margin-right: 10px;
 }
 
 .component-title {
-	font-size: 24px;
+	font-size: 20px;
 }
 
 /* 내 정보 입력 칸 */
 .info-component {
-	margin: 30px;
-	
-	display: flex;
-	align-items: flex-end;
-	flex-wrap: wrap;
-    justify-content: space-between;
-    row-gap: 20px;
-    
-    color: #808080;
+  margin: 10px 20px 20px 20px;
+  
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 8px;
+
+  color: #808080;
 }
+
 
 .info-group {
 	display: flex;
@@ -57,19 +58,20 @@
 }
 
 .info-group label {
-	font-size: 13px;
+  font-size: 13px;
+  margin-bottom: 2px; /* 라벨과 input 사이 간격 조절 */
 }
 
 .info-group > input {
-	height: 32px;
-	
-	border: 0px; 
-	border-radius: 8px;
-	
-	margin: 3px;
-	padding-left: 5px;
-	
-	font-size: 16px;
+  height: 32px;
+  border: 0px; 
+  border-radius: 8px;
+  
+  /* margin: 3px; → 제거하거나 축소 */
+  margin: **0px**;
+  padding-left: 5px;
+
+  font-size: 16px;
 }
 
 #btn-info {
@@ -100,13 +102,14 @@
 	background-color: #F8F8F8;
 	border: 1px solid #F8F8F8;
 	border-radius: 16px;
-	padding: 20px;
+	padding: 10px;
 }
 
 #discount-point-amount {
 	height: 60%;
 	
-	margin: 20px 30px 10px 30px;
+	margin: 0px 30px;
+	margin-top: 20px;
 	
 	background-color: #FFF;
 	
@@ -169,6 +172,10 @@
 	justify-content: space-between;
 }
 
+#res-list {
+	margin-bottom: 15px;
+}
+
 .res-list .card-header {
 	background-color: #fff;
     border-bottom: 1px solid #f0f0f0;
@@ -183,7 +190,7 @@
 }
 
 .res-component {
-	margin: 15px 30px;
+	margin: 5px 30px; 
 	
 	background-color: white;
 	border: 1px solid white;
@@ -280,17 +287,18 @@ a[data-toggle="collapse"][aria-expanded="true"] + .collapse .card-body {
 }
 
 .fav-component {
-	width: 300px;
+	width: 260px;
+	
 	margin: 10px;
-	padding: 20px;
+	padding: 25px 10px 10px 10px;
 	background-color: white;
-	border: 1px solid #D5D5D5;
+	/* border: 1px solid #D5D5D5; */
 	border-radius: 16px;
 }
 
 .fav-component-img {
-	width: 90%;
-	height: 40%;
+/* /* 	width: 90%;
+	height: 40%; */
 	margin: 0px auto;
 }
 
@@ -318,13 +326,12 @@ a[data-toggle="collapse"][aria-expanded="true"] + .collapse .card-body {
 }
 
 .fav-component .fav-price {
-	font-weight: bold;
-	font-size: 18px;
+	font-size: 14px;
 }
 
 .fav-component-img {
-	width: 250px;
-	height: 250px;
+	width: 200px;
+	height: 200px;
 	
 	border-radius: 16px;
 }
@@ -335,7 +342,7 @@ a[data-toggle="collapse"][aria-expanded="true"] + .collapse .card-body {
 	
 	padding: 0px;
 	
-	font-size: 18px;
+	font-size: 14px;
 }
 
 .favorite-btn {
