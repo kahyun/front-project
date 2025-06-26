@@ -4,6 +4,17 @@
 <meta charset="UTF-8">
 <title>게스트하우스</title>
 <style>
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.box * {
+	font-family: 'Pretendard-Regular', sans-serif;
+}
 .main-slide {
 	display: flex;
 	justify-content: center;
@@ -436,6 +447,7 @@ $(".gehaImg").on("mouseleave", function () {
 </head>
 
 <body>
+<div class="box">
 	<div id="header-container"></div>
 
 	<div class="main-carousel">
@@ -679,5 +691,6 @@ $(".gehaImg").on("mouseleave", function () {
 		</div>
 	</div>
 <div id="footer-container"></div>
+</div>
 </body>
 </html>
