@@ -397,7 +397,7 @@
 	<!-- slick 관련 코드 -->
 	<script type="text/javascript">
 	$('.fav-list').slick({
-  		infinite: false,
+  		infinite: true,
   		slidesToShow: 1,
   		slidesToScroll: 1,
   		slidesToShow: 1,
@@ -522,6 +522,17 @@
 				return;
 			}			
 		});
+	});
+	</script>
+	
+	<script>
+	$(() => {
+		const next = document.querySelector('#fav-list .slick-next');
+		
+		setInterval(() => {
+			console.log("Next Button");
+			next.click();
+		}, 3000);
 	});
 	</script>
 </body>
