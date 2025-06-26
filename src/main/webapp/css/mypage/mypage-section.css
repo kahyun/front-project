@@ -284,6 +284,7 @@ a[data-toggle="collapse"][aria-expanded="true"] + .collapse .card-body {
 /* 즐겨찾기 칸 */
 .fav-list {	
 	margin: 0px 30px;
+	margin-bottom: 10px;
 }
 
 .fav-component {
@@ -349,7 +350,7 @@ a[data-toggle="collapse"][aria-expanded="true"] + .collapse .card-body {
 	background: none;
 	border: none;
 	cursor: pointer;
-	margin-left: 95px;
+	/* margin-left: 95px; */
 	font-size: 18px;
 	color: #aaa;
 	
@@ -368,4 +369,74 @@ a[data-toggle="collapse"][aria-expanded="true"] + .collapse .card-body {
 
 .favorite-btn:focus {
 	outline: none;
+}
+
+/* 최근에 본 게스트하우스 */
+.recent-list {	
+	margin: 0px 30px;
+}
+
+.recent-component {
+	width: 230px;
+	
+	margin: 10px 10px 5px 10px;
+	padding: 10px 5px 10px 5px;
+	background-color: white;
+	border-radius: 16px;
+	
+	display: flex;
+	flex-direction: column;
+}
+
+.recent-component a {
+	color: gold;
+}
+
+.recent-component p {
+	margin: 0px;
+}
+
+.recent-content {
+	 display: flex;
+	 justify-content: space-between;
+	 align-items: flex-end;
+	 
+	 margin: 0px 10px;
+}
+
+.recent-content h5 {
+	margin-top: 15px;
+}
+
+.recent-component .recent-content p {
+	margin-bottom: 3px;
+	margin-left: 5px;
+}
+
+.recent-component .recent-addr {
+	color: #808080;
+	
+	font-size: 14px;
+}
+
+.recent-component .recent-price {
+	font-size: 14px;
+}
+
+.recent-component-img {
+	width: 200px;
+	height: 200px;
+	
+	border-radius: 16px;
+	
+	margin: 0px auto;
+}
+
+.recent-title {
+	font-size: 1.25rem;
+	font-weight: bold;
+	
+	padding: 0px;
+	
+	font-size: 14px;
 }
