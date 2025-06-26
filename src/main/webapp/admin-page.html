@@ -122,7 +122,10 @@
 					</div>
 				</div>
 				<div class="income-item">
-					<h5>신규 예약 목록</h5>
+					<div style="display: flex; justify-content: space-between; align-items: center;">
+						<h5>신규 예약 목록</h5>
+						<a href="#">더보기 ></a>
+					</div>
 					<div class="income-component" style="font-weight: bold;">
 						<div>어울림하우스</div>
 						<div>601호실</div>
@@ -140,9 +143,6 @@
 						<div>203호실</div>
 						<div>4명</div>
 						<div>체크인: 2025-07-05</div>
-					</div>
-					<div>
-						<a href="#">더보기 ></a>
 					</div>
 				</div>
 				<div class="income-item">
@@ -217,8 +217,67 @@
 	<!-- 헤더 관련 코드 -->
 	<script>
 	$(() => {
-    	$("#header-container").load("./header/header.html");
+		$("#header-container").load("./header/header.html", function () {
+			const username = localStorage.getItem("loggedInUser");
+		    if (username) {
+		    	$(".username").text(`${username}님`);
+		    }
+		});
+		
+		
   	});
+	</script>
+	
+	<script>
+	$(() => {
+		const nickForm = document.querySelector('#nick');
+		const nameForm = document.querySelector('#name');
+		const phoneForm = document.querySelector('#number');
+		const birthForm = document.querySelector('#birthday');
+		const genderForm = document.querySelector('#gender');
+		
+  	 	// 사용자 정보 불러오기
+  	 	const username = localStorage.getItem("loggedInUser") || '';
+  	 	const adminInfo = JSON.parse(localStorage.getItem("adminInfo")) || {};
+  	 	
+  	 	if (!adminInfo.hasOwnProperty(username)) {
+  	 		alert("등록되지 않은 사용자입니다!!!");
+  	 		console.warn(`사용자 정보가 없습니다: '${username}'`);  	 		
+  		  	location.href = "./index.html";
+  		} else {
+  			const user = adminInfo[username];
+
+    		nickForm.value = username;
+    		nameForm.value = user.name;
+    		phoneForm.value = user.phone;
+    		birthForm.value = user.birthDay;
+    		genderForm.value = user.gender;
+  		}
+  	 	
+		const btnInfo = document.querySelector('#btn-info');
+		
+		btnInfo.addEventListener('click', () => {
+			console.log("Press Button");
+			
+			// 1. 현재 userInfo를 가져와서
+			let userInfo = JSON.parse(localStorage.getItem("userInfo")) || {}; // 없을 경우 빈 객체
+
+			// 현재 입력된 닉네임(사용자명)
+			const username = nickForm.value;
+
+			// 2. 닉네임을 가지고 있는지 확인하고
+			if (adminInfo.hasOwnProperty(username)) {
+			  // 3-1. 있다면 해당 정보 수정
+			  adminInfo[username].name = nameForm.value;
+			  adminInfo[username].phone = phoneForm.value;
+			  adminInfo[username].birthDay = birthForm.value;
+			  adminInfo[username].gender = genderForm.value;
+			}
+			
+			// 변경된 정보 localStorage에 저장
+			localStorage.setItem("adminInfo", JSON.stringify(adminInfo));
+		});
+	});
 	</script>
 	
 	<!-- 모달 관련 코드 -->

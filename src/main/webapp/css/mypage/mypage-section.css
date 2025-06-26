@@ -1,10 +1,5 @@
 @charset "UTF-8";
 
-body {
-  font-family : 'gulim', 'gothic'
-}
-
-/*  */
 .section-container {
 	display: flex;
 	flex-direction: column;
@@ -34,6 +29,14 @@ body {
 	align-items: center;
 }
 
+.component-header a {
+	font-size: 14px;
+}
+
+.component-title {
+	font-size: 24px;
+}
+
 /* 내 정보 입력 칸 */
 .info-component {
 	margin: 30px;
@@ -53,6 +56,10 @@ body {
     width: calc(50% - 15px);
 }
 
+.info-group label {
+	font-size: 13px;
+}
+
 .info-group > input {
 	height: 32px;
 	
@@ -61,6 +68,8 @@ body {
 	
 	margin: 3px;
 	padding-left: 5px;
+	
+	font-size: 16px;
 }
 
 #btn-info {
@@ -74,6 +83,8 @@ body {
 	color: #FF4752;
 	
 	padding: 0px;
+	
+	font-size: 14px;
 }
 
 /* 할인 관련 칸 */
@@ -104,15 +115,21 @@ body {
 
 #discount-point-amount > h5 {
 	color: #FF4752;
-	font-size: 35px;
+	
+	font-size: 32px;
+	
 	padding-top: 30px;
 	padding-left: 30px;
 }
 
 #discount-point-amount > p {
 	float: right;
+	
 	color: #8a8a8a;
+	
 	padding: 15px 15px 15px 0px;
+	
+	font-size: 12px;
 }
 
 .discount-coupon-list {
@@ -136,6 +153,8 @@ body {
 
 .discount-coupon-list a {
 	color: #FF4752;
+	
+	font-size: 14px;
 }
 
 /* 예약 관련 칸 */
@@ -173,11 +192,13 @@ body {
 	display: flex;
 	justify-content: space-around;
     align-items: center;
+    
+    font-size: 14px;
 }
 
 .res-component-img {
-	width: 75px;
-	height: 75px;
+	width: 50px;
+	height: 50px;
 }
 
 .res-expand {
@@ -213,6 +234,7 @@ body {
 	width: 400px;
 		
 	text-align: right;
+	font-size: 14px;
 }
 
 .res-button {
@@ -220,6 +242,8 @@ body {
 	
 	display: flex;
 	justify-content: flex-end;
+	
+	font-size: 14px;
 }
 
 .res-button .btn-cancel {
@@ -289,11 +313,13 @@ a[data-toggle="collapse"][aria-expanded="true"] + .collapse .card-body {
 
 .fav-component .fav-addr {
 	color: #808080;
+	
+	font-size: 14px;
 }
 
 .fav-component .fav-price {
 	font-weight: bold;
-	font-size: 16px;
+	font-size: 18px;
 }
 
 .fav-component-img {
@@ -302,8 +328,13 @@ a[data-toggle="collapse"][aria-expanded="true"] + .collapse .card-body {
 }
 
 .fav-title {
+	font-size: 1.25rem;
+	font-weight: bold;
+	
 	margin: 0px;
 	padding: 0px;
+	
+	font-size: 18px;
 }
 
 .favorite-btn {
@@ -315,6 +346,12 @@ a[data-toggle="collapse"][aria-expanded="true"] + .collapse .card-body {
 	color: #aaa;
 	
 	float: right;
+	
+	
+}
+
+.favrotie-btn > i {
+	font-size: 18px;	
 }
 
 .favorite-btn.active i {

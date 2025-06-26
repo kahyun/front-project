@@ -68,15 +68,15 @@
 	<!-- section -->
 	<div id="section" class="section-container">
 		<div id="info" class="section-component">
-			<h5>내 정보</h5>
+			<h5 class="component-title">내 정보</h5>
 			<form>
 				<div class="info-component">
 					<div class="info-group">
 						<label for="nick">닉네임</label>
-						<input type="text" name="nick" id="nick" value="서울게하주인" />				
+						<input type="text" name="nick" id="nick" value="서울게하주인" readonly=true/>				
 					</div>
 					<div class="info-group">
-						이름
+						<label>이름</label>
 						<input type="text" name="name" id="name" value="김주인" />
 					</div>
 					<div  class="info-group">
@@ -89,7 +89,7 @@
 					</div>
 					<div  class="info-group">
 						<label>성별</label>
-						<input type="password" name="gender" id="gender" value="남성" />
+						<input type="type" name="gender" id="gender" value="남성" />
 					</div>
 					<button id="btn-info" class="btn btn-danger">저장</button> 
 				</div>
@@ -100,7 +100,7 @@
 		<div id="discount" class="discount">
 			<div id="discount-point" class="discount-component">
 				<div class="component-header">
-					<h5>포인트</h5>
+					<h5  class="component-title">포인트</h5>
 					<a href="#">더보기 ></a>
 				</div>	
 				<div id="discount-point-amount">
@@ -110,7 +110,7 @@
 			</div>
 			<div id="discount-coupon" class="discount-component">
 				<div class="component-header">
-					<h5>할인 쿠폰</h5>
+					<h5 class="component-title">할인 쿠폰</h5>
 					<a href="#">더보기 ></a>
 				</div>	
 				<div class="discount-coupon-list">
@@ -126,7 +126,7 @@
 		
 		<div id="res" class="section-component">
 			<div class="component-header">
-				<h5>예약목록 조회</h5>
+				<h5 class="component-title">예약목록 조회</h5>
 				<a href="#">더보기 ></a>
 			</div>	
 			<div id="res-list">				
@@ -226,7 +226,7 @@
 		
 		<div id="review" class="section-component review-container">
 			<div class="component-header">
-				<h5>내가 쓴 리뷰</h5>
+				<h5 class="component-title">내가 쓴 리뷰</h5>
 				<a href="#">더보기 ></a>
 			</div>			
 			<div id="review-list" class="review-list">								
@@ -278,7 +278,7 @@
 		
 		<div id="fav" class="section-component">
 			<div class="component-header">
-				<h5>나의 즐겨찾기</h5>
+				<h5 class="component-title">나의 즐겨찾기</h5>
 				<a href="#">더보기 ></a>
 			</div>	
 			<div id="fav-list" class="fav-list">								
@@ -295,12 +295,12 @@
 		                </div>
 		            </div>
 					<div class="fav-content">
-						<h5 class="fav-title">별자리 여관</h5>
+						<p class="fav-title">별자리 여관</p>
 						<p class="fav-addr">위치: 서울특별시 마포구 새별로 123</p>
 						<div style="display: flex; justify-content: space-between;">
 							<p class="fav-price">50,000원 ~</p>
-							<button class="favorite-btn">
-								<i class="far fa-star"></i>
+							<button class="favorite-btn active">
+								<i class="fas fa-star"></i>
 							</button>
 						</div>
 					</div>
@@ -318,12 +318,12 @@
 		                </div>
 		            </div>
 					<div class="fav-content">
-						<h5 class="fav-title">어떤하루</h5>
+						<p class="fav-title">어떤하루</p>
 						<p class="fav-addr">위치: 강원도 춘천시 소양강로 321</p>
 						<div style="display: flex; justify-content: space-between;">
 							<p class="fav-price">70,000원 ~</p>
-							<button class="favorite-btn">
-								<i class="far fa-star"></i>
+							<button class="favorite-btn active">
+								<i class="fas fa-star"></i>
 							</button>
 						</div>
 					</div>
@@ -341,12 +341,12 @@
 		                </div>
 		            </div>
 					<div class="fav-content">
-						<h5 class="fav-title">어울림하우스</h5>
+						<p class="fav-title">어울림하우스</p>
 						<p class="fav-addr">위치: 대전광역시 유성구 과학로 89</p>
 						<div style="display: flex; justify-content: space-between;">
 							<p class="fav-price">30,000원 ~</p>
-							<button class="favorite-btn">
-								<i class="far fa-star"></i>
+							<button class="favorite-btn active">
+								<i class="fas fa-star"></i>
 							</button>
 						</div>
 					</div>
@@ -364,12 +364,12 @@
 		                </div>
 		            </div>
 					<div class="fav-content">
-						<h5 class="fav-title">자연별장</h5>
+						<p class="fav-title">자연별장</p>
 						<p class="fav-addr">위치: 경기도 성남시 분당구 미래로 77</p>
 						<div style="display: flex; justify-content: space-between;">
 							<p class="fav-price">55,000원 ~</p>
-							<button class="favorite-btn">
-								<i class="far fa-star"></i>
+							<button class="favorite-btn active">
+								<i class="fas fa-star"></i>
 							</button>
 						</div>
 					</div> 
@@ -404,11 +404,16 @@
 
 	</script>
 
-	<!-- 헤더 관련 코드 -->
+	<!-- 헤더 + 사용자 정보 관련 코드 -->
 	<script>
 	$(() => {
-    	$("#header-container").load("./header/header.html");
-  	});
+		$("#header-container").load("./header/header.html", function () {
+		      const username = localStorage.getItem("loggedInUser");
+		      if (username) {
+		        $(".username").text(`${username}님`);
+		      }
+		    });
+	});
 	</script>
 	
 	<!-- 모달 관련 코드 -->
@@ -451,6 +456,65 @@
 		const icon = $(this).find('i');
 		icon.toggleClass('far').toggleClass('fas');
 		$(this).toggleClass('active');
+	});
+	</script>
+	
+	<!-- localStorage 관련 코드 -->
+	<script>
+	$(() => {
+  	 	// 사용자 정보 불러오기
+	    const nickForm = document.querySelector('#nick');
+		const nameForm = document.querySelector('#name');
+		const phoneForm = document.querySelector('#number');
+		const birthForm = document.querySelector('#birthday');
+		const genderForm = document.querySelector('#gender');
+			
+		const userInfo = JSON.parse(localStorage.getItem("userInfo")) || {};
+		const username = localStorage.getItem("loggedInUser") || '';
+
+		if (userInfo.hasOwnProperty(username)) {
+		  const user = userInfo[username];
+
+		  nickForm.value = username;
+		  nameForm.value = user.name;
+		  phoneForm.value = user.phone;
+		  birthForm.value = user.birthDay;
+		  genderForm.value = user.gender;
+		} else {
+		  console.warn(`사용자 정보가 없습니다: '${username}'`);
+		}
+	
+		const btnInfo = document.querySelector('#btn-info');
+		
+		btnInfo.addEventListener('click', () => {
+			console.log("Press Button");
+			
+			// 1. 현재 userInfo를 가져와서
+			let userInfo = JSON.parse(localStorage.getItem("userInfo")) || {}; // 없을 경우 빈 객체
+
+			// 현재 입력된 닉네임(사용자명)
+			const username = nickForm.value;
+
+			// 2. 닉네임을 가지고 있는지 확인하고
+			if (userInfo.hasOwnProperty(username)) {
+			  // 3-1. 있다면 해당 정보 수정
+			  userInfo[username].name = nameForm.value;
+			  userInfo[username].phone = phoneForm.value;
+			  userInfo[username].birthDay = birthForm.value;
+			  userInfo[username].gender = genderForm.value;
+			} else {
+			  // 3-2. 없다면 새로 추가
+			  userInfo[username] = {
+			    name: nameForm.value,
+			    phone: phoneForm.value,
+			    birthDay: birthForm.value,
+			    gender: genderForm.value
+			  };
+			}
+
+			// 변경된 정보 localStorage에 저장
+			localStorage.setItem("userInfo", JSON.stringify(userInfo));
+		});
 	});
 	</script>
 </body>
